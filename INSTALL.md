@@ -1,8 +1,6 @@
 # Instructions
 
-These instructions explain how to set up the tools required to build **pokered**, including [**rgbds**](https://github.com/gbdev/rgbds), which assembles the source files into a ROM.
-
-If you run into trouble, ask for help on IRC or Discord (see [README.md](README.md)).
+These instructions explain how to set up the tools required to build **pokered-ru**, including [**rgbds**](https://github.com/gbdev/rgbds), which assembles the source files into a ROM.
 
 
 ## Windows 10
@@ -143,7 +141,7 @@ Now you're ready to [build **pokered**](#build-pokered).
 To download the **pokered** source files:
 
 ```bash
-git clone https://github.com/pret/pokered
+git clone https://github.com/Shararamosh/pokered-ru
 cd pokered
 ```
 
