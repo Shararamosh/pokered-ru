@@ -330,10 +330,14 @@ StartMenu_Item::
 .choseItem
 ; erase menu cursor (blank each tile in front of an item name)
 	ld a, " "
-	ldcoord_a 5, 4
-	ldcoord_a 5, 6
-	ldcoord_a 5, 8
-	ldcoord_a 5, 10
+	;ldcoord_a 5, 4
+	ldcoord_a 3, 4
+	;ldcoord_a 5, 6
+	ldcoord_a 3, 6
+	;ldcoord_a 5, 8
+	ldcoord_a 3, 8
+	;ldcoord_a 5, 10
+	ldcoord_a 3, 10
 	call PlaceUnfilledArrowMenuCursor
 	xor a
 	ld [wMenuItemToSwap], a
@@ -347,7 +351,8 @@ StartMenu_Item::
 	ld hl, wTopMenuItemY
 	ld a, 11
 	ld [hli], a ; top menu item Y
-	ld a, 14
+	;ld a, 14
+	ld a, 6
 	ld [hli], a ; top menu item X
 	xor a
 	ld [hli], a ; current menu item ID
@@ -569,13 +574,13 @@ TrainerInfo_FarCopyData:
 	jp FarCopyData2
 
 TrainerInfo_NameMoneyTimeText:
-	db   "NAME/"
-	next "MONEY/"
-	next "TIME/@"
+	db   "ИМЯ/"
+	next "ДЕНЕГ/"
+	next "ВРЕМЯ/@"
 
 ; $76 is a circle tile
 TrainerInfo_BadgesText:
-	db $76,"BADGES",$76,"@"
+	db $76,"ЗНАЧКИ",$76,"@"
 
 ; draws a text box on the trainer info screen
 ; height is always 6

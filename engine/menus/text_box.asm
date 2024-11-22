@@ -387,21 +387,26 @@ DisplayFieldMoveMonMenu:
 	ld [hli], a ; wFieldMoves + 2
 	ld [hli], a ; wFieldMoves + 3
 	ld [hli], a ; wNumFieldMoves
-	ld [hl], 12 ; wFieldMovesLeftmostXCoord
+	;ld [hl], 12 ; wFieldMovesLeftmostXCoord
+	ld [hl], 11 ; wFieldMovesLeftmostXCoord
 	call GetMonFieldMoves
 	ld a, [wNumFieldMoves]
 	and a
 	jr nz, .fieldMovesExist
 
 ; no field moves
-	hlcoord 11, 11
-	ld b, 5
-	ld c, 7
+	;hlcoord 11, 11
+	hlcoord 10, 11
+	ld b, 5 ; Height of text box.
+	;ld c, 7
+	ld c, 8 ; Width of text box.
 	call TextBoxBorder
 	call UpdateSprites
-	ld a, 12
+	ld a, 11
+	;ld a, 12
 	ldh [hFieldMoveMonMenuTopMenuItemX], a
-	hlcoord 13, 12
+	;hlcoord 13, 12
+	hlcoord 12, 12
 	ld de, PokemonMenuEntries
 	jp PlaceString
 
@@ -502,9 +507,9 @@ DisplayFieldMoveMonMenu:
 INCLUDE "data/moves/field_move_names.asm"
 
 PokemonMenuEntries:
-	db   "STATS"
-	next "SWITCH"
-	next "CANCEL@"
+	db   "ДАННЫЕ"
+	next "СМЕНИТЬ"
+	next "ЗАКРЫТЬ@"
 
 GetMonFieldMoves:
 	ld a, [wWhichPokemon]

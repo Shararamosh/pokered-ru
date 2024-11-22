@@ -28,7 +28,8 @@ LinkCableHelp::
 	set 6, [hl]
 	hlcoord 0, 0
 	ld b, 8
-	ld c, 13
+	;ld c, 13
+	ld c, 18
 	call TextBoxBorder
 	hlcoord 2, 2
 	ld de, HowToLinkText
@@ -68,10 +69,10 @@ LinkCableHelpText2:
 	text_end
 
 HowToLinkText:
-	db   "HOW TO LINK"
-	next "COLOSSEUM"
-	next "TRADE CENTER"
-	next "STOP READING@"
+	db   "КАК СОЕДИНИТЬСЯ"
+	next "КОЛИЗЕЙ"
+	next "ЦЕНТР ОБМЕНА"
+	next "ПРЕКРАТИТЬ ЧТЕНИЕ@"
 
 LinkCableInfoTexts:
 	dw LinkCableInfoText1

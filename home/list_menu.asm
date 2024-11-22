@@ -31,8 +31,10 @@ DisplayListMenuID::
 	call DisplayTextBoxID ; draw the menu text box
 	call UpdateSprites ; disable sprites behind the text box
 ; the code up to .skipMovingSprites appears to be useless
-	hlcoord 4, 2 ; coordinates of upper left corner of menu text box
-	lb de, 9, 14 ; height and width of menu text box
+	;hlcoord 4, 2 ; coordinates of upper left corner of menu text box
+	hlcoord 2, 2
+	;lb de, 9, 14 ; height and width of menu text box
+	lb de, 11, 14
 	ld a, [wListMenuID]
 	and a ; PCPOKEMONLISTMENU?
 	jr nz, .skipMovingSprites
@@ -48,7 +50,8 @@ DisplayListMenuID::
 	ld [wMaxMenuItem], a
 	ld a, 4
 	ld [wTopMenuItemY], a
-	ld a, 5
+	;ld a, 5
+	ld a, 3
 	ld [wTopMenuItemX], a
 	ld a, A_BUTTON | B_BUTTON | SELECT
 	ld [wMenuWatchedKeys], a
@@ -67,12 +70,14 @@ DisplayListMenuIDLoop::
 	jr z, .notOldManBattle
 .oldManBattle
 	ld a, "▶"
-	ldcoord_a 5, 4 ; place menu cursor in front of first menu entry
+	;ldcoord_a 5, 4 ; place menu cursor in front of first menu entry
+	ldcoord_a 3, 4
 	ld c, 80
 	call DelayFrames
 	xor a
 	ld [wCurrentMenuItem], a
-	hlcoord 5, 4
+	;hlcoord 5, 4
+	hlcoord 3, 4
 	ld a, l
 	ld [wMenuCursorLocation], a
 	ld a, h
@@ -334,9 +339,11 @@ ExitListMenu::
 	ret
 
 PrintListMenuEntries::
-	hlcoord 5, 3
+	;hlcoord 5, 3
+	hlcoord 3, 3
 	ld b, 9
-	ld c, 14
+	;ld c, 14
+	ld c, 16
 	call ClearScreenArea
 	ld a, [wListPointer]
 	ld e, a
@@ -359,7 +366,8 @@ PrintListMenuEntries::
 	jr nc, .noCarry
 	inc d
 .noCarry
-	hlcoord 6, 4 ; coordinates of first list entry name
+	;hlcoord 6, 4 ; coordinates of first list entry name
+	hlcoord 4, 4
 	ld b, 4 ; print 4 names
 .loop
 	ld a, b
@@ -416,7 +424,8 @@ PrintListMenuEntries::
 	ld [wcf91], a
 	call GetItemPrice ; get price
 	pop hl
-	ld bc, SCREEN_WIDTH + 5 ; 1 row down and 5 columns right
+	;ld bc, SCREEN_WIDTH + 5 ; 1 row down and 5 columns right
+	ld bc, SCREEN_WIDTH + 7
 	add hl, bc
 	ld c, $a3 ; no leading zeroes, right-aligned, print currency symbol, 3 bytes
 	call PrintBCDNumber
@@ -474,7 +483,8 @@ PrintListMenuEntries::
 	and a ; is the item unsellable?
 	jr nz, .skipPrintingItemQuantity ; if so, don't print the quantity
 	push hl
-	ld bc, SCREEN_WIDTH + 8 ; 1 row down and 8 columns right
+	;ld bc, SCREEN_WIDTH + 8 ; 1 row down and 8 columns right
+	ld bc, SCREEN_WIDTH + 10
 	add hl, bc
 	ld a, "×"
 	ld [hli], a
@@ -513,7 +523,8 @@ PrintListMenuEntries::
 	inc c
 	dec b
 	jp nz, .loop
-	ld bc, -8
+	;ld bc, -8
+	ld bc, -6
 	add hl, bc
 	ld a, "▼"
 	ld [hl], a
@@ -523,4 +534,4 @@ PrintListMenuEntries::
 	jp PlaceString
 
 ListMenuCancelText::
-	db "CANCEL@"
+	db "ЗАКРЫТЬ@"

@@ -39,11 +39,13 @@ DisplayPCMainMenu::
 .next2
 	call PlaceString
 	hlcoord 2, 4
-	ld de, wPlayerName
+	;ld de, wPlayerName
+	ld de, PlayersPCText
 	call PlaceString
 	ld l, c
 	ld h, b
-	ld de, PlayersPCText
+	;ld de, PlayersPCText
+	ld de, wPlayerName
 	call PlaceString
 	CheckEvent EVENT_GOT_POKEDEX
 	jr z, .noOaksPC2
@@ -85,12 +87,12 @@ DisplayPCMainMenu::
 	ldh [hAutoBGTransferEnabled], a
 	ret
 
-SomeonesPCText:   db "SOMEONE's PC@"
-BillsPCText:      db "BILL's PC@"
-PlayersPCText:    db "'s PC@"
-OaksPCText:       db "PROF.OAK's PC@"
-PKMNLeaguePCText: db "<PKMN>LEAGUE@"
-LogOffPCText:     db "LOG OFF@"
+SomeonesPCText:   db "ЧЕЙ-ТО ПК@"
+BillsPCText:      db "ПК БИЛЛа@"
+PlayersPCText:    db "ПК @"
+OaksPCText:       db "ПК ПРОФ.ОУКа@"
+PKMNLeaguePCText: db "ЛИГА <PKMN>@"
+LogOffPCText:     db "ОТКЛЮЧИТЬСЯ@"
 
 BillsPC_::
 	ld hl, wd730
@@ -121,7 +123,8 @@ BillsPCMenu:
 	call LoadScreenTilesFromBuffer2DisableBGTransfer
 	hlcoord 0, 0
 	ld b, 10
-	ld c, 12
+	;ld c, 12
+	ld c, 13
 	call TextBoxBorder
 	hlcoord 2, 2
 	ld de, BillsPCMenuText
@@ -339,15 +342,15 @@ DisplayMonListMenu:
 	ret
 
 BillsPCMenuText:
-	db   "WITHDRAW <PKMN>"
-	next "DEPOSIT <PKMN>"
-	next "RELEASE <PKMN>"
-	next "CHANGE BOX"
-	next "SEE YA!"
+	db   "ЗАБРАТЬ <PKMN>"
+	next "ВНЕСТИ <PKMN>"
+	next "ОТПУСТИТЬ <PKMN>"
+	next "СМЕНИТЬ BOX"
+	next "УВИДИМСЯ!"
 	db "@"
 
 BoxNoPCText:
-	db "BOX No.@"
+	db "BOX Но.@"
 
 KnowsHMMove::
 ; returns whether mon with party index [wWhichPokemon] knows an HM move
@@ -446,11 +449,11 @@ DisplayDepositWithdrawMenu:
 	call LoadGBPal
 	jr .loop
 
-DepositPCText:  db "DEPOSIT@"
-WithdrawPCText: db "WITHDRAW@"
+DepositPCText:  db "ВНЕСТИ@"
+WithdrawPCText: db "ЗАБРАТЬ@"
 StatsCancelPCText:
-	db   "STATS"
-	next "CANCEL@"
+	db   "ДАННЫЕ"
+	next "ЗАКРЫТЬ@"
 
 SwitchOnText:
 	text_far _SwitchOnText

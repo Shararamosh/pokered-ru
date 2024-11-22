@@ -22,8 +22,10 @@ YesNoChoicePokeCenter::
 	call SaveScreenTilesToBuffer1
 	ld a, HEAL_CANCEL_MENU
 	ld [wTwoOptionMenuID], a
-	hlcoord 11, 6
-	lb bc, 8, 12
+	;hlcoord 11, 6
+	hlcoord 10, 6
+	;lb bc, 8, 12
+	lb bc, 8, 11
 	jr DisplayYesNoChoice
 
 WideYesNoChoice:: ; unused

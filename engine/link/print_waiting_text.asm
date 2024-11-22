@@ -1,7 +1,8 @@
 PrintWaitingText::
 	hlcoord 3, 10
 	ld b, 1
-	ld c, 11
+	;ld c, 11
+	ld c, 12
 	ld a, [wIsInBattle]
 	and a
 	jr z, .trade
@@ -18,4 +19,4 @@ PrintWaitingText::
 	jp DelayFrames
 
 WaitingText:
-	db "Waiting...!@"
+	db "ОЖИДАНИЕ...!@"

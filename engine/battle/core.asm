@@ -2033,12 +2033,14 @@ DisplayBattleMenu::
 	ld bc, NAME_LENGTH
 	call CopyData
 ; the following simulates the keystrokes by drawing menus on screen
-	hlcoord 9, 14
+	;hlcoord 9, 14
+	hlcoord 7, 14
 	ld [hl], "▶"
 	ld c, 80
 	call DelayFrames
 	ld [hl], " "
-	hlcoord 9, 16
+	;hlcoord 9, 16
+	hlcoord 7, 16
 	ld [hl], "▶"
 	ld c, 50
 	call DelayFrames
@@ -2063,13 +2065,18 @@ DisplayBattleMenu::
 	ld a, " "
 	jr z, .safariLeftColumn
 ; put cursor in left column for normal battle menu (i.e. when it's not a Safari battle)
-	ldcoord_a 15, 14 ; clear upper cursor position in right column
-	ldcoord_a 15, 16 ; clear lower cursor position in right column
-	ld b, $9 ; top menu item X
+	;ldcoord_a 15, 14 ; clear upper cursor position in right column
+	ldcoord_a 13, 14 ; clear upper cursor position in right column
+	;ldcoord_a 15, 16 ; clear lower cursor position in right column
+	ldcoord_a 13, 16 ; clear lower cursor position in right column
+	;ld b, $9 ; top menu item X
+	ld b, $7 ; top menu item X
 	jr .leftColumn_WaitForInput
 .safariLeftColumn
-	ldcoord_a 13, 14
-	ldcoord_a 13, 16
+	;ldcoord_a 13, 14
+	ldcoord_a 11, 14
+	;ldcoord_a 13, 16
+	ldcoord_a 11, 16
 	hlcoord 7, 14
 	ld de, wNumSafariBalls
 	lb bc, 1, 2
@@ -2096,9 +2103,12 @@ DisplayBattleMenu::
 	ld a, " "
 	jr z, .safariRightColumn
 ; put cursor in right column for normal battle menu (i.e. when it's not a Safari battle)
-	ldcoord_a 9, 14 ; clear upper cursor position in left column
-	ldcoord_a 9, 16 ; clear lower cursor position in left column
-	ld b, $f ; top menu item X
+	;ldcoord_a 9, 14 ; clear upper cursor position in left column
+	ldcoord_a 7, 14 ; clear upper cursor position in left column
+	;ldcoord_a 9, 16 ; clear lower cursor position in left column
+	ldcoord_a 7, 16 ; clear lower cursor position in left column
+	;ld b, $f ; top menu item X
+	ld b, $d ; top menu item X
 	jr .rightColumn_WaitForInput
 .safariRightColumn
 	ldcoord_a 1, 14 ; clear upper cursor position in left column
@@ -2107,7 +2117,8 @@ DisplayBattleMenu::
 	ld de, wNumSafariBalls
 	lb bc, 1, 2
 	call PrintNumber
-	ld b, $d ; top menu item X
+	;ld b, $d ; top menu item X
+	ld b, $b ; top menu item X
 .rightColumn_WaitForInput
 	ld hl, wTopMenuItemY
 	ld a, $e
@@ -2324,8 +2335,10 @@ PartyMenuOrRockOrRun:
 	call GBPalNormal
 	jp DisplayBattleMenu
 .partyMonDeselected
-	hlcoord 11, 11
-	ld bc, 6 * SCREEN_WIDTH + 9
+	;hlcoord 11, 11
+	hlcoord 10, 11
+	;ld bc, 6 * SCREEN_WIDTH + 9
+	ld bc, 6 * SCREEN_WIDTH + 10
 	ld a, " "
 	call FillMemory
 	xor a ; NORMAL_PARTY_MENU
@@ -2339,6 +2352,7 @@ PartyMenuOrRockOrRun:
 	ld hl, wTopMenuItemY
 	ld a, $c
 	ld [hli], a ; wTopMenuItemY
+	ld a, $b ; New line!!! $b is the new box width.
 	ld [hli], a ; wTopMenuItemX
 	xor a
 	ld [hli], a ; wCurrentMenuItem
@@ -2486,9 +2500,11 @@ MoveSelectionMenu:
 	ret z
 	ld hl, wBattleMonMoves
 	call .loadmoves
-	hlcoord 4, 12
+	;hlcoord 4, 12
+	hlcoord 2, 12
 	ld b, 4
-	ld c, 14
+	;ld c, 14
+	ld c, 16
 	di ; out of pure coincidence, it is possible for vblank to occur between the di and ei
 	   ; so it is necessary to put the di ei block to not cause tearing
 	call TextBoxBorder
@@ -2497,9 +2513,11 @@ MoveSelectionMenu:
 	hlcoord 10, 12
 	ld [hl], $7e
 	ei
-	hlcoord 6, 13
+	;hlcoord 6, 13
+	hlcoord 4, 13
 	call .writemoves
-	ld b, $5
+	;ld b, $5
+	ld b, $3
 	ld a, $c
 	jr .menuset
 .mimicmenu
@@ -2507,7 +2525,8 @@ MoveSelectionMenu:
 	call .loadmoves
 	hlcoord 0, 7
 	ld b, 4
-	ld c, 14
+	;ld c, 14
+	ld c, 16
 	call TextBoxBorder
 	hlcoord 2, 8
 	call .writemoves
@@ -2520,13 +2539,17 @@ MoveSelectionMenu:
 	ld bc, wPartyMon2 - wPartyMon1
 	call AddNTimes
 	call .loadmoves
-	hlcoord 4, 7
+	;hlcoord 4, 7
+	hlcoord 2, 7
 	ld b, 4
-	ld c, 14
+	;ld c, 14
+	ld c, 16
 	call TextBoxBorder
-	hlcoord 6, 8
+	;hlcoord 6, 8
+	hlcoord 4, 8
 	call .writemoves
-	ld b, $5
+	;ld b, $5
+	ld b, $3
 	ld a, $7
 .menuset
 	ld hl, wTopMenuItemY
@@ -2678,7 +2701,7 @@ MoveDisabledText:
 	text_end
 
 WhichTechniqueString:
-	db "WHICH TECHNIQUE?@"
+	db "КАКУЮ ТЕХНИКУ?@"
 
 SelectMenuItem_CursorUp:
 	ld a, [wCurrentMenuItem]
@@ -2830,8 +2853,9 @@ PrintMenuItem:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	hlcoord 0, 8
-	ld b, 3
-	ld c, 9
+	ld b, 3; Height of resulting text box.
+	;ld c, 9; Width of resulting text box.
+	ld c, 10
 	call TextBoxBorder
 	ld a, [wPlayerDisabledMove]
 	and a
@@ -2898,10 +2922,10 @@ PrintMenuItem:
 	jp Delay3
 
 DisabledText:
-	db "disabled!@"
+	db "отключено!@"
 
 TypeText:
-	db "TYPE@"
+	db "ТИП@"
 
 SelectEnemyMove:
 	ld a, [wLinkState]

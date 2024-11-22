@@ -9,11 +9,14 @@ CableClub_DoBattleOrTrade:
 	call LoadFontTilePatterns
 	call LoadHpBarAndStatusTilePatterns
 	call LoadTrainerInfoTextBoxTiles
-	hlcoord 3, 8
+	;hlcoord 3, 8
+	hlcoord 4, 8
 	ld b, 2
-	ld c, 12
+	;ld c, 12
+	ld c, 10
 	call CableClub_TextBoxBorder
-	hlcoord 4, 10
+	;hlcoord 4, 10
+	hlcoord 5, 10
 	ld de, PleaseWaitString
 	call PlaceString
 	ld hl, wPlayerNumHits
@@ -293,7 +296,7 @@ CableClub_DoBattleOrTradeAgain:
 	jr CallCurrentTradeCenterFunction
 
 PleaseWaitString:
-	db "PLEASE WAIT!@"
+	db "ПОДОЖДИТЕ!@"
 
 CallCurrentTradeCenterFunction:
 	ld hl, TradeCenterPointerTable
@@ -536,7 +539,7 @@ TradeCenter_SelectMon:
 	ld [wTradeCenterPointerTableIndex], a
 	jp CallCurrentTradeCenterFunction
 .statsTrade
-	db "STATS     TRADE@"
+	db "ДАННЫЕ    ОБМЕН@"
 .selectedCancelMenuItem
 	ld a, [wCurrentMenuItem]
 	ld b, a
@@ -612,7 +615,7 @@ TradeCenter_DrawCancelBox:
 	jp PlaceString
 
 CancelTextString:
-	db "CANCEL@"
+	db "ЗАКРЫТЬ@"
 
 TradeCenter_PlaceSelectedEnemyMonMenuCursor:
 	ld a, [wSerialSyncAndExchangeNybbleReceiveData]
@@ -715,8 +718,10 @@ TradeCenter_Trade:
 	bccoord 1, 14
 	call TextCommandProcessor
 	call SaveScreenTilesToBuffer1
-	hlcoord 10, 7
-	lb bc, 8, 11
+	;hlcoord 10, 7
+	hlcoord 8, 7
+	;lb bc, 8, 11
+	lb bc, 8, 9
 	ld a, TRADE_CANCEL_MENU
 	ld [wTwoOptionMenuID], a
 	ld a, TWO_OPTION_MENU
@@ -880,11 +885,11 @@ WillBeTradedText:
 	text_end
 
 TradeCompleted:
-	db "Trade completed!@"
+	db "Обмен завершён!@"
 
 TradeCanceled:
-	db   "Too bad! The trade"
-	next "was canceled!@"
+	db   "Как жаль! Обмен"
+	next "был отменён!@"
 
 TradeCenterPointerTable:
 	dw TradeCenter_SelectMon

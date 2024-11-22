@@ -1,26 +1,27 @@
 _CeladonMart4Text2::
-	text "I'm getting a"
-	line "# DOLL for my"
-	cont "girl friend!"
+	text "Я хочу купить"
+	line "# КУКЛу для"
+	cont "своей подруги!"
 	done
 
 _CeladonMart4Text3::
-	text "I heard something"
-	line "useful."
+	text "Я слышал кое-что"
+	line "полезное."
 
-	para "You can run from"
-	line "wild #MON by"
-	cont "distracting them"
-	cont "with a # DOLL!"
+	para "От дикого #МОНа"
+	line "можно сбежать,"
+	cont "если отвлечь его"
+	cont "# КУКЛой!"
 	done
 
 _CeladonMart4Text4::
-	text "Express yourself"
-	line "with gifts!"
+	text "Выразите себя с"
+	line "помощью подарков!"
 
-	para "4F: WISEMAN GIFTS"
+	para "4 ЭТАЖ: МУДРЫЕ"
+	line "        ПОДАРКИ"
 
-	para "Evolution Special!"
-	line "Element STONEs on"
-	cont "sale now!"
+	para "Эво-акция!"
+	line "КАМНИ элементов"
+	cont "по скидке!"
 	done

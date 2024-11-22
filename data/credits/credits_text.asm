@@ -69,10 +69,11 @@ CreditsTextPointers:
 
 CredVersion: ; this 1 byte difference makes all bank addresses offset by 1 in the blue version
 IF DEF(_RED)
-	db -8, "RED VERSION STAFF@"
+	;db -8, "ТИТРЫ КРАСНОЙ ВЕРСИИ@"
+	db -9, "ТИТРЫ КРАСНОЙ ВЕРСИИ@"
 ENDC
 IF DEF(_BLUE)
-	db -8, "BLUE VERSION STAFF@"
+	db -8, "ТИТРЫ СИНЕЙ ВЕРСИИ@"
 ENDC
 CredTajiri:
 	db -6, "SATOSHI TAJIRI@"
@@ -129,37 +130,43 @@ CredTaNakamura:
 CredYuda:
 	db -6, "MASAMITSU YUDA@"
 CredMon:
-	db -3, "#MON@"
+	db -3, "#МОН@"
 CredDirector:
-	db -3, "DIRECTOR@"
+	db -3, "РЕЖИССЁР@"
 CredProgrammers:
-	db -5, "PROGRAMMERS@"
+	db -5, "ПРОГРАММИСТЫ@"
 CredCharDesign:
-	db -7, "CHARACTER DESIGN@"
+	db -7, "ДИЗАЙН ПЕРСОНАЖЕЙ@"
 CredMusic:
-	db -2, "MUSIC@"
+	db -2, "МУЗЫКА@"
 CredSoundEffects:
-	db -6, "SOUND EFFECTS@"
+	;db -6, "ЗВУКОВЫЕ ЭФФЕКТЫ@"
+	db -7, "ЗВУКОВЫЕ ЭФФЕКТЫ@"
 CredGameDesign:
-	db -5, "GAME DESIGN@"
+	db -5, "ДИЗАЙН ИГРЫ@"
 CredMonsterDesign:
-	db -6, "MONSTER DESIGN@"
+	db -6, "ДИЗАЙН МОНСТРОВ@"
 CredGameScene:
-	db -6, "GAME SCENARIO@"
+	db -6, "СЦЕНАРИЙ ИГРЫ@"
 CredParam:
-	db -8, "PARAMETRIC DESIGN@"
+	;db -8, "ПАРАМЕТР.ДИЗАЙН@"
+	db -7, "ПАРАМЕТР.ДИЗАЙН@"
 CredMap:
-	db -4, "MAP DESIGN@"
+	;db -4, "ДИЗАЙН КАРТ@"
+	db -5, "ДИЗАЙН КАРТ@"
 CredTest:
-	db -7, "PRODUCT TESTING@"
+	;db -7, "ТЕСТИРОВАНИЕ@"
+	db -5, "ТЕСТИРОВАНИЕ@"
 CredSpecial:
-	db -6, "SPECIAL THANKS@"
+	;db -6, "ОСОБАЯ БЛАГОДАРНОСТЬ@"
+	db -9, "ОСОБАЯ БЛАГОДАРНОСТЬ@"
 CredProducers:
-	db -4, "PRODUCERS@"
+	db -4, "ПРОДЮСЕРЫ@"
 CredProducer:
-	db -4, "PRODUCER@"
+	db -4, "ПРОДЮСЕР@"
 CredExecutive:
-	db -8, "EXECUTIVE PRODUCER@"
+	;db -8, "ИСПОЛ.ПРОДЮСЕР@"
+	db -6, "ИСПОЛ.ПРОДЮСЕР@"
 CredTamada:
 	db -6, "SOUSUKE TAMADA@"
 CredSaOota:
@@ -169,9 +176,10 @@ CredYoshikawa:
 CredToOota:
 	db -6, "TOMOMICHI OOTA@"
 CredUSStaff:
-	db -7, "US VERSION STAFF@"
+	;db -7, "ТИТРЫ ВЕРСИИ ДЛЯ США@"
+	db -9, "ТИТРЫ ВЕРСИИ ДЛЯ США@"
 CredUSCoord:
-	db -7, "US COORDINATION@"
+	db -7, "КООРДИНАЦИЯ В США@"
 CredTilden:
 	db -5, "GAIL TILDEN@"
 CredKawakami:
@@ -183,7 +191,8 @@ CredGiese:
 CredOsborne:
 	db -5, "SARA OSBORNE@"
 CredTrans:
-	db -7, "TEXT TRANSLATION@"
+	;db -7, "ПЕРЕВОД ТЕКСТА@"
+	db -6, "ПЕРЕВОД ТЕКСТА@"
 CredOgasawara:
 	db -6, "NOB OGASAWARA@"
 CredIwata:

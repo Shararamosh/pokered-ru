@@ -120,11 +120,14 @@ TryingToLearn:
 	push hl
 	ld hl, WhichMoveToForgetText
 	call PrintText
-	hlcoord 4, 7
+	;hlcoord 4, 7
+	hlcoord 2, 7
 	ld b, 4
-	ld c, 14
+	;ld c, 14
+	ld c, 16
 	call TextBoxBorder
-	hlcoord 6, 8
+	;hlcoord 6, 8
+	hlcoord 4, 8
 	ld de, wMovesString
 	ldh a, [hUILayoutFlags]
 	set 2, a
@@ -136,7 +139,8 @@ TryingToLearn:
 	ld hl, wTopMenuItemY
 	ld a, 8
 	ld [hli], a ; wTopMenuItemY
-	ld a, 5
+	;ld a, 5
+	ld a, 3
 	ld [hli], a ; wTopMenuItemX
 	xor a
 	ld [hli], a ; wCurrentMenuItem

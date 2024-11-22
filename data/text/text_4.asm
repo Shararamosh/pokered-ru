@@ -1,6 +1,6 @@
 _PokemartGreetingText::
-	text "Hi there!"
-	next "May I help you?"
+	text "Привет!"
+	next "Чем вам помочь?"
 	done
 
 _PokemonFaintedText::
@@ -18,84 +18,84 @@ _PlayerBlackedOutText::
 	prompt
 
 _RepelWoreOffText::
-	text "REPEL's effect"
-	line "wore off."
+	text "Эффект РЕПЕЛЛЕНТа"
+	line "закончился."
 	done
 
 _PokemartBuyingGreetingText::
-	text "Take your time."
+	text "Не торопитесь."
 	done
 
 _PokemartTellBuyPriceText::
 	text_ram wStringBuffer
 	text "?"
-	line "That will be"
+	line "Это будет стоить"
 	cont "¥@"
 	text_bcd hMoney, 3 | LEADING_ZEROES | LEFT_ALIGN
-	text ". OK?"
+	text ". ОК?"
 	done
 
 _PokemartBoughtItemText::
-	text "Here you are!"
-	line "Thank you!"
+	text "Вот, держите!"
+	line "Спасибо!"
 	prompt
 
 _PokemartNotEnoughMoneyText::
-	text "You don't have"
-	line "enough money."
+	text "У вас недостаточно"
+	line "денег."
 	prompt
 
 _PokemartItemBagFullText::
-	text "You can't carry"
-	line "any more items."
+	text "У вас слишком"
+	line "много вещей."
 	prompt
 
 _PokemonSellingGreetingText::
-	text "What would you"
-	line "like to sell?"
+	text "Что бы вы хотели"
+	line "продать?"
 	done
 
 _PokemartTellSellPriceText::
-	text "I can pay you"
+	text "Я могу заплатить"
 	line "¥@"
 	text_bcd hMoney, 3 | LEADING_ZEROES | LEFT_ALIGN
-	text " for that."
+	text " за это."
 	done
 
 _PokemartItemBagEmptyText::
-	text "You don't have"
-	line "anything to sell."
+	text "У вас ничего на"
+	line "продажу."
 	prompt
 
 _PokemartUnsellableItemText::
-	text "I can't put a"
-	line "price on that."
+	text "На это я не могу"
+	line "установить цену."
 	prompt
 
 _PokemartThankYouText::
-	text "Thank you!"
+	text "Спасибо!"
 	done
 
 _PokemartAnythingElseText::
-	text "Is there anything"
-	line "else I can do?"
+	text "Я что-то ещё могу"
+	line "сделать для вас?"
 	done
 
 _LearnedMove1Text::
 	text_ram wLearnMoveMonName
-	text " learned"
+	text " выучил"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
 _WhichMoveToForgetText::
-	text "Which move should"
-	next "be forgotten?"
+	text "Какая атака должна"
+	next "быть забыта?"
 	done
 
 _AbandonLearningText::
-	text "Abandon learning"
+	text "Прервать изучение"
 	line "@"
 	text_ram wStringBuffer
 	text "?"
@@ -104,7 +104,7 @@ _AbandonLearningText::
 _DidNotLearnText::
 	text_ram wLearnMoveMonName
 	text_start
-	line "did not learn"
+	line "не выучил"
 	cont "@"
 	text_ram wStringBuffer
 	text "!"
@@ -112,120 +112,126 @@ _DidNotLearnText::
 
 _TryingToLearnText::
 	text_ram wLearnMoveMonName
-	text " is"
-	line "trying to learn"
+	text " "
+	line "пытается выучить"
 	cont "@"
 	text_ram wStringBuffer
 	text "!"
 
-	para "But, @"
+	para "Но, @"
 	text_ram wLearnMoveMonName
 	text_start
-	line "can't learn more"
-	cont "than 4 moves!"
+	line "не может выучить"
+	cont "более 4 атак!"
 
-	para "Delete an older"
-	line "move to make room"
-	cont "for @"
+	para "Удалить старую"
+	line "атаку, чтобы"
+	cont "освободить место"
+	cont "под @"
 	text_ram wStringBuffer
 	text "?"
 	done
 
 _OneTwoAndText::
-	text "1, 2 and...@"
+	text "1, 2 и...@"
 	text_end
 
 _PoofText::
-	text " Poof!@"
+	text " Вжух!@"
 	text_end
 
 _ForgotAndText::
 	text_start
 	para "@"
 	text_ram wLearnMoveMonName
-	text " forgot"
+	text " забыл"
 	line "@"
 	text_ram wcd6d
 	text "!"
 
-	para "And..."
+	para "И..."
 	prompt
 
 _HMCantDeleteText::
-	text "HM techniques"
-	line "can't be deleted!"
+	text "Техники HM нельзя"
+	line "удалить!"
 	prompt
 
 _PokemonCenterWelcomeText::
-	text "Welcome to our"
-	line "#MON CENTER!"
+	text "Добро пожаловать в"
+	line "ЦЕНТР #МОНов!"
 
-	para "We heal your"
-	line "#MON back to"
-	cont "perfect health!"
+	para "Мы полностью лечим"
+	line "ваших #МОНов!"
 	prompt
 
 _ShallWeHealYourPokemonText::
-	text "Shall we heal your"
-	line "#MON?"
+	text "Вылечить ваших"
+	line "#МОНов?"
 	done
 
 _NeedYourPokemonText::
-	text "OK. We'll need"
-	line "your #MON."
+	text "ОК. Нам нужны ваши"
+	line "#МОНы."
 	done
 
 _PokemonFightingFitText::
-	text "Thank you!"
-	line "Your #MON are"
-	cont "fighting fit!"
+	text "Спасибо!"
+	line "Ваши #МОНы в"
+	cont "отличной форме!"
 	prompt
 
 _PokemonCenterFarewellText::
-	text "We hope to see"
-	line "you again!"
+	text "Будем рады снова"
+	line "видеть вас!"
 	done
 
 _CableClubNPCAreaReservedFor2FriendsLinkedByCableText::
-	text "This area is"
-	line "reserved for 2"
-	cont "friends who are"
-	cont "linked by cable."
+	text "Это место предна-"
+	line "значено для 2"
+	cont "друзей, соединён-"
+	cont "ных кабелем."
 	done
 
 _CableClubNPCWelcomeText::
-	text "Welcome to the"
-	line "Cable Club!"
+	text "Добро пожаловать в"
+	line "Кабельный Клуб!"
 	done
 
 _CableClubNPCPleaseApplyHereHaveToSaveText::
-	text "Please apply here."
+	text "Подключиться можно"
+	line "здесь."
 
-	para "Before opening"
-	line "the link, we have"
-	cont "to save the game."
+	para "Перед открытием"
+	line "соединения, необ-"
+	cont "ходимо сохранить"
+	cont "игру."
 	done
 
 _CableClubNPCPleaseWaitText::
-	text "Please wait.@"
+	text "Пожалуйста,"
+	line "подождите.@"
 	text_end
 
 _CableClubNPCLinkClosedBecauseOfInactivityText::
 	vc_patch Change_link_closed_inactivity_message
 IF DEF(_RED_VC) || DEF(_BLUE_VC)
-	text "Please come again!"
+	text "Возвращайтесь"
+	line "снова!"
 	done
 	text_start
-	text "sed because of"
-	cont "inactivity."
+	text "Соединение закрыто"
+	line "из-за отсутствия"
+	cont "активности."
 ELSE
-	text "The link has been"
-	line "closed because of"
-	cont "inactivity."
+	text "Соединение закрыто"
+	line "из-за отсутствия"
+	cont "активности."
 ENDC
 	vc_patch_end
 
-	para "Please contact"
-	line "your friend and"
-	cont "come again!"
+	para "Пожалуйста, свяжи-"
+	line "тесь со своим"
+	cont "другом и приходи-"
+	cont "те снова!"
 	done

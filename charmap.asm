@@ -89,6 +89,8 @@
 
 ; Actual characters (from gfx/font/font.png)
 
+; English upper-case characters (same as in original)
+
 	charmap "A",         $80
 	charmap "B",         $81
 	charmap "C",         $82
@@ -116,39 +118,43 @@
 	charmap "Y",         $98
 	charmap "Z",         $99
 
+; English lower-case characters using upper-case characters
+
+	charmap "a",         $80
+	charmap "b",         $81
+	charmap "c",         $82
+	charmap "d",         $83
+	charmap "e",         $84
+	charmap "f",         $85
+	charmap "g",         $86
+	charmap "h",         $87
+	charmap "i",         $88
+	charmap "j",         $89
+	charmap "k",         $8a
+	charmap "l",         $8b
+	charmap "m",         $8c
+	charmap "n",         $8d
+	charmap "o",         $8e
+	charmap "p",         $8f
+	charmap "q",         $90
+	charmap "r",         $91
+	charmap "s",         $92
+	charmap "t",         $93
+	charmap "u",         $94
+	charmap "v",         $95
+	charmap "w",         $96
+	charmap "x",         $97
+	charmap "y",         $98
+	charmap "z",         $99
+	
+; Original symbols (1)
+
 	charmap "(",         $9a
 	charmap ")",         $9b
 	charmap ":",         $9c
 	charmap ";",         $9d
 	charmap "[",         $9e
 	charmap "]",         $9f
-
-	charmap "a",         $a0
-	charmap "b",         $a1
-	charmap "c",         $a2
-	charmap "d",         $a3
-	charmap "e",         $a4
-	charmap "f",         $a5
-	charmap "g",         $a6
-	charmap "h",         $a7
-	charmap "i",         $a8
-	charmap "j",         $a9
-	charmap "k",         $aa
-	charmap "l",         $ab
-	charmap "m",         $ac
-	charmap "n",         $ad
-	charmap "o",         $ae
-	charmap "p",         $af
-	charmap "q",         $b0
-	charmap "r",         $b1
-	charmap "s",         $b2
-	charmap "t",         $b3
-	charmap "u",         $b4
-	charmap "v",         $b5
-	charmap "w",         $b6
-	charmap "x",         $b7
-	charmap "y",         $b8
-	charmap "z",         $b9
 
 	charmap "é",         $ba
 	charmap "'d",        $bb
@@ -161,29 +167,25 @@
 	charmap "<PK>",      $e1
 	charmap "<MN>",      $e2
 	charmap "-",         $e3
-
 	charmap "'r",        $e4
 	charmap "'m",        $e5
-
 	charmap "?",         $e6
 	charmap "!",         $e7
 	charmap ".",         $e8
-
 	charmap "ァ",         $e9 ; katakana small a, unused
 	charmap "ゥ",         $ea ; katakana small u, unused
 	charmap "ェ",         $eb ; katakana small e, unused
-
 	charmap "▷",         $ec
 	charmap "▶",         $ed
 	charmap "▼",         $ee
 	charmap "♂",         $ef
+
 	charmap "¥",         $f0
 	charmap "×",         $f1
 	charmap "<DOT>",     $f2 ; decimal point; same as "." in English
 	charmap "/",         $f3
 	charmap ",",         $f4
 	charmap "♀",         $f5
-
 	charmap "0",         $f6
 	charmap "1",         $f7
 	charmap "2",         $f8
@@ -195,6 +197,88 @@
 	charmap "8",         $fe
 	charmap "9",         $ff
 
+; Russian upper-case characters
+
+	charmap "Б",         $a0
+	charmap "Г",         $a1
+	charmap "Д",         $a2
+	charmap "Ё",         $a3
+	charmap "Ж",         $a4
+	charmap "З",         $a5
+	charmap "И",         $a6
+	charmap "Й",         $a7
+	charmap "Л",         $a8
+	charmap "П",         $a9
+	charmap "У",         $aa
+	charmap "Ф",         $ab
+	charmap "Ц",         $ac
+	charmap "Ч",         $ad
+	charmap "Ш",         $ae
+	charmap "Щ",         $af
+	
+	charmap "Ъ",         $b0
+	charmap "Ы",         $b1
+	charmap "Ь",         $b2
+	charmap "Э",         $b3
+	charmap "Ю",         $b4
+	charmap "Я",         $b5
+
+; Russian lower-case characters
+
+	charmap "а",         $b6
+	charmap "б",         $b7
+	charmap "в",         $b8
+	charmap "г",         $b9
+
+	charmap "д",         $c0
+	charmap "е",         $c1
+	charmap "ё",         $c2
+	charmap "ж",         $c3
+	charmap "з",         $c4
+	charmap "и",         $c5
+	charmap "й",         $c6
+	charmap "к",         $c7
+	charmap "л",         $c8
+	charmap "м",         $c9
+	charmap "н",         $ca
+	charmap "о",         $cb
+	charmap "п",         $cc
+	charmap "р",         $cd
+	charmap "с",         $ce
+	charmap "т",         $cf
+
+	charmap "у",         $d0
+	charmap "ф",         $d1
+	charmap "х",         $d2
+	charmap "ц",         $d3
+	charmap "ч",         $d4
+	charmap "ш",         $d5
+	charmap "щ",         $d6
+	charmap "ъ",         $d7
+	charmap "ы",         $d8
+	charmap "ь",         $d9
+	charmap "э",         $da
+	charmap "ю",         $db
+	charmap "я",         $dc
+
+; Russian upper-case characters that have English equivalents
+	charmap "А",         $80
+	charmap "В",         $81
+	charmap "С",         $82
+	charmap "Е",         $84
+	charmap "Н",         $87
+	charmap "К",         $8a
+	charmap "М",         $8c
+	charmap "О",         $8e
+	charmap "Р",         $8f
+	charmap "Т",         $93
+	charmap "Х",         $97
+
+; New symbols for Russian version
+
+	charmap "<PO>",      $dd
+	charmap "<KE>",      $de
+	charmap "+",         $df
 
 ; Japanese kana, for those bits of text that were not translated to English
 

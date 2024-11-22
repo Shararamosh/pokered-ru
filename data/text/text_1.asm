@@ -1,16 +1,16 @@
 _CardKeySuccessText1::
-	text "Bingo!@"
+	text "Бинго!@"
 	text_end
 
 _CardKeySuccessText2::
 	text_start
-	line "The CARD KEY"
-	cont "opened the door!"
+	line "КЛЮЧ-КАРТА открыл"
+	cont "дверь!"
 	done
 
 _CardKeyFailText::
-	text "Darn! It needs a"
-	line "CARD KEY!"
+	text "Чёрт! Здесь нужен"
+	line "КЛЮЧ-КАРТА!"
 	done
 
 _TrainerNameText::
@@ -19,17 +19,17 @@ _TrainerNameText::
 	text_end
 
 _NoNibbleText::
-	text "Not even a nibble!"
+	text "Даже не шевелится!"
 	prompt
 
 _NothingHereText::
-	text "Looks like there's"
-	line "nothing here."
+	text "Похоже, здесь"
+	line "ничего нет."
 	prompt
 
 _ItsABiteText::
-	text "Oh!"
-	line "It's a bite!"
+	text "Оу!"
+	line "Что-то на крючке!"
 	prompt
 
 _ExclamationText::
@@ -37,112 +37,109 @@ _ExclamationText::
 	done
 
 _GroundRoseText::
-	text "Ground rose up"
-	line "somewhere!"
+	text "Где-то поднялась"
+	line "земля!"
 	done
 
 _BoulderText::
-	text "This requires"
-	line "STRENGTH to move!"
+	text "Чтобы это сдвинуть"
+	line "нужна СИЛА!"
 	done
 
 _MartSignText::
-	text "All your item"
-	line "needs fulfilled!"
-	cont "#MON MART"
+	text "Всё необходимое"
+	line "для вас!"
+	cont "#МОН МАРКЕТ"
 	done
 
 _PokeCenterSignText::
-	text "Heal Your #MON!"
-	line "#MON CENTER"
+	text "Лечим #МОНов!"
+	line "ЦЕНТР #МОНов"
 	done
 
 _FoundItemText::
-	text "<PLAYER> found"
+	text "<PLAYER> нашёл"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
 _NoMoreRoomForItemText::
-	text "No more room for"
-	line "items!"
+	text "Нет места под"
+	line "вещи!"
 	done
 
 _OaksAideHiText::
-	text "Hi! Remember me?"
-	line "I'm PROF.OAK's"
-	cont "AIDE!"
+	text "Привет! Узнаёшь?"
+	line "Я ПОМОЩНИК ПРОФ."
+	cont "ОУКА!"
 
-	para "If you caught @"
+	para "Если ты поймал @"
 	text_decimal hOaksAideRequirement, 1, 3
 	text_start
-	line "kinds of #MON,"
-	cont "I'm supposed to"
-	cont "give you an"
+	line "видов #МОНов,"
+	cont "я могу дать тебе"
 	cont "@"
 	text_ram wOaksAideRewardItemName
 	text "!"
 
-	para "So, <PLAYER>! Have"
-	line "you caught at"
-	cont "least @"
+	para "Что ж, <PLAYER>! Ты"
+	line "поймал хотя бы"
+	cont "@"
 	text_decimal hOaksAideRequirement, 1, 3
-	text " kinds of"
-	cont "#MON?"
+	text " #МОНов?"
 	done
 
 _OaksAideUhOhText::
-	text "Let's see..."
-	line "Uh-oh! You have"
-	cont "caught only @"
+	text "Посмотрим..."
+	line "О-о! Ты поймал"
+	cont "лишь @"
 	text_decimal hOaksAideNumMonsOwned, 1, 3
 	text_start
-	cont "kinds of #MON!"
+	cont "видов #МОНов!"
 
-	para "You need @"
+	para "Тебе нужно @"
 	text_decimal hOaksAideRequirement, 1, 3
-	text " kinds"
-	line "if you want the"
+	text " видов,"
+	line "если хочешь"
 	cont "@"
 	text_ram wOaksAideRewardItemName
 	text "."
 	done
 
 _OaksAideComeBackText::
-	text "Oh. I see."
+	text "Оу. Ясно."
 
-	para "When you get @"
+	para "Когда поймаешь @"
 	text_decimal hOaksAideRequirement, 1, 3
 	text_start
-	line "kinds, come back"
-	cont "for @"
+	line "видов, приходи за"
+	cont "@"
 	text_ram wOaksAideRewardItemName
 	text "."
 	done
 
 _OaksAideHereYouGoText::
-	text "Great! You have"
-	line "caught @"
+	text "Отлично! Ты поймал"
+	line "@"
 	text_decimal hOaksAideNumMonsOwned, 1, 3
-	text " kinds "
-	cont "of #MON!"
-	cont "Congratulations!"
+	text " видов"
+	cont "#МОНов!"
+	cont "Поздравляю!"
 
-	para "Here you go!"
+	para "Вот, держи!"
 	prompt
 
 _OaksAideGotItemText::
-	text "<PLAYER> got the"
+	text "<PLAYER> получил"
 	line "@"
 	text_ram wOaksAideRewardItemName
 	text "!@"
 	text_end
 
 _OaksAideNoRoomText::
-	text "Oh! I see you"
-	line "don't have any"
-	cont "room for the"
+	text "Оу! У тебя нет"
+	line "места под"
 	cont "@"
 	text_ram wOaksAideRewardItemName
 	text "."

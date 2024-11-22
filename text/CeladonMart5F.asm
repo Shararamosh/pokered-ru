@@ -1,28 +1,28 @@
 _CeladonMart5Text1::
-	text "#MON ability"
-	line "enhancers can be"
-	cont "bought only here."
+	text "Усилители способ-"
+	line "ностей #МОНов"
+	cont "можно купить"
+	cont "только здесь."
 
-	para "Use CALCIUM to"
-	line "increase SPECIAL"
-	cont "abilities."
+	para "КАЛЬЦИЙ увеличива-"
+	line "ет СП.АТАКУ."
 
-	para "Use CARBOS to"
-	line "increase SPEED."
+	para "УГЛЕРОД увеличива-"
+	line "ет СКОРОСТЬ."
 	done
 
 _CeladonMart5Text2::
-	text "I'm here for"
-	line "#MON ability"
-	cont "enhancers."
+	text "Я здесь за усили-"
+	line "телями способно-"
+	cont "стей #МОНов."
 
-	para "PROTEIN increases"
-	line "ATTACK power."
+	para "ПРОТЕИН увеличива-"
+	line "ет АТАКУ."
 
-	para "IRON increases"
-	line "DEFENSE!"
+	para "ЖЕЛЕЗО увеличивает"
+	line "ЗАЩИТУ!"
 	done
 
 _CeladonMart5Text5::
-	text "5F: DRUG STORE"
+	text "5 ЭТАЖ: АПТЕКА"
 	done

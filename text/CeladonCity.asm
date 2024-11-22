@@ -1,154 +1,158 @@
 _CeladonCityText1::
-	text "I got my KOFFING"
-	line "in CINNABAR!"
+	text "Я поймала КОФФИНГа"
+	line "на СИННАБАРе!"
 
-	para "It's nice, but it"
-	line "breathes poison"
-	cont "when it's angry!"
+	para "Он хороший, но"
+	line "выдыхает яд,"
+	cont "когда злится!"
 	done
 
 _CeladonCityText2::
-	text "Heheh! This GYM"
-	line "is great! It's"
-	cont "full of women!"
+	text "Хехех! Этот ЗАЛ"
+	line "прекрасен!"
+	cont "Он полон женщин!"
 	done
 
 _CeladonCityText3::
-	text "The GAME CORNER"
-	line "is bad for our"
-	cont "city's image!"
+	text "УГОЛОК ИГР портит"
+	line "имидж нашего"
+	cont "города!"
 	done
 
 _CeladonCityText4::
-	text "Moan! I blew it"
-	line "all at the slots!"
+	text "Блин! Я истратил"
+	line "всё в автоматах!"
 
-	para "I knew I should"
-	line "have cashed in my"
-	cont "coins for prizes!"
+	para "Знал же, что надо"
+	line "менять монеты на"
+	cont "призы!"
 	done
 
 _TM41PreText::
-	text "Hello, there!"
+	text "Привет!"
 
-	para "I've seen you,"
-	line "but I never had a"
-	cont "chance to talk!"
+	para "Я тебя видел, но"
+	line "всё никак не было"
+	cont "шанса поговорить!"
 
-	para "Here's a gift for"
-	line "dropping by!"
+	para "Вот тебе подарок"
+	line "за то, что"
+	cont "заскочил!"
 	prompt
 
 _ReceivedTM41Text::
-	text "<PLAYER> received"
+	text "<PLAYER> получил"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
 _TM41ExplanationText::
-	text "TM41 teaches"
-	line "SOFTBOILED!"
+	text "TM41 обучает"
+	line "ВСМЯТКУ!"
 
-	para "Only one #MON"
-	line "can use it!"
+	para "Лишь один #МОН"
+	line "может это"
+	cont "выучить!"
 
-	para "That #MON is"
-	line "CHANSEY!"
+	para "И это ЧЕНСИ!"
 	done
 
 _TM41NoRoomText::
-	text "Oh, your pack is"
-	line "full of items!"
+	text "Оу, твоя сумка"
+	line "заполнена!"
 	done
 
 _CeladonCityText6::
-	text "This is my trusted"
-	line "pal, POLIWRATH!"
+	text "Это мой верный"
+	line "друг - ПОЛИВРАТ!"
 
-	para "It evolved from"
-	line "POLIWHIRL when I"
-	cont "used WATER STONE!"
+	para "Он эволюционировал"
+	line "из ПОЛИВИРЛА,"
+	cont "когда я использо-"
+	cont "вал КАМЕНЬ ВОДЫ!"
 	done
 
 _CeladonCityText7::
-	text "POLIWRATH: Ribi"
-	line "ribit!@"
+	text "ПОЛИВРАТ: Ква-ква-"
+	line "ква!@"
 	text_end
 
 _CeladonCityText8::
-	text "What are you"
-	line "staring at?"
+	text "На что это ты"
+	line "уставился?"
 	done
 
 _CeladonCityText9::
-	text "Keep out of TEAM"
-	line "ROCKET's way!"
+	text "Держись подальше"
+	line "от КОМАНДЫ РАКЕТА!"
 	done
 
 _CeladonCityText10::
-	text "TRAINER TIPS"
+	text "СОВЕТЫ ТРЕНЕРУ"
 
-	para "X ACCURACY boosts"
-	line "the accuracy of"
-	cont "techniques!"
+	para "X ТОЧНОСТЬ"
+	line "повышает точность"
+	cont "техник!"
 
-	para "DIRE HIT jacks up"
-	line "the likelihood of"
-	cont "critical hits!"
+	para "X КРИТ.УРОН"
+	line "повышает шанс"
+	cont "критического"
+	cont "урона!"
 
-	para "Get your items at"
-	line "CELADON DEPT."
-	cont "STORE!"
+	para "Найдите эти вещи"
+	line "в УНИВЕРМАГе"
+	cont "СЕЛАДОНА!"
 	done
 
 _CeladonCityText11::
-	text "CELADON CITY"
-	line "The City of"
-	cont "Rainbow Dreams"
+	text "СЕЛАДОН СИТИ"
+	line "Город Радужных"
+	cont "Мечтаний"
 	done
 
 _CeladonCityText13::
-	text "CELADON CITY"
-	line "#MON GYM"
-	cont "LEADER: ERIKA"
+	text "СЕЛАДОН СИТИ"
+	line "ЗАЛ #МОНов"
+	cont "ЛИДЕР: ЭРИКА"
 
-	para "The Nature Loving"
-	line "Princess!"
+	para "Принцесса, Любящая"
+	line "Природу!"
 	done
 
 _CeladonCityText14::
-	text "CELADON MANSION"
+	text "ОСОБНЯК СЕЛАДОНА"
 	done
 
 _CeladonCityText15::
-	text "Find what you"
-	line "need at CELADON"
-	cont "DEPT. STORE!"
+	text "Найдите всё, что"
+	line "вам нужно, в"
+	cont "УНИВЕРМАГе"
+	cont "СЕЛАДОНА!"
 	done
 
 _CeladonCityText16::
-	text "TRAINER TIPS"
+	text "СОВЕТЫ ТРЕНЕРУ"
 
-	para "GUARD SPEC."
-	line "protects #MON"
-	cont "against SPECIAL"
-	cont "attacks such as"
-	cont "fire and water!"
+	para "СПЕЦ.ОХРАНА"
+	line "защищает #МОНа"
+	cont "от СПЕЦИАЛЬНЫХ"
+	cont "атак, таких как"
+	cont "огонь и вода!"
 
-	para "Get your items at"
-	line "CELADON DEPT."
-	cont "STORE!"
+	para "Найдите эти вещи"
+	line "в УНИВЕРМАГе"
+	cont "СЕЛАДОНА!"
 	done
 
 _CeladonCityText17::
-	text "Coins exchanged"
-	line "for prizes!"
-	cont "PRIZE EXCHANGE"
+	text "Меняем монеты на"
+	line "призы!"
+	cont "ВЫДАЧА ПРИЗОВ"
 	done
 
 _CeladonCityText18::
-	text "ROCKET GAME CORNER"
-	line "The playground"
-	cont "for grown-ups!"
+	text "УГОЛОК ИГР РАКЕТЫ"
+	line "Игровая площадка"
+	cont "на вырост!"
 	done

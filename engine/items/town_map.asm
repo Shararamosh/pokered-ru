@@ -397,11 +397,14 @@ DisplayWildLocations:
 	and a ; were any OAM entries written?
 	jr nz, .drawPlayerSprite
 ; if no OAM entries were written, print area unknown text
-	hlcoord 1, 7
+	;hlcoord 1, 7
+	hlcoord 0, 7
 	ld b, 2
-	ld c, 15
+	;ld c, 15
+	ld c, 18
 	call TextBoxBorder
-	hlcoord 2, 9
+	;hlcoord 2, 9
+	hlcoord 1, 9
 	ld de, AreaUnknownText
 	call PlaceString
 	jr .done
@@ -416,7 +419,7 @@ DisplayWildLocations:
 	jp CopyData
 
 AreaUnknownText:
-	db " AREA UNKNOWN@"
+	db " НЕИЗВЕСТНОЕ МЕСТО@"
 
 TownMapCoordsToOAMCoords:
 ; in: lower nybble of a = x, upper nybble of a = y

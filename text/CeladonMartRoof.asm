@@ -1,21 +1,20 @@
 _CeladonMartRoofText_484ee::
-	text "Give her which"
-	line "drink?"
+	text "Какой напиток ей"
+	line "дать?"
 	done
 
 _CeladonMartRoofText_484f3::
-	text "Yay!"
+	text "Йей!"
 
-	para "FRESH WATER!"
+	para "СВЕЖАЯ ВОДА!"
 
-	para "Thank you!"
+	para "Спасибо!"
 
-	para "You can have this"
-	line "from me!@"
+	para "Это тебе от меня!@"
 	text_end
 
 _CeladonMartRoofText_484f9::
-	text "<PLAYER> received"
+	text "<PLAYER> получил"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
@@ -26,26 +25,25 @@ _CeladonMartRoofText_484fe::
 
 	para "@"
 	text_ram wStringBuffer
-	text " contains"
-	line "ICE BEAM!"
+	text " содержит"
+	line "ЛЕДЯНОЙ ЛУЧ!"
 
-	para "It can freeze the"
-	line "target sometimes!@"
+	para "Иногда он замора-"
+	line "живает цель!@"
 	text_end
 
 _CeladonMartRoofText_48504::
-	text "Yay!"
+	text "Йей!"
 
-	para "SODA POP!"
+	para "СОДОВАЯ!"
 
-	para "Thank you!"
+	para "Спасибо!"
 
-	para "You can have this"
-	line "from me!@"
+	para "Это тебе от меня!@"
 	text_end
 
 _CeladonMartRoofText_4850a::
-	text "<PLAYER> received"
+	text "<PLAYER> получил"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
@@ -56,97 +54,96 @@ _CeladonMartRoofText_4850f::
 
 	para "@"
 	text_ram wStringBuffer
-	text " contains"
-	line "ROCK SLIDE!"
+	text " содержит"
+	line "КАМНЕПАД!"
 
-	para "It can spook the"
-	line "target sometimes!@"
+	para "Иногда он может"
+	line "спугнуть цель!@"
 	text_end
 
 _CeladonMartRoofText_48515::
-	text "Yay!"
+	text "Йей!"
 
-	para "LEMONADE!"
+	para "ЛИМОНАД!"
 
-	para "Thank you!"
+	para "Спасибо!"
 
-	para "You can have this"
-	line "from me!@"
+	para "Это тебе от меня!@"
 	text_end
 
 _ReceivedTM49Text::
-	text "<PLAYER> received"
+	text "<PLAYER> получил"
 	line "TM49!@"
 	text_end
 
 _CeladonMartRoofText_48520::
 	text_start
 
-	para "TM49 contains"
-	line "TRI ATTACK!@"
+	para "TM49 содержит"
+	line "ТРОЙНУЮ АТАКУ!@"
 	text_end
 
 _CeladonMartRoofText_48526::
-	text "You don't have"
-	line "space for this!@"
+	text "У тебя нет для"
+	line "этого места!@"
 	text_end
 
 _CeladonMartRoofText_4852c::
-	text "No thank you!"
-	line "I'm not thirsty"
-	cont "after all!@"
+	text "Спасибо, но нет!"
+	line "Я всё-таки не"
+	cont "хочу пить!@"
 	text_end
 
 _CeladonMartRoofText1::
-	text "My sister is a"
-	line "trainer, believe"
-	cont "it or not."
+	text "Веришь или нет, но"
+	line "моя сестра тоже"
+	cont "тренер."
 
-	para "But, she's so"
-	line "immature, she"
-	cont "drives me nuts!"
+	para "Однако она такая"
+	line "инфантильная, что"
+	cont "аж бесит!"
 	done
 
 _CeladonMartRoofText_48598::
-	text "I'm thirsty!"
-	line "I want something"
-	cont "to drink!"
+	text "В горле пересохло!"
+	line "Я хочу что-нибудь"
+	cont "выпить!"
 	done
 
 _CeladonMartRoofText4::
-	text "I'm thirsty!"
-	line "I want something"
-	cont "to drink!"
+	text "В горле пересохло!"
+	line "Я хочу что-нибудь"
+	cont "выпить!"
 
-	para "Give her a drink?"
+	para "Дать ей напиток?"
 	done
 
 _CeladonMartRoofText6::
-	text "ROOFTOP SQUARE:"
-	line "VENDING MACHINES"
+	text "ПЛОЩАДЬ НА КРЫШЕ:"
+	line "ТОРГОВЫЕ АВТОМАТЫ"
 	done
 
 _VendingMachineText1::
-	text "A vending machine!"
-	line "Here's the menu!"
+	text "Торговый автомат!"
+	line "А вот и меню!"
 	prompt
 
 _VendingMachineText4::
-	text "Oops, not enough"
-	line "money!"
+	text "Упс, недостаточно"
+	line "денег!"
 	done
 
 _VendingMachineText5::
 	text_ram wStringBuffer
 	text_start
-	line "popped out!"
+	line "выскочил!"
 	done
 
 _VendingMachineText6::
-	text "There's no more"
-	line "room for stuff!"
+	text "Больше нет места"
+	line "под вещи!"
 	done
 
 _VendingMachineText7::
-	text "Not thirsty!"
+	text "Не хочется!"
 	done

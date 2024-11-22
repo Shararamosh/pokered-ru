@@ -1,31 +1,34 @@
 _CeladonMart1Text1::
-	text "Hello! Welcome to"
-	line "CELADON DEPT."
-	cont "STORE."
+	text "Привет! Добро"
+	line "пожаловать в"
+	cont "УНИВЕРМАГ"
+	cont "СЕЛАДОНА."
 
-	para "The board on the"
-	line "right describes"
-	cont "the store layout."
+	para "Доска справа"
+	line "описывает струк-"
+	cont "туру магазина."
 	done
 
 _CeladonMart1Text2::
-	text "1F: SERVICE"
-	line "    COUNTER"
+	text "1 ЭТАЖ: СТОЙКА"
+	line "        СЕРВИСА"
 
-	para "2F: TRAINER'S"
-	line "    MARKET"
+	para "2 ЭТАЖ: МАРКЕТ"
+	line "        ТРЕНЕРА"
 
-	para "3F: TV GAME SHOP"
+	para "3 ЭТАЖ: МАГАЗИН"
+	line "        ВИДЕОИГР"
 
-	para "4F: WISEMAN GIFTS"
+	para "4 ЭТАЖ: МУДРЫЕ"
+	line "        ПОДАРКИ"
 
-	para "5F: DRUG STORE"
+	para "5 ЭТАЖ: АПТЕКА"
 
-	para "ROOFTOP SQUARE:"
-	line "VENDING MACHINES"
+	para "ПЛОЩАДЬ НА КРЫШЕ:"
+	line "ТОРГОВЫЕ АВТОМАТЫ"
 	done
 
 _CeladonMart1Text3::
-	text "1F: SERVICE"
-	line "    COUNTER"
+	text "1 ЭТАЖ: СТОЙКА"
+	line "        СЕРВИСА"
 	done

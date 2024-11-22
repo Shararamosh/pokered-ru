@@ -1,22 +1,23 @@
 _CeladonMart2Text3::
-	text "SUPER REPEL keeps"
-	line "weak #MON at"
-	cont "bay..."
+	text "СУПЕР РЕПЕЛЛЕНТ"
+	line "не подпускает"
+	cont "слабых #МОНов."
 
-	para "Hmm, it's a more"
-	line "powerful REPEL!"
+	para "Хмм, это же более"
+	line "сильный РЕПЕЛЛЕНТ!"
 	done
 
 _CeladonMart2Text4::
-	text "For long outings,"
-	line "you should buy"
-	cont "REVIVE."
+	text "Для длительных"
+	line "прогулок тебе"
+	cont "следует купить"
+	cont "ОЖИВЛЕНИЕ."
 	done
 
 _CeladonMart2Text5::
-	text "Top Grade Items"
-	line "for Trainers!"
+	text "Вещи высшего сорта"
+	line "для Тренеров!"
 
-	para "2F: TRAINER'S"
-	line "    MARKET"
+	para "2 ЭТАЖ: МАРКЕТ"
+	line "        ТРЕНЕРОВ"
 	done

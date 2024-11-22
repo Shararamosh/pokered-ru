@@ -1,56 +1,58 @@
 _OakAppearsText::
-	text "OAK: Hey! Wait!"
-	line "Don't go out!@"
-	text_end
+	text "ОУК: Хэй! Подожди!"
+	line "Не выходи!@@"
 
 _OakWalksUpText::
-	text "OAK: It's unsafe!"
-	line "Wild #MON live"
-	cont "in tall grass!"
+	text "ОУК: Это опасно!"
+	line "В высокой траве"
+	cont "живут дикие ПОКé-"
+	cont "МОНы!"
 
-	para "You need your own"
-	line "#MON for your"
-	cont "protection."
-	cont "I know!"
+	para "Тебе нужен свой"
+	line "собственный ПОКé-"
+	cont "МОН для защиты."
+	cont "Я знаю!"
 
-	para "Here, come with"
-	line "me!"
+	para "Пойдём за мной!"
 	done
 
 _PalletTownText2::
-	text "I'm raising"
-	line "#MON too!"
+	text "Я тоже выращиваю"
+	line "ПОКéМОНов!"
 
-	para "When they get"
-	line "strong, they can"
-	cont "protect me!"
+	para "Когда они станут"
+	line "сильными, они"
+	cont "смогут защищать"
+	cont "меня!"
 	done
 
 _PalletTownText3::
-	text "Technology is"
-	line "incredible!"
+	text "Технологии - это"
+	line "невероятно!"
 
-	para "You can now store"
-	line "and recall items"
-	cont "and #MON as"
-	cont "data via PC!"
+	para "Теперь ты можешь"
+	line "принимать и отп-" 
+	cont "равлять вещи и"
+	cont "ПОКéМОНов через"
+	cont "компьютер."
 	done
 
 _PalletTownText4::
-	text "OAK #MON"
-	line "RESEARCH LAB"
+	text "ИССЛЕДОВАТЕЛЬСКАЯ"
+	line "ЛАБОРАТОРИЯ ПРОФ."
+	cont "ОУКА"
 	done
 
 _PalletTownText5::
-	text "PALLET TOWN"
-	line "Shades of your"
-	cont "journey await!"
+	text "ПАЛЛЕТ ТАУН"
+	line "Тебя ожидает твоё"
+	cont "новое путешествие!"
 	done
 
 _PalletTownText6::
-	text "<PLAYER>'s house "
+	text "Дом: <PLAYER>"
 	done
 
 _PalletTownText7::
-	text "<RIVAL>'s house "
+	text "Дом: <RIVAL>"
 	done

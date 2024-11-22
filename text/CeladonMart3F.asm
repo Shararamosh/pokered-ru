@@ -1,99 +1,104 @@
 _TM18PreReceiveText::
-	text "Oh, hi! I finally"
-	line "finished #MON!"
+	text "О, привет! Я"
+	line "наконец-то прошёл"
+	cont "#МОН!"
 
-	para "Not done yet?"
-	line "This might be"
-	cont "useful!"
+	para "А ты ещё нет?"
+	line "Это может"
+	cont "пригодиться!"
 	prompt
 
 _ReceivedTM18Text::
-	text "<PLAYER> received"
+	text "<PLAYER> получил"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
 _TM18ExplanationText::
-	text "TM18 is COUNTER!"
-	line "Not like the one"
-	cont "I'm leaning on,"
-	cont "mind you!"
+	text "TM18 - это"
+	line "КОНТРУДАР!"
+	cont "Не то чтобы я"
+	cont "вовсю на него"
+	cont "опираюсь, однако!"
 	done
 
 _TM18NoRoomText::
-	text "Your pack is full"
-	line "of items!"
+	text "Твоя сумка"
+	line "заполнена!"
 	done
 
 _CeladonMart3Text2::
-	text "Captured #MON"
-	line "are registered"
-	cont "with an ID No."
-	cont "and OT, the name"
-	cont "of the Original"
-	cont "Trainer that"
-	cont "caught it!"
+	text "Пойманный #МОН"
+	line "регистрируется с"
+	cont "Номером ID и ОТ -"
+	cont "именем Оригиналь-"
+	cont "ного Тренера,"
+	cont "который и поймал"
+	cont "его!"
 	done
 
 _CeladonMart3Text3::
-	text "All right!"
+	text "Отлично!"
 
-	para "My buddy's going"
-	line "to trade me his"
-	cont "KANGASKHAN for my"
-	cont "GRAVELER!"
+	para "Мой приятель соби-"
+	line "рается обменять"
+	cont "своего КАНГАСХАНА"
+	cont "на ГРАВЕЛЕРА!"
 	done
 
 _CeladonMart3Text4::
-	text "Come on GRAVELER!"
+	text "Вперёд, ГРАВЕЛЕР!"
 
-	para "I love GRAVELER!"
-	line "I collect them!"
+	para "Обожаю ГРАВЕЛЕРОВ!"
+	line "Я их собираю!"
 
-	para "Huh?"
+	para "Что?"
 
-	para "GRAVELER turned"
-	line "into a different"
-	cont "#MON!"
+	para "ГРАВЕЛЕР превра-"
+	line "тился в другого"
+	cont "#МОНа!"
 	done
 
 _CeladonMart3Text5::
-	text "You can identify"
-	line "#MON you got"
-	cont "in trades by"
-	cont "their ID Numbers!"
+	text "#МОНов, получе-"
+	line "нных в обмене,"
+	cont "можно опознать по"
+	cont "их Номерам ID!"
 	done
 
 _CeladonMart3Text6::
-	text "It's an SNES!"
+	text "Это SUPER"
+	line "NINTENDO!"
 	done
 
 _CeladonMart3Text7::
-	text "An RPG! There's"
-	line "no time for that!"
+	text "Ролевая игра! На"
+	line "это нет времени!"
 	done
 
 _CeladonMart3Text9::
-	text "A sports game!"
-	line "Dad'll like that!"
+	text "Спортивная игра!"
+	line "Папе понравится!"
 	done
 
 _CeladonMart3Text11::
-	text "A puzzle game!"
-	line "Looks addictive!"
+	text "Головоломка!"
+	line "Выглядит"
+	cont "захватывающе!"
 	done
 
 _CeladonMart3Text13::
-	text "A fighting game!"
-	line "Looks tough!"
+	text "Файтинг!"
+	line "Выглядит жёстко!"
 	done
 
 _CeladonMart3Text14::
-	text "3F: TV GAME SHOP"
+	text "3 ЭТАЖ: МАГАЗИН"
+	line "        ВИДЕОИГР"
 	done
 
 _CeladonMart3Text15::
-	text "Red and Blue!"
-	line "Both are #MON!"
+	text "Красная и Синяя!"
+	line "И обе - #МОН!"
 	done

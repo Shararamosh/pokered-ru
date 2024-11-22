@@ -1,141 +1,143 @@
 _FileDataDestroyedText::
-	text "The file data is"
-	line "destroyed!"
+	text "Данные файла"
+	line "уничтожены!"
 	prompt
 
 _WouldYouLikeToSaveText::
-	text "Would you like to"
-	line "SAVE the game?"
+	text "Хочешь ЗАПИСать"
+	line "данные?"
 	done
 
 _GameSavedText::
-	text "<PLAYER> saved"
-	line "the game!"
+	text "<PLAYER> записал"
+	line "данные!"
 	done
 
 _OlderFileWillBeErasedText::
-	text "The older file"
-	line "will be erased to"
-	cont "save. Okay?"
+	text "Старый файл будет"
+	line "удалён для записи"
+	cont "нового. Окей?"
 	done
 
 _WhenYouChangeBoxText::
-	text "When you change a"
-	line "#MON BOX, data"
-	cont "will be saved."
+	text "При смене #МОН"
+	line "BOXа, данные"
+	cont "сохраняются."
 
-	para "Is that okay?"
+	para "Продолжить?"
 	done
 
 _ChooseABoxText::
-	text "Choose a"
+	text "Выбери"
 	line "<PKMN> BOX.@"
 	text_end
 
 _EvolvedText::
 	text_ram wStringBuffer
-	text " evolved"
+	text_start
+	line "эволюционировал в"
 	done
 
 _IntoText::
 	text_start
-	line "into @"
+	line "@"
 	text_ram wcd6d
 	text "!"
 	done
 
 _StoppedEvolvingText::
-	text "Huh? @"
+	text "Хм? @"
 	text_ram wStringBuffer
 	text_start
-	line "stopped evolving!"
+	line "прекратил"
+	cont "эволюционировать!"
 	prompt
 
 _IsEvolvingText::
-	text "What? @"
+	text "Что? @"
 	text_ram wStringBuffer
 	text_start
-	line "is evolving!"
+	line "эволюционирует!"
 	done
 
 _FellAsleepText::
 	text "<TARGET>"
-	line "fell asleep!"
+	line "уснул!"
 	prompt
 
 _AlreadyAsleepText::
-	text "<TARGET>'s"
-	line "already asleep!"
+	text "<TARGET>"
+	line "уже спит!"
 	prompt
 
 _PoisonedText::
 	text "<TARGET>"
-	line "was poisoned!"
+	line "отравлен!"
 	prompt
 
 _BadlyPoisonedText::
-	text "<TARGET>'s"
-	line "badly poisoned!"
+	text "<TARGET>"
+	line "сильно отравлен!"
 	prompt
 
 _BurnedText::
 	text "<TARGET>"
-	line "was burned!"
+	line "обожжён!"
 	prompt
 
 _FrozenText::
 	text "<TARGET>"
-	line "was frozen solid!"
+	line "заморожен!"
 	prompt
 
 _FireDefrostedText::
-	text "Fire defrosted"
+	text "Огонь разморозил"
 	line "<TARGET>!"
 	prompt
 
 _MonsStatsRoseText::
-	text "<USER>'s"
-	line "@"
 	text_ram wStringBuffer
-	text "@"
+	text_start
+	line "<USER>"
+	cont "@"
 	text_end
 
 _GreatlyRoseText::
-	text "<SCROLL>greatly@"
+	text "сильно @"
 	text_end
 
 _RoseText::
-	text " rose!"
+	text "повышена!"
 	prompt
 
 _MonsStatsFellText::
-	text "<TARGET>'s"
-	line "@"
 	text_ram wStringBuffer
-	text "@"
+	text_start
+	line "<USER>"
+	cont "@"
 	text_end
 
 _GreatlyFellText::
-	text "<SCROLL>greatly@"
+	text "сильно @"
 	text_end
 
 _FellText::
-	text " fell!"
+	text "понижена!"
 	prompt
 
 _RanFromBattleText::
 	text "<USER>"
-	line "ran from battle!"
+	line "сбежал из битвы!"
 	prompt
 
 _RanAwayScaredText::
 	text "<TARGET>"
-	line "ran away scared!"
+	line "сбежал в испуге!"
 	prompt
 
 _WasBlownAwayText::
 	text "<TARGET>"
-	line "was blown away!"
+	line "был сдут!"
 	prompt
 
 _ChargeMoveEffectText::
@@ -144,61 +146,63 @@ _ChargeMoveEffectText::
 
 _MadeWhirlwindText::
 	text_start
-	line "made a whirlwind!"
+	line "вызвал вихрь!"
 	prompt
 
 _TookInSunlightText::
 	text_start
-	line "took in sunlight!"
+	line "собирает солнце!"
 	prompt
 
 _LoweredItsHeadText::
 	text_start
-	line "lowered its head!"
+	line "опустил голову!"
 	prompt
 
 _SkyAttackGlowingText::
 	text_start
-	line "is glowing!"
+	line "сияет!"
 	prompt
 
 _FlewUpHighText::
 	text_start
-	line "flew up high!"
+	line "взлетел ввысь!"
 	prompt
 
 _DugAHoleText::
 	text_start
-	line "dug a hole!"
+	line "вырыл нору!"
 	prompt
 
 _BecameConfusedText::
 	text "<TARGET>"
-	line "became confused!"
+	line "в смятении!"
 	prompt
 
 _MimicLearnedMoveText::
 	text "<USER>"
-	line "learned"
+	line "выучил"
 	cont "@"
 	text_ram wcd6d
 	text "!"
 	prompt
 
 _MoveWasDisabledText::
-	text "<TARGET>'s"
+	text "Атака"
 	line "@"
 	text_ram wcd6d
-	text " was"
-	cont "disabled!"
+	text_start
+	line "<TARGET>"
+	cont "отключена!"
 	prompt
 
 _NothingHappenedText::
-	text "Nothing happened!"
+	text "Ничего не"
+	line "произошло!"
 	prompt
 
 _NoEffectText::
-	text "No effect!"
+	text "Нет эффета!"
 	prompt
 
 _ButItFailedText::

@@ -67,7 +67,8 @@ HisNameIsText:
 OakSpeechSlidePicLeft:
 	push de
 	hlcoord 0, 0
-	lb bc, 12, 11
+	;lb bc, 12, 11
+	lb bc, 12, 12
 	call ClearScreenArea ; clear the name list text box
 	ld c, 10
 	call DelayFrames
@@ -163,9 +164,11 @@ DisplayIntroNameTextBox:
 	push de
 	hlcoord 0, 0
 	ld b, $a
-	ld c, $9
+	;ld c, $9
+	ld c, $a
 	call TextBoxBorder
-	hlcoord 3, 0
+	;hlcoord 3, 0
+	hlcoord 4, 0
 	ld de, .namestring
 	call PlaceString
 	pop de
@@ -185,7 +188,7 @@ DisplayIntroNameTextBox:
 	jp HandleMenuInput
 
 .namestring
-	db "NAME@"
+	db "ИМЯ@"
 
 INCLUDE "data/player_names.asm"
 

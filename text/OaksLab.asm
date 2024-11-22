@@ -364,18 +364,19 @@ _OaksLabText_1d405::
 	done
 
 _OaksLabText_441cc::
-	text "#DEX comp-"
-	line "letion is:"
+	text "Прогресс #DEX:"
 
 	para "@"
 	text_decimal hDexRatingNumMonsSeen, 1, 3
-	text " #MON seen"
-	line "@"
+	text " #МОНов"
+	line "обнаружено."
+	
+	para "@"
 	text_decimal hDexRatingNumMonsOwned, 1, 3
-	text " #MON owned"
+	text " #МОНов"
+	line "поймано."
 
-	para "PROF.OAK's"
-	line "Rating:"
+	para "Рейтинг ПРОФ.ОУКА:"
 	prompt
 
 _OaksLabText_44201::
