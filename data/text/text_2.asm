@@ -2,7 +2,7 @@ _AIBattleWithdrawText::
 	text_ram wTrainerName
 	text_start
 	line "отзывает"
-	cont "@"
+	line "<SCROLL>@"
 	text_ram wEnemyMonNick
 	text "!"
 	prompt
@@ -13,9 +13,8 @@ _AIBattleUseItemText::
 	line "использует"
 	cont "@"
 	text_ram wcd6d
-	text_start
-	text "на"
-	cont "@"
+	text " на"
+	line "<SCROLL>@"
 	text_ram wEnemyMonNick
 	text "!"
 	prompt
@@ -122,15 +121,15 @@ _YeahText::
 	text_end
 
 _DexSeenOwnedText::
-	text "#DEX   Seen:@"
+	text "#DEX   Найдено:@"
 	text_decimal wDexRatingNumMonsSeen, 1, 3
 	text_start
-	line "         Owned:@"
+	line "       Поймано:@"
 	text_decimal wDexRatingNumMonsOwned, 1, 3
 	text_end
 
 _DexRatingText::
-	text "#DEX Rating<COLON>"
+	text "Рейтинг #DEX<COLON>"
 	done
 
 _GymStatueText1::
@@ -289,8 +288,8 @@ _CeladonCityHotelText::
 
 _BookcaseText::
 	text "Битком набито"
-	line "книгами о"
-	cont "#МОНах!"
+	line "книгами о #-"
+	cont "МОНах!"
 	done
 
 _NewBicycleText::
@@ -813,8 +812,8 @@ _IndigoPlateauStatuesText3::
 
 _PokemonBooksText::
 	text "Битком набито"
-	line "книгами о"
-	cont "#МОНах!"
+	line "книгами о #-"
+	cont "МОНах!"
 	done
 
 _DiglettSculptureText::
@@ -960,8 +959,8 @@ _GotAwayText::
 	prompt
 
 _ItemsCantBeUsedHereText::
-	text ""
-	line "used here."
+	text "Здесь нельзя"
+	line "использовать вещи."
 	prompt
 
 _AlreadyOutText::
@@ -989,6 +988,7 @@ _NoMovesLeftText::
 _MultiHitText::
 	text "Нанесено @"
 	text_decimal wPlayerNumHits, 1, 1
+	text_start
 	line "ударов!"
 	prompt
 
@@ -1095,13 +1095,13 @@ _MonName1Text::
 _Used1Text::
 	text ""
 	line "использует"
-	cont "@"
+	line "<SCROLL>@"
 	text_end
 
 _Used2Text::
 	text ""
 	line "использует"
-	cont "@"
+	line "<SCROLL>@"
 	text_end
 
 _InsteadText::
@@ -1397,7 +1397,7 @@ _PartyMenuUseTMText::
 	done
 
 _PartyMenuSwapMonText::
-	text "Куда передвинуть"
+	text "Куда переместить"
 	line "#МОНа?"
 	done
 
@@ -1549,8 +1549,8 @@ _NothingStoredText::
 	prompt
 
 _CantCarryMoreText::
-	text "Ты не можешь но-"
-	line "сить больше вещей."
+	text "Ты не можешь нести"
+	line "больше вещей."
 	prompt
 
 _WhatToTossText::
@@ -1793,13 +1793,13 @@ _DoYouWantToNicknameText::
 	done
 
 _YourNameIsText::
-	text "Точно! Значит тебя"
-	line "зовут <PLAYER>!"
+	text "Точно! Значит твоё"
+	line "имя <PLAYER>!"
 	prompt
 
 _HisNameIsText::
 	text "Точно! Вспомнил!"
-	line "Его зовут <RIVAL>!"
+	line "Его имя <RIVAL>!"
 	prompt
 
 _WillBeTradedText::

@@ -175,7 +175,7 @@ PlaceCommandCharacter::
 TMCharText::      db "TM@"
 TrainerCharText:: db "ТРЕНЕР@"
 PCCharText::      db "ПК@"
-RocketCharText::  db "РАКЕТА@"
+RocketCharText::  db "КОМАНДА Р@"
 PlacePOKeText::   db "ПОКé@"
 SixDotsCharText:: db "……@"
 EnemyText::       db "Враг @"

@@ -50,7 +50,7 @@ _StoppedEvolvingText::
 	text_ram wStringBuffer
 	text_start
 	line "прекратил"
-	cont "эволюционировать!"
+	line "<SCROLL>эволюционировать!"
 	prompt
 
 _IsEvolvingText::
@@ -161,7 +161,7 @@ _LoweredItsHeadText::
 
 _SkyAttackGlowingText::
 	text_start
-	line "сияет!"
+	text " сияет!"
 	prompt
 
 _FlewUpHighText::
@@ -192,8 +192,8 @@ _MoveWasDisabledText::
 	line "@"
 	text_ram wcd6d
 	text_start
-	line "<TARGET>"
-	cont "отключена!"
+	cont "<TARGET>"
+	line "<SCROLL>отключена!"
 	prompt
 
 _NothingHappenedText::
@@ -202,93 +202,97 @@ _NothingHappenedText::
 	prompt
 
 _NoEffectText::
-	text "Нет эффета!"
+	text "Нет эффекта!"
 	prompt
 
 _ButItFailedText::
-	text "But, it failed! "
+	text "Но не удалось! "
 	prompt
 
 _DidntAffectText::
-	text "It didn't affect"
+	text "Без эффекта на"
 	line "<TARGET>!"
 	prompt
 
 _IsUnaffectedText::
-	text "<TARGET>"
-	line "is unaffected!"
+	text "Нет эффекта на"
+	line "<TARGET>!"
 	prompt
 
 _ParalyzedMayNotAttackText::
-	text "<TARGET>'s"
-	line "paralyzed! It may"
-	cont "not attack!"
+	text "<TARGET>"
+	line "парализован! Он"
+	cont "может пропустить"
+	line "<SCROLL>свою атаку!"
 	prompt
 
 _SubstituteText::
-	text "It created a"
-	line "SUBSTITUTE!"
+	text "ПОДМЕНА создана!"
 	prompt
 
 _HasSubstituteText::
-	text "<USER>"
-	line "has a SUBSTITUTE!"
+	text "У <USER>"
+	line "есть ПОДМЕНА!"
 	prompt
 
 _TooWeakSubstituteText::
-	text "Too weak to make"
-	line "a SUBSTITUTE!"
+	text "Слишком слаб"
+	line "для ПОДМЕНЫ!"
 	prompt
 
 _CoinsScatteredText::
-	text "Coins scattered"
-	line "everywhere!"
+	text "Монеты разросаны"
+	line "повсюду!"
 	prompt
 
 _GettingPumpedText::
-	text "<USER>'s"
-	line "getting pumped!"
+	text "<USER>"
+	line "накачивается!"
 	prompt
 
 _WasSeededText::
 	text "<TARGET>"
-	line "was seeded!"
+	line "был засеян!"
 	prompt
 
 _EvadedAttackText::
 	text "<TARGET>"
-	line "evaded attack!"
+	line "уклоняется от"
+	line "<SCROLL>атаки!"
 	prompt
 
 _HitWithRecoilText::
-	text "<USER>'s"
-	line "hit with recoil!"
+	text "<USER>"
+	line "получает урон"
+	line "<SCROLL>отдачей!"
 	prompt
 
 _ConvertedTypeText::
-	text "Converted type to"
-	line "<TARGET>'s!"
+	text "Тип конвертирован"
+	line "в принадлежащий"
+	line "<SCROLL><TARGET>!"
 	prompt
 
 _StatusChangesEliminatedText::
-	text "All STATUS changes"
-	line "are eliminated!"
+	text "Все изменения в"
+	line "СТАТУСе устранены!"
 	prompt
 
 _StartedSleepingEffect::
 	text "<USER>"
-	line "started sleeping!"
+	line "начал спать!"
 	done
 
 _FellAsleepBecameHealthyText::
 	text "<USER>"
-	line "fell asleep and"
-	cont "became healthy!"
+	line "засыпает и"
+	cont "лечится!"
 	done
 
 _RegainedHealthText::
 	text "<USER>"
-	line "regained health!"
+	line "восстанавливает"
+	line "<SCROLL>здоровье!"
 	prompt
 
 _TransformedText::
@@ -300,29 +304,30 @@ _TransformedText::
 	prompt
 
 _LightScreenProtectedText::
-	text "<USER>'s"
-	line "protected against"
-	cont "special attacks!"
+	text "<USER>"
+	line "защищается от"
+	cont "специальных атак!"
 	prompt
 
 _ReflectGainedArmorText::
 	text "<USER>"
-	line "gained armor!"
+	line "получает броню!"
 	prompt
 
 _ShroudedInMistText::
-	text "<USER>'s"
-	line "shrouded in mist!"
+	text "<USER>"
+	line "окутывает мгла!"
 	prompt
 
 _SuckedHealthText::
-	text "Sucked health from"
-	line "<TARGET>!"
+	text "Здоровье из"
+	line "<TARGET>"
+	line "<SCROLL>высосано!"
 	prompt
 
 _DreamWasEatenText::
-	text "<TARGET>'s"
-	line "dream was eaten!"
+	text "Сон <TARGET>"
+	line "был пожран!"
 	prompt
 
 _TradeCenterText1::

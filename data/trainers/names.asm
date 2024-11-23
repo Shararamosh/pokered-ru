@@ -42,7 +42,7 @@ TrainerNames::
 	db "ДЖЕНТЛЬМЕН@"
 	db "RIVAL2@"
 	db "RIVAL3@"
-	db "ЛОРЕЛЕЙ@"
+	db "ЛОРЕЛЕЯ@"
 	db "ШАМАН@"
 	db "АГАТА@"
 	db "ЛЭНС@"
