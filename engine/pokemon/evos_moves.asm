@@ -131,7 +131,44 @@ Evolution_PartyMonLoop: ; loop over party mons
 	call ClearSprites
 	callfar EvolveMon
 	jp c, CancelledEvolution
+	;shara-add begin: Jumping to .female section for certain Pokemon.
+	push af
+	ld a, [wEvoOldSpecies]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
 	ld hl, EvolvedText
+	jr .gotText ;shara-add: Continuing standard behavior.
+	;shara-add: end
+.female ;shara-add: Loading item use text for certain Pokemon.
+	ld hl, EvolvedText_Female
+.gotText ;shara-add: Standard behavior of .doEvolution section.
+	pop af
 	call PrintText
 	pop hl
 	ld a, [hl]
@@ -232,7 +269,6 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld l, e
 	ld h, d
 	jr .nextEvoEntry2
-
 .nextEvoEntry1
 	inc hl
 
@@ -297,6 +333,10 @@ CancelledEvolution:
 
 EvolvedText:
 	text_far _EvolvedText
+	text_end
+
+EvolvedText_Female:
+	text_far _EvolvedText_Female
 	text_end
 
 IntoText:

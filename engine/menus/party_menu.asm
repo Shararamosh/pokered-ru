@@ -108,9 +108,9 @@ RedrawPartyMenu_::
 	inc c
 	jp .loop
 .ableToLearnMoveText
-	db "ABLE@"
+	db "МОЖЕТ@"
 .notAbleToLearnMoveText
-	db "NOT ABLE@"
+	db "НЕ МОЖЕТ@"
 .evolutionStoneMenu
 	push hl
 	ld hl, EvosMovesPointerTable
@@ -165,9 +165,9 @@ RedrawPartyMenu_::
 	pop hl
 	jr .printLevel
 .ableToEvolveText
-	db "ABLE@"
+	db "МОЖЕТ@"
 .notAbleToEvolveText
-	db "NOT ABLE@"
+	db "НЕ МОЖЕТ@"
 .afterDrawingMonEntries
 	ld b, SET_PAL_PARTY_MENU
 	call RunPaletteCommand
@@ -199,7 +199,44 @@ RedrawPartyMenu_::
 	jp GBPalNormal
 .printItemUseMessage
 	and $0F
+	;shara-add begin: Jumping to .female section for certain Pokemon.
+	push af
+	ld a, [wEnemyMonSpecies2]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
 	ld hl, PartyMenuItemUseMessagePointers
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading item use text for certain Pokemon.
+	ld hl, PartyMenuItemUseMessagePointers_Female
+.gotText: ;shara-add: Standard behavior of .printItemUseMessage section.
+	pop af
 	add a
 	ld c, a
 	ld b, 0
@@ -225,6 +262,17 @@ PartyMenuItemUseMessagePointers:
 	dw FullHealText
 	dw ReviveText
 	dw RareCandyText
+
+PartyMenuItemUseMessagePointers_Female:
+	dw AntidoteText_Female
+	dw BurnHealText_Female
+	dw IceHealText_Female
+	dw AwakeningText_Female
+	dw ParlyzHealText_Female
+	dw PotionText_Female
+	dw FullHealText_Female
+	dw ReviveText_Female
+	dw RareCandyText_Female
 
 PartyMenuMessagePointers:
 	dw PartyMenuNormalText
@@ -258,36 +306,74 @@ PotionText:
 	text_far _PotionText
 	text_end
 
+PotionText_Female:
+	text_far _PotionText_Female
+	text_end
+
 AntidoteText:
 	text_far _AntidoteText
+	text_end
+
+AntidoteText_Female:
+	text_far _AntidoteText_Female
 	text_end
 
 ParlyzHealText:
 	text_far _ParlyzHealText
 	text_end
 
+ParlyzHealText_Female:
+	text_far _ParlyzHealText_Female
+	text_end
+
 BurnHealText:
 	text_far _BurnHealText
+	text_end
+
+BurnHealText_Female:
+	text_far _BurnHealText_Female
 	text_end
 
 IceHealText:
 	text_far _IceHealText
 	text_end
 
+IceHealText_Female:
+	text_far _IceHealText_Female
+	text_end
+
 AwakeningText:
 	text_far _AwakeningText
+	text_end
+
+AwakeningText_Female:
+	text_far _AwakeningText_Female
 	text_end
 
 FullHealText:
 	text_far _FullHealText
 	text_end
 
+FullHealText_Female:
+	text_far _FullHealText_Female
+	text_end
+
 ReviveText:
 	text_far _ReviveText
 	text_end
 
+ReviveText_Female:
+	text_far _ReviveText_Female
+	text_end
+
 RareCandyText:
 	text_far _RareCandyText
+	sound_get_item_1 ; probably supposed to play SFX_LEVEL_UP but the wrong music bank is loaded
+	text_promptbutton
+	text_end
+
+RareCandyText_Female:
+	text_far _RareCandyText_Female
 	sound_get_item_1 ; probably supposed to play SFX_LEVEL_UP but the wrong music bank is loaded
 	text_promptbutton
 	text_end

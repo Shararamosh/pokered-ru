@@ -2,7 +2,7 @@ _AIBattleWithdrawText::
 	text_ram wTrainerName
 	text_start
 	line "отзывает"
-	line "<SCROLL>@"
+	auto "@"
 	text_ram wEnemyMonNick
 	text "!"
 	prompt
@@ -14,7 +14,7 @@ _AIBattleUseItemText::
 	cont "@"
 	text_ram wcd6d
 	text " на"
-	line "<SCROLL>@"
+	auto "@"
 	text_ram wEnemyMonNick
 	text "!"
 	prompt
@@ -849,7 +849,7 @@ _WildRanText::
 	prompt
 
 _EnemyRanText::
-	text "Враг @"
+	text "Прот. @"
 	text_ram wEnemyMonNick
 	text_start
 	line "сбежал!"
@@ -871,7 +871,7 @@ _HurtByLeechSeedText::
 	prompt
 
 _EnemyMonFaintedText::
-	text "Враг @"
+	text "Прот. @"
 	text_ram wEnemyMonNick
 	text_start
 	line "повержен!"
@@ -970,7 +970,7 @@ _AlreadyOutText::
 	prompt
 
 _MoveNoPPText::
-	text "Нет PP для"
+	text "Нет ОС для"
 	line "этой атаки!"
 	prompt
 
@@ -1095,13 +1095,13 @@ _MonName1Text::
 _Used1Text::
 	text ""
 	line "использует"
-	line "<SCROLL>@"
+	auto "@"
 	text_end
 
 _Used2Text::
 	text ""
 	line "использует"
-	line "<SCROLL>@"
+	auto "@"
 	text_end
 
 _InsteadText::
@@ -1255,13 +1255,19 @@ _WildMonAppearedText::
 	text_ram wEnemyMonNick
 	text "!"
 	prompt
+	
+_WildMonAppearedText_Female::
+	text "Появилась дикая"
+	line "@"
+	text_ram wEnemyMonNick
+	text "!"
+	prompt
 
 _HookedMonAttackedText::
 	text "@"
 	text_ram wEnemyMonNick
-	text_start
-	line "на крючке"
-	cont "атакует!"
+	text " на"
+	line "крючке атакует!"
 	prompt
 
 _EnemyAppearedText::
@@ -1304,8 +1310,8 @@ _GetmText::
 	text_end
 
 _EnemysWeakText::
-	text "Враг слаб! Давай!"
-	line "@"
+	text "Противник слаб!"
+	line "Давай! @"
 	text_end
 
 _PlayerMon1Text::
@@ -1315,7 +1321,7 @@ _PlayerMon1Text::
 
 _PlayerMon2Text::
 	text_ram wBattleMonNick
-	text " @"
+	text ", @"
 	text_end
 
 _EnoughText::
@@ -1332,7 +1338,7 @@ _GoodText::
 
 _ComeBackText::
 	text_start
-	line "Возвращайся!"
+	line "возвращайся!"
 	done
 
 _SuperEffectiveText::
@@ -1404,7 +1410,15 @@ _PartyMenuSwapMonText::
 _PotionText::
 	text_ram wcd6d
 	text_start
-	line "восстановлен на @"
+	line "вылечен на @"
+	text_decimal wHPBarHPDifference, 2, 3
+	text "!"
+	done
+
+_PotionText_Female::
+	text_ram wcd6d
+	text_start
+	line "вылечена на @"
 	text_decimal wHPBarHPDifference, 2, 3
 	text "!"
 	done
@@ -1415,10 +1429,22 @@ _AntidoteText::
 	line "не отравлен!"
 	done
 
+_AntidoteText_Female::
+	text_ram wcd6d
+	text " больше"
+	line "не отравлена!"
+	done
+
 _ParlyzHealText::
 	text_ram wcd6d
 	text " больше"
 	line "не парализован!"
+	done
+
+_ParlyzHealText_Female::
+	text_ram wcd6d
+	text " больше"
+	line "не парализована!"
 	done
 
 _BurnHealText::
@@ -1427,10 +1453,22 @@ _BurnHealText::
 	line "не обожжён!"
 	done
 
+_BurnHealText_Female::
+	text_ram wcd6d
+	text " больше"
+	line "не обожжена!"
+	done
+
 _IceHealText::
 	text_ram wcd6d
 	text " был"
 	line "разморожен!"
+	done
+
+_IceHealText_Female::
+	text_ram wcd6d
+	text " была"
+	line "разморожена!"
 	done
 
 _AwakeningText::
@@ -1439,10 +1477,22 @@ _AwakeningText::
 	line "проснулся!"
 	done
 
+_AwakeningText_Female::
+	text_ram wcd6d
+	text_start
+	line "проснулась!"
+	done
+
 _FullHealText::
 	text_ram wcd6d
 	text " был"
-	line "вылечен!"
+	line "исцелён!"
+	done
+
+_FullHealText_Female::
+	text_ram wcd6d
+	text " была"
+	line "исцелена!"
 	done
 
 _ReviveText::
@@ -1452,9 +1502,24 @@ _ReviveText::
 	line "возрождён!"
 	done
 
+_ReviveText_Female::
+	text_ram wcd6d
+	text " была"
+	text_start
+	line "возрождена!"
+	done
+
 _RareCandyText::
 	text_ram wcd6d
 	text " вырос"
+	line "до уровня @"
+	text_decimal wCurEnemyLVL, 1, 3
+	text "!@"
+	text_end
+
+_RareCandyText_Female::
+	text_ram wcd6d
+	text " выросла"
 	line "до уровня @"
 	text_decimal wCurEnemyLVL, 1, 3
 	text "!@"
@@ -1651,8 +1716,8 @@ _MonWasReleasedText::
 	prompt
 
 _RequireCoinCaseText::
-	text "A COIN CASE is"
-	line "required!@"
+	text "Необходим ЧЕХОЛ"
+	line "ДЛЯ МОНЕТ!@"
 	text_end
 
 _ExchangeCoinsForPrizesText::
@@ -1721,8 +1786,8 @@ _PleaseWaitText::
 	done
 
 _LinkCanceledText::
-	text "The link was"
-	line "canceled."
+	text "Соединение было"
+	line "закрыто."
 	done
 
 _OakSpeechText1::

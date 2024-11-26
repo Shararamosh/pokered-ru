@@ -329,8 +329,8 @@ StatusScreen2:
 	ld b, a ; Number of moves ?
 	hlcoord 11, 10
 	ld de, SCREEN_WIDTH * 2
-	ld a, "<BOLD_P>"
-	call StatusScreen_PrintPP ; Print "PP"
+	ld a, "О"
+	call StatusScreen_PrintPP_RU ; Print "ОС"
 	ld a, b
 	and a
 	jr z, .InitPP
@@ -479,4 +479,14 @@ StatusScreen_PrintPP:
 	add hl, de
 	dec c
 	jr nz, StatusScreen_PrintPP
+	ret
+
+StatusScreen_PrintPP_RU:
+	ld a, "О"
+	ld [hli], a
+	ld a, "С"
+	ldd [hl], a
+	add hl, de
+	dec c
+	jr nz, StatusScreen_PrintPP_RU
 	ret

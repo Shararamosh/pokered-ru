@@ -10,7 +10,42 @@ PrintBeginningBattleText:
 .notPokemonTower
 	ld a, [wEnemyMonSpecies2]
 	call PlayCry
-	ld hl, WildMonAppearedText
+	;shara-add begin: Jumping to .female section for certain Pokemon.
+	ld a, [wEnemyMonSpecies2] ;shara-add: Reading enemy Pokemon specie.
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
+    ld hl, WildMonAppearedText
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading wild text for certain Pokemon.
+    ld hl, WildMonAppearedText_Female
+.gotText ;shara-add: Standard behavior of .notPokemonTower section.
 	ld a, [wMoveMissed]
 	and a
 	jr z, .notFishing
@@ -39,7 +74,8 @@ PrintBeginningBattleText:
 	and a
 	jr z, .noSilphScope
 	callfar LoadEnemyMonData
-	jr .notPokemonTower
+	;jr .notPokemonTower
+	jp .notPokemonTower ;shara-add: Changed, because jr target out of reach.
 .noSilphScope
 	ld hl, EnemyAppearedText
 	call PrintText
@@ -72,6 +108,10 @@ PrintBeginningBattleText:
 
 WildMonAppearedText:
 	text_far _WildMonAppearedText
+	text_end
+	
+WildMonAppearedText_Female:
+	text_far _WildMonAppearedText_Female
 	text_end
 
 HookedMonAttackedText:

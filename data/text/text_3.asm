@@ -36,6 +36,14 @@ _EvolvedText::
 	text_ram wStringBuffer
 	text_start
 	line "эволюционировал в"
+	auto ""
+	done
+
+_EvolvedText_Female::
+	text_ram wStringBuffer
+	text_start
+	line "эволюционировала в"
+	auto ""
 	done
 
 _IntoText::
@@ -50,7 +58,7 @@ _StoppedEvolvingText::
 	text_ram wStringBuffer
 	text_start
 	line "прекратил"
-	line "<SCROLL>эволюционировать!"
+	auto "эволюционировать!"
 	prompt
 
 _IsEvolvingText::
@@ -98,7 +106,7 @@ _FireDefrostedText::
 _MonsStatsRoseText::
 	text_ram wStringBuffer
 	text_start
-	line "<USER>"
+	line "<TARGET>"
 	cont "@"
 	text_end
 
@@ -113,7 +121,7 @@ _RoseText::
 _MonsStatsFellText::
 	text_ram wStringBuffer
 	text_start
-	line "<USER>"
+	line "<TARGET>"
 	cont "@"
 	text_end
 
@@ -193,7 +201,7 @@ _MoveWasDisabledText::
 	text_ram wcd6d
 	text_start
 	cont "<TARGET>"
-	line "<SCROLL>отключена!"
+	auto "отключена!"
 	prompt
 
 _NothingHappenedText::
@@ -206,16 +214,16 @@ _NoEffectText::
 	prompt
 
 _ButItFailedText::
-	text "Но не удалось! "
+	text "Но это не удалось!"
 	prompt
 
 _DidntAffectText::
-	text "Без эффекта на"
-	line "<TARGET>!"
+	text "Не подействовало"
+	line "на <TARGET>!"
 	prompt
 
 _IsUnaffectedText::
-	text "Нет эффекта на"
+	text "Не действует на"
 	line "<TARGET>!"
 	prompt
 
@@ -223,7 +231,7 @@ _ParalyzedMayNotAttackText::
 	text "<TARGET>"
 	line "парализован! Он"
 	cont "может пропустить"
-	line "<SCROLL>свою атаку!"
+	auto "свою атаку!"
 	prompt
 
 _SubstituteText::
@@ -258,19 +266,19 @@ _WasSeededText::
 _EvadedAttackText::
 	text "<TARGET>"
 	line "уклоняется от"
-	line "<SCROLL>атаки!"
+	auto "атаки!"
 	prompt
 
 _HitWithRecoilText::
 	text "<USER>"
 	line "получает урон"
-	line "<SCROLL>отдачей!"
+	auto "отдачей!"
 	prompt
 
 _ConvertedTypeText::
 	text "Тип конвертирован"
 	line "в принадлежащий"
-	line "<SCROLL><TARGET>!"
+	auto "<TARGET>!"
 	prompt
 
 _StatusChangesEliminatedText::
@@ -292,7 +300,7 @@ _FellAsleepBecameHealthyText::
 _RegainedHealthText::
 	text "<USER>"
 	line "восстанавливает"
-	line "<SCROLL>здоровье!"
+	auto "здоровье!"
 	prompt
 
 _TransformedText::
@@ -322,7 +330,7 @@ _ShroudedInMistText::
 _SuckedHealthText::
 	text "Здоровье из"
 	line "<TARGET>"
-	line "<SCROLL>высосано!"
+	auto "высосано!"
 	prompt
 
 _DreamWasEatenText::

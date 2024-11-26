@@ -4,7 +4,7 @@ LowerCaseAlphabet:
 	db "стуфхцчшщ"
 	db "ъыьэюя<PK><MN> "
 	db ":;'<PO><KE>/<DOT>,<ED>"
-	db "ЗАГЛАВНЫЕ БУКВЫ@"
+	db "ПРОПИСНЫЕ БУКВЫ@"
 
 UpperCaseAlphabet:
 	db "АБВГДЕЁЖЗ"
