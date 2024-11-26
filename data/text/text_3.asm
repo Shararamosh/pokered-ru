@@ -106,7 +106,7 @@ _FireDefrostedText::
 _MonsStatsRoseText::
 	text_ram wStringBuffer
 	text_start
-	line "<TARGET>"
+	line "<USER>"
 	cont "@"
 	text_end
 
