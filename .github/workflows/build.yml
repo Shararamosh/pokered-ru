@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@master
         with:
           path: rgbds
+          ref: v0.5.2
           repository: gbdev/rgbds
       
       - name: Install rgbds
@@ -33,6 +34,7 @@ jobs:
         run: |
            git clone https://github.com/pret/pokered.git
            cd pokered
+           git checkout 6c945a6b
            make -j${nproc}
 
       - name: Move original ROMs to parent folder and remove pokered
