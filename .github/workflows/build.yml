@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build BPS patches
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -26,7 +27,7 @@ jobs:
         run: |
            make -j$(nproc)
            mv pokered.gbc pokered-ru.gbc
-           mv pokeblue.gbc pokeblue.ru.gbc
+           mv pokeblue.gbc pokeblue-ru.gbc
 
       - name: Clone and build pokered ROM
         run: |
@@ -34,15 +35,15 @@ jobs:
            cd pokered
            make -j${nproc}
 
-       - name: Move original ROMs to parent folder and remove pokered
-         run: |
+      - name: Move original ROMs to parent folder and remove pokered
+        run: |
            mv pokered.gbc ..
            mv pokeblue.gbc ..
            cd ..
            rm -rf pokered
            
-       - name: Remove rgbds
-         run: |
+      - name: Remove rgbds
+        run: |
            rm -rf rgbds
       
       - name: Install unzip, download Floating IPS and create patches
