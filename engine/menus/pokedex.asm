@@ -81,7 +81,8 @@ HandlePokedexSideMenu:
 	ld hl, wTopMenuItemY
 	ld a, 10
 	ld [hli], a ; top menu item Y
-	ld a, 15
+	;ld a, 15
+	ld a, 13 ;shara-add: Moved cursor 2 tiles left.
 	ld [hli], a ; top menu item X
 	xor a
 	ld [hli], a ; current menu item ID
@@ -128,7 +129,8 @@ HandlePokedexSideMenu:
 
 .buttonBPressed
 	push bc
-	hlcoord 15, 10
+	;hlcoord 15, 10
+	hlcoord 13, 10 ;shara-add: Cursor was moved 2 tiles left.
 	ld de, 20
 	lb bc, " ", 7
 	call DrawTileLine ; cover up the menu cursor in the side menu
@@ -158,43 +160,54 @@ HandlePokedexListMenu:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 ; draw the horizontal line separating the seen and owned amounts from the menu
-	hlcoord 15, 8
+	;hlcoord 15, 8
+	hlcoord 13, 8 ;shara-add: Moved divider 2 tiles left.
 	ld a, "─"
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
-	hlcoord 14, 0
+	ld [hli], a ;shara-add: Added one more line.
+	ld [hli], a ;shara-add: Added one more line.
+	;hlcoord 14, 0
+	hlcoord 12, 0 ;shara-add: Moved divider 2 tiles left.
 	ld [hl], $71 ; vertical line tile
-	hlcoord 14, 1
+	;hlcoord 14, 1
+	hlcoord 12, 1 ;shara-add: Moved divider 2 tiles left.
 	call DrawPokedexVerticalLine
-	hlcoord 14, 9
+	;hlcoord 14, 9
+	hlcoord 12, 9 ;shara-add: Moved divider 2 tiles left.
 	call DrawPokedexVerticalLine
 	ld hl, wPokedexSeen
 	ld b, wPokedexSeenEnd - wPokedexSeen
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 16, 3
+	;hlcoord 16, 3
+	hlcoord 15, 3 ;shara-add: Moved number left one tile.
 	lb bc, 1, 3
 	call PrintNumber ; print number of seen pokemon
 	ld hl, wPokedexOwned
 	ld b, wPokedexOwnedEnd - wPokedexOwned
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 16, 6
+	;hlcoord 16, 6
+	hlcoord 15, 6 ;shara-add: Moved number left one tile.
 	lb bc, 1, 3
 	call PrintNumber ; print number of owned pokemon
-	hlcoord 16, 2
+	;hlcoord 16, 2
+	hlcoord 13, 2 ;shara-add: "Owned" text is 3 tiles longer than original.
 	ld de, PokedexSeenText
 	call PlaceString
-	hlcoord 16, 5
+	;hlcoord 16, 5
+	hlcoord 13, 5 ;shara-add: "Owned" text is 3 tiles longer than original.
 	ld de, PokedexOwnText
 	call PlaceString
 	hlcoord 1, 1
 	ld de, PokedexContentsText
 	call PlaceString
-	hlcoord 16, 10
+	;hlcoord 16, 10
+	hlcoord 14, 10 ;shara-add: Draws items text 2 tiles left from original.
 	ld de, PokedexMenuItemsText
 	call PlaceString
 ; find the highest pokedex number among the pokemon the player has seen
@@ -217,10 +230,12 @@ HandlePokedexListMenu:
 .loop
 	xor a
 	ldh [hAutoBGTransferEnabled], a
-	hlcoord 4, 2
+	;hlcoord 4, 2
+	hlcoord 2, 2 ;shara-add: Moved clear screen box 2 tiles left.
 	lb bc, 14, 10
 	call ClearScreenArea
-	hlcoord 1, 3
+	;hlcoord 1, 3
+	hlcoord -1, 3 ;shara-add: Moved ball+Pokemon specie 2 tiles left.
 	ld a, [wListScrollOffset]
 	ld [wd11e], a
 	ld d, 7
@@ -241,12 +256,14 @@ HandlePokedexListMenu:
 	push hl
 	ld de, -SCREEN_WIDTH
 	add hl, de
+	inc hl ;shara-add: Move coordinate for Pokedex number AND Pokemon specie one tile right.
 	ld de, wd11e
 	lb bc, LEADING_ZEROES | 1, 3
 	call PrintNumber ; print the pokedex number
 	ld de, SCREEN_WIDTH
 	add hl, de
 	dec hl
+	dec hl ;shara-add: Move coordinate for Pokemon specie one tile left.
 	push hl
 	ld hl, wPokedexOwned
 	call IsPokemonBitSet
@@ -360,19 +377,19 @@ DrawPokedexVerticalLine:
 	ret
 
 PokedexSeenText:
-	db "SEEN@"
+	db "НАЙДЕНО@"
 
 PokedexOwnText:
-	db "OWN@"
+	db "ПОЙМАНО@"
 
 PokedexContentsText:
-	db "CONTENTS@"
+	db "СОДЕРЖАНИЕ@"
 
 PokedexMenuItemsText:
-	db   "DATA"
-	next "CRY"
-	next "AREA"
-	next "QUIT@"
+	db   "ДАННЫЕ"
+	next "ГОЛОС"
+	next "АРЕАЛ"
+	next "ВЫХОД@"
 
 ; tests if a pokemon's bit is set in the seen or owned pokemon bit fields
 ; INPUT:
@@ -513,24 +530,25 @@ ShowPokedexDataInternal:
 	ld a, c
 	and a
 	jp z, .waitForButtonPress ; if the pokemon has not been owned, don't print the height, weight, or description
-	inc de ; de = address of feet (height)
-	ld a, [de] ; reads feet, but a is overwritten without being used
-	hlcoord 12, 6
-	lb bc, 1, 2
-	call PrintNumber ; print feet (height)
-	ld a, "′"
-	ld [hl], a
+	inc de ; de = address of decimetres (height)
+	ld a, [de] ; reads decimetres, but a is overwritten without being used
+	push af
+	hlcoord 13, 6
+	lb bc, 1, 3
+	call PrintNumber ; print decimetres (height)
+	hlcoord 14, 6
+	pop af
+	cp $a
+	jr nc, .func_43d7
+	ld [hl], $F6
+.func_43d7
+	inc hl
+	ld a, [hli]
+	ldd [hl], a
+	ld [hl], $F2
 	inc de
-	inc de ; de = address of inches (height)
-	hlcoord 15, 6
-	lb bc, LEADING_ZEROES | 1, 2
-	call PrintNumber ; print inches (height)
-	ld a, "″"
-	ld [hl], a
-; now print the weight (note that weight is stored in tenths of pounds internally)
 	inc de
-	inc de
-	inc de ; de = address of upper byte of weight
+	inc de ; de = address of decimetres (height)
 	push de
 ; put weight in big-endian order at hDexWeight
 	ld hl, hDexWeight
@@ -544,8 +562,8 @@ ShowPokedexDataInternal:
 	ld a, [de] ; a = lower byte of weight
 	ld [hl], a ; store lower byte of weight in [hDexWeight + 1]
 	ld de, hDexWeight
-	hlcoord 11, 8
-	lb bc, 2, 5 ; 2 bytes, 5 digits
+	hlcoord 12, 8
+	lb bc, 2, 4 ; 2 bytes, 4 digits
 	call PrintNumber ; print weight
 	hlcoord 14, 8
 	ldh a, [hDexWeight + 1]
@@ -590,8 +608,8 @@ ShowPokedexDataInternal:
 	ret
 
 HeightWeightText:
-	db   "HT  ?′??″"
-	next "WT   ???lb@"
+	db   "РОСТ ???<M>"
+	next "ВЕС  ???<K><G>@"
 
 ; XXX does anything point to this?
 PokeText:

@@ -369,7 +369,7 @@ _OaksLabText_441cc::
 	para "@"
 	text_decimal hDexRatingNumMonsSeen, 1, 3
 	text " #МОНов"
-	line "обнаружено."
+	line "найдено."
 	
 	para "@"
 	text_decimal hDexRatingNumMonsOwned, 1, 3
