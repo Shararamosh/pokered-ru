@@ -1,0 +1,66 @@
+name: CI
+permissions: write-all
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Checkout rgbds
+        uses: actions/checkout@master
+        with:
+          path: rgbds
+          repository: gbdev/rgbds
+      
+      - name: Install rgbds
+        working-directory: rgbds
+        run: sudo make install
+       
+      - name: Build and rename ROMs
+        run: |
+           make -j$(nproc)
+           mv pokered.gbc pokered-ru.gbc
+           mv pokeblue.gbc pokeblue.ru.gbc
+
+      - name: Clone and build pokered ROM
+        run: |
+           git clone https://github.com/pret/pokered.git
+           cd pokered
+           make -j${nproc}
+
+       - name: Move original ROMs to parent folder and remove pokered
+         run: |
+           mv pokered.gbc ..
+           mv pokeblue.gbc ..
+           cd ..
+           rm -rf pokered
+           
+       - name: Remove rgbds
+         run: |
+           rm -rf rgbds
+      
+      - name: Install unzip, download Floating IPS and create patches
+        run: |
+           apt-get install unzip
+           wget "https://github.com/Alcaro/Flips/releases/latest/download/flips-linux.zip"
+           unzip -p flips-linux.zip builds/linux-x64-gui.zip/flips >flips
+           rm flips-linux.zip
+           ./flips -c -b pokered.gbc pokered-ru.gbc pokered-ru.bps
+           ./flips -c -b pokeblue.gbc pokeblue-ru.gbc pokeblue-ru.bps
+
+      - name: Create Automatic Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: latest
+          prerelease: false
+          title: Latest Release
+          files: |
+            pokered-ru.bps
+            pokeblue-ru.bps
