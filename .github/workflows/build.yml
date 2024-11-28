@@ -55,6 +55,7 @@ jobs:
           wget "https://github.com/Alcaro/Flips/releases/latest/download/flips-linux.zip"
           unzip -p flips-linux.zip builds/linux-x64-gui.zip/flips >flips
           rm flips-linux.zip
+          chmod +x flips
           ./flips -c -b pokered.gbc pokered-ru.gbc pokered-ru.bps
           ./flips -c -b pokeblue.gbc pokeblue-ru.gbc pokeblue-ru.bps
 
