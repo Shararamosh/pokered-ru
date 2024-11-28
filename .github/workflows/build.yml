@@ -51,7 +51,7 @@ jobs:
       
       - name: Install unzip, download Floating IPS and create patches
         run: |
-          apt-get install unzip
+          sudo apt-get install unzip
           wget "https://github.com/Alcaro/Flips/releases/latest/download/flips-linux.zip"
           unzip -p flips-linux.zip builds/linux-x64-gui.zip/flips >flips
           rm flips-linux.zip
