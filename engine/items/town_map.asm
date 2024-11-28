@@ -134,7 +134,7 @@ LoadTownMap_Nest:
 	ret
 
 MonsNestText:
-	db "'s NEST@"
+	db ": АРЕАЛ@"
 
 LoadTownMap_Fly::
 	call ClearSprites
@@ -246,7 +246,7 @@ LoadTownMap_Fly::
 	jr .pressedDown
 
 ToText:
-	db "To@"
+	db " ‘@"
 
 BuildFlyLocationsList:
 	ld hl, wFlyAnimUsingCoordList
