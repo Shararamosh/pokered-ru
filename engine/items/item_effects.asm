@@ -513,9 +513,43 @@ ItemUseBall:
 	ld [wd11e], a
 	ld a, [wBattleType]
 	dec a ; is this the old man battle?
-	jr z, .oldManCaughtMon ; if so, don't give the player the caught Pokémon
-
+	jp z, .oldManCaughtMon ; if so, don't give the player the caught Pokémon
+	;shara-add begin: Sending different message depending on caught Pokemon specie.
+	ld a, [wCapturedMonSpecies]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
 	ld hl, ItemUseBallText05
+	jr .printText
+.female
+	ld hl, ItemUseBallText05_Female
+.printText
 	call PrintText
 
 ; Add the caught Pokémon to the Pokédex.
@@ -558,10 +592,50 @@ ItemUseBall:
 .sendToBox
 	call ClearSprites
 	call SendNewMonToBox
+	;shara-add begin: Sending different message depending on caught Pokemon specie.
+	push af
+	ld a, [wCapturedMonSpecies]
+	cp RATTATA
+    jr z, .sendToBoxFemale
+    cp RATICATE
+    jr z, .sendToBoxFemale
+    cp CLEFAIRY
+    jr z, .sendToBoxFemale
+    cp CLEFABLE
+    jr z, .sendToBoxFemale
+    cp PONYTA
+    jr z, .sendToBoxFemale
+    cp RAPIDASH
+    jr z, .sendToBoxFemale
+	cp GOLDEEN
+	jr z, .sendToBoxFemale
+	cp SEAKING
+	jr z, .sendToBoxFemale
+    cp CHANSEY
+    jr z, .sendToBoxFemale
+    cp JYNX
+    jr z, .sendToBoxFemale
+    cp KANGASKHAN
+    jr z, .sendToBoxFemale
+    cp NIDORAN_F
+    jr z, .sendToBoxFemale
+    cp NIDORINA
+    jr z, .sendToBoxFemale
+    cp NIDOQUEEN
+    jr z, .sendToBoxFemale
+	pop af
+	;shara-add end
 	ld hl, ItemUseBallText07
 	CheckEvent EVENT_MET_BILL
 	jr nz, .printTransferredToPCText
 	ld hl, ItemUseBallText08
+	jr .printTransferredToPCText
+.sendToBoxFemale; Sending different message for certain Pokemon species.
+	pop af
+	ld hl, ItemUseBallText07_Female
+	CheckEvent EVENT_MET_BILL
+	jr nz, .printTransferredToPCText
+	ld hl, ItemUseBallText08_Female
 .printTransferredToPCText
 	call PrintText
 	jr .done
@@ -612,13 +686,28 @@ ItemUseBallText05:
 	sound_caught_mon
 	text_promptbutton
 	text_end
+ItemUseBallText05_Female: ;shara-add: Additional variation for certain species.
+;"All right! {MonName} was caught!"
+;play sound
+	text_far _ItemUseBallText05_Female
+	sound_caught_mon
+	text_promptbutton
+	text_end
 ItemUseBallText07:
 ;"X was transferred to Bill's PC"
 	text_far _ItemUseBallText07
 	text_end
+ItemUseBallText07_Female: ;shara-add: Additional variation for certain species.
+;"X was transferred to Bill's PC"
+	text_far _ItemUseBallText07_Female
+	text_end
 ItemUseBallText08:
 ;"X was transferred to someone's PC"
 	text_far _ItemUseBallText08
+	text_end
+ItemUseBallText08_Female: ;shara-add: Additional variation for certain species.
+;"X was transferred to someone's PC"
+	text_far _ItemUseBallText08_Female
 	text_end
 
 ItemUseBallText06:
@@ -2189,7 +2278,8 @@ ItemUseTMHM:
 .chooseMon
 	ld hl, wStringBuffer
 	ld de, wTempMoveNameBuffer
-	ld bc, 14
+	;ld bc, 14
+	ld bc, ATTACK_NAME_LENGTH ;shara-add: Giving bigger buffer to attack name. Length is defined in text_constants.asm.
 	call CopyData ; save the move name because DisplayPartyMenu will overwrite it
 	ld a, $ff
 	ld [wUpdateSpritesEnabled], a
@@ -2199,7 +2289,8 @@ ItemUseTMHM:
 	push af
 	ld hl, wTempMoveNameBuffer
 	ld de, wStringBuffer
-	ld bc, 14
+	;ld bc, 14
+	ld bc, ATTACK_NAME_LENGTH ;shara-add: Giving bigger buffer to attack name. Length is defined in text_constants.asm.
 	call CopyData
 	pop af
 	jr nc, .checkIfAbleToLearnMove

@@ -255,9 +255,46 @@ EnemyRan:
 	call LoadScreenTilesFromBuffer1
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
+	;shara-add begin
+	push af
+	ld a, [wEnemyMonSpecies2] ;shara-add: Reading enemy Pokemon specie.
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
 	ld hl, WildRanText
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading run text for certain Pokemon.
+	ld hl, WildRanText_Female
+.gotText ;shara-add: Standard behavior of EnemyRan section.
+	pop af
 	jr nz, .printText
-; link battle
+	; link battle
 	xor a
 	ld [wBattleResult], a
 	ld hl, EnemyRanText
@@ -271,6 +308,10 @@ EnemyRan:
 
 WildRanText:
 	text_far _WildRanText
+	text_end
+
+WildRanText_Female:
+	text_far _WildRanText_Female
 	text_end
 
 EnemyRanText:
@@ -3301,7 +3342,44 @@ PrintGhostText:
 	ld a, [wBattleMonStatus] ; player's turn
 	and SLP | (1 << FRZ)
 	ret nz
+	;shara-add begin: Jumping to .female section for certain Pokemon.
+	push af
+	ld a, [wBattleMonSpecies2]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
 	ld hl, ScaredText
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading scared text for certain Pokemon.
+	ld hl, ScaredText_Female
+.gotText ;shara-add: Standard behavior of PrintGhostText section.
+	pop af
 	call PrintText
 	xor a
 	ret
@@ -3312,6 +3390,10 @@ PrintGhostText:
 	ret
 
 ScaredText:
+	text_far _ScaredText
+	text_end
+
+ScaredText_Female:
 	text_far _ScaredText
 	text_end
 

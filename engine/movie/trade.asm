@@ -780,7 +780,44 @@ Trade_SlideTextBoxOffScreen:
 	ret
 
 PrintTradeWentToText:
+	;shara-add begin
+	push af
+	ld a, [wTradedPlayerMonSpecies]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
 	ld hl, TradeWentToText
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading trade text for certain Pokemon.
+	ld hl, TradeWentToText_Female
+.gotText ;shara-add: Standard behavior of .PrintTradeFarewellText section.
+	pop af
 	call PrintText
 	ld c, 200
 	call DelayFrames
@@ -788,6 +825,10 @@ PrintTradeWentToText:
 
 TradeWentToText:
 	text_far _TradeWentToText
+	text_end
+
+TradeWentToText_Female:
+	text_far _TradeWentToText_Female
 	text_end
 
 PrintTradeForSendsText:
@@ -810,7 +851,44 @@ PrintTradeFarewellText:
 	ld hl, TradeWavesFarewellText
 	call PrintText
 	call Trade_Delay80
+	;shara-add begin
+	push af
+	ld a, [wTradedEnemyMonSpecies]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
 	ld hl, TradeTransferredText
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading trade text for certain Pokemon.
+	ld hl, TradeTransferredText_Female
+.gotText ;shara-add: Standard behavior of .PrintTradeFarewellText section.
+	pop af
 	call PrintText
 	call Trade_Delay80
 	jp Trade_SlideTextBoxOffScreen
@@ -821,6 +899,10 @@ TradeWavesFarewellText:
 
 TradeTransferredText:
 	text_far _TradeTransferredText
+	text_end
+
+TradeTransferredText_Female:
+	text_far _TradeTransferredText_Female
 	text_end
 
 PrintTradeTakeCareText:

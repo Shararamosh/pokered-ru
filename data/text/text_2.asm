@@ -27,6 +27,14 @@ _TradeWentToText::
 	text "."
 	done
 
+_TradeWentToText_Female::
+	text_ram wStringBuffer
+	text_start
+	line "отправлена @"
+	text_ram wLinkEnemyTrainerName
+	text "."
+	done
+
 _TradeForText::
 	text "Взамен @"
 	text_ram wStringBuffer
@@ -52,6 +60,12 @@ _TradeTransferredText::
 	text_ram wcd6d
 	text_start
 	line "будет отправлен."
+	done
+
+_TradeTransferredText_Female::
+	text_ram wcd6d
+	text_start
+	line "будет отправлена."
 	done
 
 _TradeTakeCareText::
@@ -848,6 +862,13 @@ _WildRanText::
 	line "сбежал!"
 	prompt
 
+_WildRanText_Female::
+	text "Дикая @"
+	text_ram wEnemyMonNick
+	text_start
+	line "сбежала!"
+	prompt
+
 _EnemyRanText::
 	text "Прот. @"
 	text_ram wEnemyMonNick
@@ -996,6 +1017,12 @@ _ScaredText::
 	text_ram wBattleMonNick
 	text " слишком"
 	line "напуган!"
+	prompt
+
+_ScaredText_Female::
+	text_ram wBattleMonNick
+	text " слишком"
+	line "напугана!"
 	prompt
 
 _GetOutText::
@@ -1360,6 +1387,13 @@ _SafariZoneEatingText::
 
 _SafariZoneAngryText::
 	text "Дикий @"
+	text_ram wEnemyMonNick
+	text_start
+	line "злится!"
+	prompt
+
+_SafariZoneAngryText_Female::
+	text "Дикая @"
 	text_ram wEnemyMonNick
 	text_start
 	line "злится!"

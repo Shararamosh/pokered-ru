@@ -12,7 +12,44 @@ PrintSafariZoneBattleText:
 	and a
 	ret z
 	dec [hl]
+	;shara-add begin
+	push af
+	ld a, [wEnemyMonSpecies2] ;shara-add: Reading enemy Pokemon specie.
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add end
 	ld hl, SafariZoneAngryText
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading angry text for certain Pokemon.
+	ld hl, SafariZoneAngryText_Female
+.gotText ;shara-add: Standard behavior of .no_bait section.
+	pop af
 	jr nz, .done
 	push hl
 	ld a, [wEnemyMonSpecies]
@@ -33,4 +70,8 @@ SafariZoneEatingText:
 
 SafariZoneAngryText:
 	text_far _SafariZoneAngryText
+	text_end
+
+SafariZoneAngryText_Female:
+	text_far _SafariZoneAngryText_Female
 	text_end

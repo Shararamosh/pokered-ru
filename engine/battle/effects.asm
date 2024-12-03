@@ -898,13 +898,173 @@ SwitchAndTeleportEffect:
 	ld c, 20
 	call DelayFrames
 	pop af
-	ld hl, RanFromBattleText
+	;shara-add begin: Re-routing depending on whose turn.
+	push af ;Saving current move to buffer.
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .playerTurnText
+	;shara-add end
+.enemyTurnText ;shara-add: Getting text for enemy turn depending on Pokemon specie.
+	pop af ;Restoring current move from buffer.
 	cp TELEPORT
-	jr z, .printText
+	jr z, .EnemyRanFromBattleFemaleCheck ;Enemy used Teleport, so we check its specie.
+	cp ROAR
+	jp z, .RanAwayScaredFemaleCheck ;Enemy used Roar, so we check our specie.
+	jp .WasBlownAwayFemaleCheck ;Enemy used Whirlwind, so we also check our specie.
+.playerTurnText ;shara-add: Getting text for our turn depending on Pokemon specie.
+	pop af ;Restoring current move from buffer.
+	cp TELEPORT
+	jr z, .RanFromBattleFemaleCheck ;We used Teleport, so we check our specie.
 	ld hl, RanAwayScaredText
 	cp ROAR
-	jr z, .printText
+	jp z, .printText ;We used Roar, so we don't need to edit text.
+	ld hl, WasBlownAwayText ;We used Whirlwind, so we don't need to edit text.
+	jp PrintText
+.RanFromBattleFemaleCheck ;shara-add: Our Pokemon used Teleport.
+	ld a, [wBattleMonSpecies2]
+	cp RATTATA
+    jr z, .RanFromBattleFemale
+    cp RATICATE
+    jr z, .RanFromBattleFemale
+    cp CLEFAIRY
+    jr z, .RanFromBattleFemale
+    cp CLEFABLE
+    jr z, .RanFromBattleFemale
+    cp PONYTA
+    jr z, .RanFromBattleFemale
+    cp RAPIDASH
+    jr z, .RanFromBattleFemale
+	cp GOLDEEN
+	jr z, .RanFromBattleFemale
+	cp SEAKING
+	jr z, .RanFromBattleFemale
+    cp CHANSEY
+    jr z, .RanFromBattleFemale
+    cp JYNX
+    jr z, .RanFromBattleFemale
+    cp KANGASKHAN
+    jr z, .RanFromBattleFemale
+    cp NIDORAN_F
+    jr z, .RanFromBattleFemale
+    cp NIDORINA
+    jr z, .RanFromBattleFemale
+    cp NIDOQUEEN
+    jr z, .RanFromBattleFemale
+	pop af
+	ld hl, RanFromBattleText
+	jp PrintText
+.RanFromBattleFemale ;shara-add: Female enemy or our Pokemon used Teleport.
+	pop af
+	ld hl, RanFromBattleText_Female
+	jp PrintText
+.EnemyRanFromBattleFemaleCheck; shara-add: Enemy Pokemon used Teleport.
+	ld a, [wEnemyMonSpecies2]
+	cp RATTATA
+    jr z, .RanFromBattleFemale
+    cp RATICATE
+    jr z, .RanFromBattleFemale
+    cp CLEFAIRY
+    jr z, .RanFromBattleFemale
+    cp CLEFABLE
+    jr z, .RanFromBattleFemale
+    cp PONYTA
+    jr z, .RanFromBattleFemale
+    cp RAPIDASH
+    jr z, .RanFromBattleFemale
+	cp GOLDEEN
+	jr z, .RanFromBattleFemale
+	cp SEAKING
+	jr z, .RanFromBattleFemale
+    cp CHANSEY
+    jr z, .RanFromBattleFemale
+    cp JYNX
+    jr z, .RanFromBattleFemale
+    cp KANGASKHAN
+    jr z, .RanFromBattleFemale
+    cp NIDORAN_F
+    jr z, .RanFromBattleFemale
+    cp NIDORINA
+    jr z, .RanFromBattleFemale
+    cp NIDOQUEEN
+    jr z, .RanFromBattleFemale
+	pop af
+	ld hl, RanFromBattleText
+	jp PrintText
+.RanAwayScaredFemaleCheck ;shara-add: Enemy Pokemon used Roar.
+	ld a, [wBattleMonSpecies2]
+	cp RATTATA
+    jr z, .RanAwayScaredFemale
+    cp RATICATE
+    jr z, .RanAwayScaredFemale
+    cp CLEFAIRY
+    jr z, .RanAwayScaredFemale
+    cp CLEFABLE
+    jr z, .RanAwayScaredFemale
+    cp PONYTA
+    jr z, .RanAwayScaredFemale
+    cp RAPIDASH
+    jr z, .RanAwayScaredFemale
+	cp GOLDEEN
+	jr z, .RanAwayScaredFemale
+	cp SEAKING
+	jr z, .RanAwayScaredFemale
+    cp CHANSEY
+    jr z, .RanAwayScaredFemale
+    cp JYNX
+    jr z, .RanAwayScaredFemale
+    cp KANGASKHAN
+    jr z, .RanAwayScaredFemale
+    cp NIDORAN_F
+    jr z, .RanAwayScaredFemale
+    cp NIDORINA
+    jr z, .RanAwayScaredFemale
+    cp NIDOQUEEN
+    jr z, .RanAwayScaredFemale
+	pop af
+	ld hl, RanFromBattleText
+	jp PrintText
+.RanAwayScaredFemale ;shara-add: Enemy Pokemon used Roar on female Pokemon.
+	pop af
+	ld hl, RanAwayScaredText_Female
+	jp PrintText
+.WasBlownAwayFemaleCheck ;shara-add: Enemy used Whirlwind on our Pokemon.
+	push af
+	ld a, [wBattleMonSpecies2]
+	cp RATTATA
+    jr z, .WasBlownAwayFemale
+    cp RATICATE
+    jr z, .WasBlownAwayFemale
+    cp CLEFAIRY
+    jr z, .WasBlownAwayFemale
+    cp CLEFABLE
+    jr z, .WasBlownAwayFemale
+    cp PONYTA
+    jr z, .WasBlownAwayFemale
+    cp RAPIDASH
+    jr z, .WasBlownAwayFemale
+	cp GOLDEEN
+	jr z, .WasBlownAwayFemale
+	cp SEAKING
+	jr z, .WasBlownAwayFemale
+    cp CHANSEY
+    jr z, .WasBlownAwayFemale
+    cp JYNX
+    jr z, .WasBlownAwayFemale
+    cp KANGASKHAN
+    jr z, .WasBlownAwayFemale
+    cp NIDORAN_F
+    jr z, .WasBlownAwayFemale
+    cp NIDORINA
+    jr z, .WasBlownAwayFemale
+    cp NIDOQUEEN
+    jr z, .WasBlownAwayFemale
+	pop af
 	ld hl, WasBlownAwayText
+	jp PrintText
+.WasBlownAwayFemale ;shara-add: Enemy used Whirlwind on female Pokemon.
+	pop af
+	ld hl, WasBlownAwayText_Female
+	jp PrintText
 .printText
 	jp PrintText
 
@@ -912,12 +1072,24 @@ RanFromBattleText:
 	text_far _RanFromBattleText
 	text_end
 
+RanFromBattleText_Female:
+	text_far _RanFromBattleText_Female
+	text_end
+
 RanAwayScaredText:
 	text_far _RanAwayScaredText
 	text_end
 
+RanAwayScaredText_Female:
+	text_far _RanAwayScaredText_Female
+	text_end
+
 WasBlownAwayText:
 	text_far _WasBlownAwayText
+	text_end
+
+WasBlownAwayText_Female:
+	text_far _WasBlownAwayText_Female
 	text_end
 
 TwoToFiveAttacksEffect:
@@ -1424,10 +1596,56 @@ IsUnaffectedText:
 	text_end
 
 PrintMayNotAttackText:
+	;shara-add begin: Re-routing depending on whose turn.
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .standard
+	;shara-add end
+.femaleCheck ;shara-add: Getting text for enemy turn depending on Pokemon specie.
+	ld a, [wBattleMonSpecies2]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+.standard
+	pop af
 	ld hl, ParalyzedMayNotAttackText
+	jp PrintText
+.female ;shara-add: Female enemy or our Pokemon used Teleport.
+	pop af
+	ld hl, ParalyzedMayNotAttackText_Female
 	jp PrintText
 
 ParalyzedMayNotAttackText:
+	text_far _ParalyzedMayNotAttackText
+	text_end
+
+ParalyzedMayNotAttackText_Female:
 	text_far _ParalyzedMayNotAttackText
 	text_end
 

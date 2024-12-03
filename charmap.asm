@@ -74,13 +74,13 @@
 
 ; Actual characters (from other graphics files)
 
-	; needed for ShowPokedexDataInternal (see engine/menus/pokedex.asm)
+	; needed for ShowPokedexDataInternal (see engine/menus/pokedex.asm), shara-add: metric system symbols copied from French/German versions.
 	charmap "<M>",       $60 ; gfx/pokedex/pokedex.png
 	charmap "<K>",       $61 ; gfx/pokedex/pokedex.png
 	charmap "<G>",       $62 ; gfx/pokedex/pokedex.png
 
 	; needed for StatusScreen (see engine/pokemon/status_screen.asm)
-	charmap "<BOLD_P>",  $72 ; gfx/font/P.1bpp
+	charmap "<BOLD_P>",  $72 ; gfx/font/P.1bpp, shara-add: unused, because PP text uses Cyrillic characters now
 
 	; needed for LoadTownMap_Fly (see engine/items/town_map.asm)
 	charmap "▲",         $ed ; gfx/town_map/up_arrow.1bpp
@@ -90,7 +90,7 @@
 
 ; Actual characters (from gfx/font/font.png)
 
-; English upper-case characters (same as in original)
+; shara-add: English upper-case characters (same as in original)
 
 	charmap "A",         $80
 	charmap "B",         $81
@@ -119,7 +119,7 @@
 	charmap "Y",         $98
 	charmap "Z",         $99
 
-; English lower-case characters using upper-case characters
+; shara-add: English lower-case characters using upper-case characters
 
 	charmap "a",         $80
 	charmap "b",         $81
@@ -198,7 +198,7 @@
 	charmap "8",         $fe
 	charmap "9",         $ff
 
-; Russian upper-case characters
+; shara-add: Russian upper-case characters
 
 	charmap "Б",         $a0
 	charmap "Г",         $a1
@@ -224,7 +224,7 @@
 	charmap "Ю",         $b4
 	charmap "Я",         $b5
 
-; Russian lower-case characters
+; shara-add: Russian lower-case characters
 
 	charmap "а",         $b6
 	charmap "б",         $b7
@@ -262,7 +262,7 @@
 	charmap "ю",         $db
 	charmap "я",         $dc
 
-; Russian upper-case characters that have English equivalents
+; shara-add: Russian upper-case characters that have English equivalents
 	charmap "А",         $80
 	charmap "В",         $81
 	charmap "С",         $82
@@ -275,7 +275,7 @@
 	charmap "Т",         $93
 	charmap "Х",         $97
 
-; New symbols for Russian version
+; shara-add: New symbols for Russian version
 
 	charmap "<PO>",      $dd
 	charmap "<KE>",      $de

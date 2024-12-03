@@ -162,9 +162,9 @@ Evolution_PartyMonLoop: ; loop over party mons
     jr z, .female
     cp NIDOQUEEN
     jr z, .female
+	;shara-add: end
 	ld hl, EvolvedText
 	jr .gotText ;shara-add: Continuing standard behavior.
-	;shara-add: end
 .female ;shara-add: Loading item use text for certain Pokemon.
 	ld hl, EvolvedText_Female
 .gotText ;shara-add: Standard behavior of .doEvolution section.
@@ -324,7 +324,44 @@ RenameEvolvedMon:
 	jp CopyData
 
 CancelledEvolution:
+	;shara-add begin: Jumping to .female section for certain Pokemon.
+	push af
+	ld a, [wEvoOldSpecies]
+	cp RATTATA
+    jr z, .female
+    cp RATICATE
+    jr z, .female
+    cp CLEFAIRY
+    jr z, .female
+    cp CLEFABLE
+    jr z, .female
+    cp PONYTA
+    jr z, .female
+    cp RAPIDASH
+    jr z, .female
+	cp GOLDEEN
+	jr z, .female
+	cp SEAKING
+	jr z, .female
+    cp CHANSEY
+    jr z, .female
+    cp JYNX
+    jr z, .female
+    cp KANGASKHAN
+    jr z, .female
+    cp NIDORAN_F
+    jr z, .female
+    cp NIDORINA
+    jr z, .female
+    cp NIDOQUEEN
+    jr z, .female
+	;shara-add: end
 	ld hl, StoppedEvolvingText
+	jr .gotText ;shara-add: Continuing standard behavior.
+.female ;shara-add: Loading item use text for certain Pokemon.
+	ld hl, StoppedEvolvingText_Female
+.gotText ;shara-add: Standard behavior of CancelledEvolution section.
+	pop af
 	call PrintText
 	call ClearScreen
 	pop hl
@@ -345,6 +382,10 @@ IntoText:
 
 StoppedEvolvingText:
 	text_far _StoppedEvolvingText
+	text_end
+
+StoppedEvolvingText_Female:
+	text_far _StoppedEvolvingText_Female
 	text_end
 
 IsEvolvingText:

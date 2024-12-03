@@ -10,11 +10,12 @@ _PokemonFaintedText::
 	done
 
 _PlayerBlackedOutText::
-	text "<PLAYER> is out of"
-	line "useable #MON!"
+	text "У <PLAYER>"
+	line "закончились"
+	auto "#МОНы!"
 
-	para "<PLAYER> blacked"
-	line "out!"
+	para "<PLAYER>"
+	line "выброшен!"
 	prompt
 
 _RepelWoreOffText::
@@ -125,9 +126,9 @@ _TryingToLearnText::
 	cont "более 4 атак!"
 
 	para "Удалить старую"
-	line "атаку, чтобы"
-	cont "освободить место"
-	cont "под @"
+	line "атаку для её"
+	cont "замены на"
+	cont "@"
 	text_ram wStringBuffer
 	text "?"
 	done

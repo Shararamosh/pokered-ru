@@ -1190,7 +1190,8 @@ wTrainerPicPointer:: dw
 	ds 1
 
 UNION
-wTempMoveNameBuffer:: ds 14
+;wTempMoveNameBuffer:: ds 14
+wTempMoveNameBuffer:: ds 17 ;shara-add: Max attack length is higher.
 
 NEXTU
 ; The name of the mon that is learning a move.

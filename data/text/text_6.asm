@@ -7,110 +7,131 @@ _ItemUseBallText00::
 	prompt
 
 _ItemUseBallText01::
-	text "You missed the"
-	line "#MON!"
+	text "Ты не попал по"
+	line "#МОНу!"
 	prompt
 
 _ItemUseBallText02::
-	text "Darn! The #MON"
-	line "broke free!"
+	text "Чёрт! #МОН"
+	line "вырвался!"
 	prompt
 
 _ItemUseBallText03::
-	text "Aww! It appeared"
-	line "to be caught! "
+	text "Оу! А ведь почти"
+	line "помайлся! "
 	prompt
 
 _ItemUseBallText04::
-	text "Shoot! It was so"
-	line "close too!"
+	text "Уф! Было ведь"
+	line "так близко!"
 	prompt
 
 _ItemUseBallText05::
-	text "All right!"
+	text "Отлично!"
 	line "@"
 	text_ram wEnemyMonNick
-	text " was"
-	cont "caught!@"
+	text " был"
+	cont "пойман!@"
+	text_end
+
+_ItemUseBallText05_Female::
+	text "Отлично!"
+	line "@"
+	text_ram wEnemyMonNick
+	text " была"
+	cont "поймана!@"
 	text_end
 
 _ItemUseBallText07::
 	text_ram wBoxMonNicks
-	text " was"
-	line "transferred to"
-	cont "BILL's PC!"
+	text " был"
+	line "отправлен в"
+	cont "ПК БИЛЛа!"
+	prompt
+
+_ItemUseBallText07_Female::
+	text_ram wBoxMonNicks
+	text " была"
+	line "отправлена в"
+	cont "ПК БИЛЛа!"
 	prompt
 
 _ItemUseBallText08::
 	text_ram wBoxMonNicks
-	text " was"
-	line "transferred to"
-	cont "someone's PC!"
+	text " был"
+	line "отправлен в"
+	cont "чей-то ПК!"
+	prompt
+
+_ItemUseBallText08_Female::
+	text_ram wBoxMonNicks
+	text " была"
+	line "отправлена в"
+	cont "чей-то ПК!"
 	prompt
 
 _ItemUseBallText06::
-	text "New #DEX data"
-	line "will be added for"
+	text "#DEX обновил"
+	line "данные о"
 	cont "@"
 	text_ram wEnemyMonNick
 	text "!@"
 	text_end
 
 _SurfingGotOnText::
-	text "<PLAYER> got on"
+	text "<PLAYER> сел на"
 	line "@"
 	text_ram wcd6d
 	text "!"
 	prompt
 
 _SurfingNoPlaceToGetOffText::
-	text "There's no place"
-	line "to get off!"
+	text "Здесь негде"
+	line "сойти!"
 	prompt
 
 _VitaminStatRoseText::
-	text_ram wcd6d
-	text "'s"
-	line "@"
 	text_ram wStringBuffer
-	text " rose."
+	line "@"
+	text_ram wcd6d
+	text " ПОВЫШЕНА."
 	prompt
 
 _VitaminNoEffectText::
-	text "It won't have any"
-	line "effect."
+	text "Это не окажет"
+	line "никакого эффекта."
 	prompt
 
 _ThrewBaitText::
-	text "<PLAYER> threw"
-	line "some BAIT."
+	text "<PLAYER> кинул"
+	line "НАЖИВКУ."
 	done
 
 _ThrewRockText::
-	text "<PLAYER> threw a"
-	line "ROCK."
+	text "<PLAYER> кинул"
+	line "КАМЕНЬ."
 	done
 
 _PlayedFluteNoEffectText::
-	text "Played the #"
-	line "FLUTE."
+	text "Сыграл на #"
+	line "ФЛЕЙТЕ."
 
-	para "Now, that's a"
-	line "catchy tune!"
+	para "А мелодия то"
+	line "цепляющая!"
 	prompt
 
 _FluteWokeUpText::
-	text "All sleeping"
-	line "#MON woke up."
+	text "Все спяшие #-"
+	line "МОНы проснулись."
 	prompt
 
 _PlayedFluteHadEffectText::
-	text "<PLAYER> played the"
-	line "# FLUTE.@"
+	text "<PLAYER> сыграл на"
+	line "# ФЛЕЙТЕ.@"
 	text_end
 
 _CoinCaseNumCoinsText::
-	text "Coins"
+	text "Монеты"
 	line "@"
 	text_bcd wPlayerCoins, 2 | LEADING_ZEROES | LEFT_ALIGN
 	text " "
@@ -128,49 +149,52 @@ _ItemfinderFoundNothingText::
 	prompt
 
 _RaisePPWhichTechniqueText::
-	text "Raise PP of which"
-	line "technique?"
+	text "ОС какой техники"
+	line "повысить?"
 	done
 
 _RestorePPWhichTechniqueText::
-	text "Restore PP of"
-	line "which technique?"
+	text "ОС какой техники"
+	line "восстановить?"
 	done
 
 _PPMaxedOutText::
+	text "ОС"
+	line "@"
 	text_ram wStringBuffer
-	text "'s PP"
-	line "is maxed out."
+	cont "максимизированы."
 	prompt
 
 _PPIncreasedText::
+	text "ОС"
+	line "@"
 	text_ram wStringBuffer
-	text "'s PP"
-	line "increased."
+	cont "повышены."
 	prompt
 
 _PPRestoredText::
-	text "PP was restored."
+	text "ОС были"
+	line "восстановлены."
 	prompt
 
 _BootedUpTMText::
-	text "Booted up a TM!"
+	text "Загружена TM!"
 	prompt
 
 _BootedUpHMText::
-	text "Booted up an HM!"
+	text "Загружена HM!"
 	prompt
 
 _TeachMachineMoveText::
-	text "It contained"
+	text "Она содержит"
 	line "@"
 	text_ram wStringBuffer
 	text "!"
 
-	para "Teach @"
+	para "Обучить #МОНа"
+	line "@"
 	text_ram wStringBuffer
-	text_start
-	line "to a #MON?"
+	text "?"
 	done
 
 _MonCannotLearnMachineMoveText::
@@ -188,14 +212,14 @@ _MonCannotLearnMachineMoveText::
 	prompt
 
 _ItemUseNotTimeText::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that! "
+	text "ОУК: <PLAYER>!"
+	line "Сейчас не время"
+	cont "для этого! "
 	prompt
 
 _ItemUseNotYoursToUseText::
-	text "This isn't yours"
-	line "to use!"
+	text "Это не твоё, чтобы"
+	line "использовать!"
 	prompt
 
 _ItemUseNoEffectText::
@@ -204,28 +228,29 @@ _ItemUseNoEffectText::
 	prompt
 
 _ThrowBallAtTrainerMonText1::
-	text "The trainer"
-	line "blocked the BALL!"
+	text "Тренер заблокиро-"
+	line "вал БОЛЛ!"
 	prompt
 
 _ThrowBallAtTrainerMonText2::
-	text "Don't be a thief!"
+	text "Не будь вором!"
 	prompt
 
 _NoCyclingAllowedHereText::
-	text "No cycling"
-	next "allowed here."
+	text "Велосипед здесь"
+	next "запрещён."
 	prompt
 
 _NoSurfingHereText::
-	text "No SURFing on"
+	text "СЁРФинг на"
 	line "@"
 	text_ram wcd6d
-	text " here!"
+	cont "здесь запрещён!"
 	prompt
 
 _BoxFullCannotThrowBallText::
-	text "The #MON BOX"
-	line "is full! Can't"
-	cont "use that item!"
+	text "#МОН BOX"
+	line "заполнен! Нельзя"
+	cont "использовать эту"
+	auto "вещь!"
 	prompt

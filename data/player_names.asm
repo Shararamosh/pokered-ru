@@ -9,7 +9,7 @@ DefaultNamesPlayer:
 DefaultNamesRival:
 	db   "НОВОЕ ИМЯ"
 	next "БЛУ"
-	next "ГАРИ"
+	next "ГЭРИ"
 	next "ДЖОН"
 	db   "@"
 ENDC
@@ -18,7 +18,7 @@ IF DEF(_BLUE)
 DefaultNamesPlayer:
 	db   "НОВОЕ ИМЯ"
 	next "БЛУ"
-	next "ГАРИ"
+	next "ГЭРИ"
 	next "ДЖОН"
 	db   "@"
 

@@ -1,7 +1,8 @@
 DEF NAME_LENGTH EQU 11
 ;DEF ITEM_NAME_LENGTH EQU 13
-DEF ITEM_NAME_LENGTH EQU 15
+DEF ITEM_NAME_LENGTH EQU 16 ;shara-add: Max length of item names is higher.
 DEF NAME_BUFFER_LENGTH EQU 20
+DEF ATTACK_NAME_LENGTH EQU 17; shara-add: Check item_effects.asm.
 
 ; PrintNumber
 	const_def 5

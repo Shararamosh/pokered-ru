@@ -61,6 +61,14 @@ _StoppedEvolvingText::
 	auto "эволюционировать!"
 	prompt
 
+_StoppedEvolvingText_Female::
+	text "Хм? @"
+	text_ram wStringBuffer
+	text_start
+	line "прекратила"
+	auto "эволюционировать!"
+	prompt
+
 _IsEvolvingText::
 	text "Что? @"
 	text_ram wStringBuffer
@@ -138,14 +146,29 @@ _RanFromBattleText::
 	line "сбежал из битвы!"
 	prompt
 
+_RanFromBattleText_Female::
+	text "<USER>"
+	line "сбежала из битвы!"
+	prompt
+
 _RanAwayScaredText::
 	text "<TARGET>"
 	line "сбежал в испуге!"
 	prompt
 
+_RanAwayScaredText_Female::
+	text "<TARGET>"
+	line "сбежала в испуге!"
+	prompt
+
 _WasBlownAwayText::
 	text "<TARGET>"
 	line "был сдут!"
+	prompt
+
+_WasBlownAwayText_Female::
+	text "<TARGET>"
+	line "была сдута!"
 	prompt
 
 _ChargeMoveEffectText::
@@ -230,6 +253,13 @@ _IsUnaffectedText::
 _ParalyzedMayNotAttackText::
 	text "<TARGET>"
 	line "парализован! Он"
+	cont "может пропустить"
+	auto "свою атаку!"
+	prompt
+
+_ParalyzedMayNotAttackText_Female::
+	text "<TARGET>"
+	line "парализована! Она"
 	cont "может пропустить"
 	auto "свою атаку!"
 	prompt
@@ -334,8 +364,8 @@ _SuckedHealthText::
 	prompt
 
 _DreamWasEatenText::
-	text "Сон <TARGET>"
-	line "был пожран!"
+	text "Пожран сон"
+	line "<TARGET>!"
 	prompt
 
 _TradeCenterText1::
