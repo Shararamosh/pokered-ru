@@ -218,6 +218,15 @@ _MimicLearnedMoveText::
 	text "!"
 	prompt
 
+
+_MimicLearnedMoveText_Female::
+	text "<USER>"
+	line "выучила"
+	cont "@"
+	text_ram wcd6d
+	text "!"
+	prompt
+
 _MoveWasDisabledText::
 	text "Атака"
 	line "@"

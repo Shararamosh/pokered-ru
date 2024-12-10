@@ -202,34 +202,12 @@ RedrawPartyMenu_::
 	;shara-add begin: Jumping to .female section for certain Pokemon.
 	push af
 	ld a, [wEnemyMonSpecies2]
-	cp RATTATA
-    jr z, .female
-    cp RATICATE
-    jr z, .female
-    cp CLEFAIRY
-    jr z, .female
-    cp CLEFABLE
-    jr z, .female
-    cp PONYTA
-    jr z, .female
-    cp RAPIDASH
-    jr z, .female
-	cp GOLDEEN
-	jr z, .female
-	cp SEAKING
-	jr z, .female
-    cp CHANSEY
-    jr z, .female
-    cp JYNX
-    jr z, .female
-    cp KANGASKHAN
-    jr z, .female
-    cp NIDORAN_F
-    jr z, .female
-    cp NIDORINA
-    jr z, .female
-    cp NIDOQUEEN
-    jr z, .female
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
 	;shara-add end
 	ld hl, PartyMenuItemUseMessagePointers
 	jr .gotText ;shara-add: Continuing standard behavior.

@@ -515,41 +515,21 @@ ItemUseBall:
 	dec a ; is this the old man battle?
 	jp z, .oldManCaughtMon ; if so, don't give the player the caught Pokémon
 	;shara-add begin: Sending different message depending on caught Pokemon specie.
+	push af
 	ld a, [wCapturedMonSpecies]
-	cp RATTATA
-    jr z, .female
-    cp RATICATE
-    jr z, .female
-    cp CLEFAIRY
-    jr z, .female
-    cp CLEFABLE
-    jr z, .female
-    cp PONYTA
-    jr z, .female
-    cp RAPIDASH
-    jr z, .female
-	cp GOLDEEN
-	jr z, .female
-	cp SEAKING
-	jr z, .female
-    cp CHANSEY
-    jr z, .female
-    cp JYNX
-    jr z, .female
-    cp KANGASKHAN
-    jr z, .female
-    cp NIDORAN_F
-    jr z, .female
-    cp NIDORINA
-    jr z, .female
-    cp NIDOQUEEN
-    jr z, .female
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
 	;shara-add end
 	ld hl, ItemUseBallText05
-	jr .printText
+	jr .printText ;shara-add
 .female
 	ld hl, ItemUseBallText05_Female
 .printText
+	pop af
 	call PrintText
 
 ; Add the caught Pokémon to the Pokédex.
@@ -595,34 +575,12 @@ ItemUseBall:
 	;shara-add begin: Sending different message depending on caught Pokemon specie.
 	push af
 	ld a, [wCapturedMonSpecies]
-	cp RATTATA
-    jr z, .sendToBoxFemale
-    cp RATICATE
-    jr z, .sendToBoxFemale
-    cp CLEFAIRY
-    jr z, .sendToBoxFemale
-    cp CLEFABLE
-    jr z, .sendToBoxFemale
-    cp PONYTA
-    jr z, .sendToBoxFemale
-    cp RAPIDASH
-    jr z, .sendToBoxFemale
-	cp GOLDEEN
-	jr z, .sendToBoxFemale
-	cp SEAKING
-	jr z, .sendToBoxFemale
-    cp CHANSEY
-    jr z, .sendToBoxFemale
-    cp JYNX
-    jr z, .sendToBoxFemale
-    cp KANGASKHAN
-    jr z, .sendToBoxFemale
-    cp NIDORAN_F
-    jr z, .sendToBoxFemale
-    cp NIDORINA
-    jr z, .sendToBoxFemale
-    cp NIDOQUEEN
-    jr z, .sendToBoxFemale
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .sendToBoxFemale
 	pop af
 	;shara-add end
 	ld hl, ItemUseBallText07
@@ -2314,7 +2272,22 @@ ItemUseTMHM:
 ; if the pokemon can't learn the move
 	ld a, SFX_DENIED
 	call PlaySoundWaitForCurrent
+	;shara-add begin: Changing "can't learn" text depending on Pokemon specie.
+	push af
+	ld a, [wcf91]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld hl, MonCannotLearnMachineMoveText
+	jr .gotText ;shara-add
+.female ;shara-add: Section for female species.
+	ld hl, MonCannotLearnMachineMoveText_Female
+.gotText
+	pop af
 	call PrintText
 	jr .chooseMon
 .checkIfAlreadyLearnedMove
@@ -2347,6 +2320,10 @@ TeachMachineMoveText:
 
 MonCannotLearnMachineMoveText:
 	text_far _MonCannotLearnMachineMoveText
+	text_end
+
+MonCannotLearnMachineMoveText_Female:
+	text_far _MonCannotLearnMachineMoveText_Female
 	text_end
 
 PrintItemUseTextAndRemoveItem:

@@ -918,6 +918,12 @@ _PlayerMonFaintedText::
 	line "повержен!"
 	prompt
 
+_PlayerMonFaintedText_Female::
+	text_ram wBattleMonNick
+	text_start
+	line "повержена!"
+	prompt
+
 _UseNextMonText::
 	text "Следующий #МОН?"
 	done
@@ -1691,6 +1697,14 @@ _MonWasStoredText::
 	text "."
 	prompt
 
+_MonWasStoredText_Female::
+	text_ram wStringBuffer
+	text " была"
+	line "внесёна в BOX@"
+	text_ram wBoxNumString
+	text "."
+	prompt
+
 _CantDepositLastMonText::
 	text "Нельзя внести"
 	line "последнего"
@@ -1705,9 +1719,21 @@ _BoxFullText::
 _MonIsTakenOutText::
 	text_ram wStringBuffer
 	text " был"
-	line "вытащен."
-	cont "Получен"
-	cont "@"
+	line "взят."
+	
+	para "Получен"
+	line "@"
+	text_ram wStringBuffer
+	text "."
+	prompt
+
+_MonIsTakenOutText_Female::
+	text_ram wStringBuffer
+	text " была"
+	line "взята."
+	
+	para "Получена"
+	line "@"
 	text_ram wStringBuffer
 	text "."
 	prompt
@@ -1743,6 +1769,16 @@ _MonWasReleasedText::
 	text_ram wStringBuffer
 	text " был"
 	line "отпущен на волю."
+	cont "Прощай,"
+	cont "@"
+	text_ram wStringBuffer
+	text "!"
+	prompt
+
+_MonWasReleasedText_Female::
+	text_ram wStringBuffer
+	text " была"
+	line "отпущена на волю."
 	cont "Прощай,"
 	cont "@"
 	text_ram wStringBuffer

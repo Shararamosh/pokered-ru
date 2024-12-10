@@ -84,13 +84,43 @@ AbandonLearning:
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, DontAbandonLearning
+	;shara-add begin
+	push af
+	ld a, [wcf91] ;Pokemon specie.
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld hl, DidNotLearnText
+	jr .gotText ;shara-add
+.female ;shara-add
+	ld hl, DidNotLearnText_Female
+.gotText ;shara-add
+	pop af
 	call PrintText
 	ld b, 0
 	ret
 
 PrintLearnedMove:
+	;shara-add begin
+	push af
+	ld a, [wcf91] ;Pokemon specie.
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld hl, LearnedMove1Text
+	jr .gotText ;shara-add
+.female
+	ld hl, LearnedMove1Text_Female
+.gotText
+	pop af
 	call PrintText
 	ld b, 1
 	ret
@@ -121,13 +151,13 @@ TryingToLearn:
 	ld hl, WhichMoveToForgetText
 	call PrintText
 	;hlcoord 4, 7
-	hlcoord 2, 7
+	hlcoord 18-ATTACK_NAME_LENGTH, 7
 	ld b, 4
 	;ld c, 14
-	ld c, 16
+	ld c, ATTACK_NAME_LENGTH ;shara-add: Giving bigger buffer to attack name. Length is defined in text_constants.asm.
 	call TextBoxBorder
 	;hlcoord 6, 8
-	hlcoord 4, 8
+	hlcoord 20-ATTACK_NAME_LENGTH, 8
 	ld de, wMovesString
 	ldh a, [hUILayoutFlags]
 	set 2, a
@@ -140,7 +170,7 @@ TryingToLearn:
 	ld a, 8
 	ld [hli], a ; wTopMenuItemY
 	;ld a, 5
-	ld a, 3
+	ld a, 2
 	ld [hli], a ; wTopMenuItemX
 	xor a
 	ld [hli], a ; wCurrentMenuItem
@@ -193,6 +223,12 @@ LearnedMove1Text:
 	text_promptbutton
 	text_end
 
+LearnedMove1Text_Female: ;shara-add
+	text_far _LearnedMove1Text_Female
+	sound_get_item_1 ; plays SFX_GET_ITEM_1 in the party menu (rare candy) and plays SFX_LEVEL_UP in battle
+	text_promptbutton
+	text_end
+
 WhichMoveToForgetText:
 	text_far _WhichMoveToForgetText
 	text_end
@@ -203,6 +239,10 @@ AbandonLearningText:
 
 DidNotLearnText:
 	text_far _DidNotLearnText
+	text_end
+
+DidNotLearnText_Female: ;shara-add
+	text_far _DidNotLearnText_Female
 	text_end
 
 TryingToLearnText:

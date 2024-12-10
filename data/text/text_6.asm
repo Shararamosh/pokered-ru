@@ -92,6 +92,7 @@ _SurfingNoPlaceToGetOffText::
 
 _VitaminStatRoseText::
 	text_ram wStringBuffer
+	text_start
 	line "@"
 	text_ram wcd6d
 	text " ПОВЫШЕНА."
@@ -162,6 +163,7 @@ _PPMaxedOutText::
 	text "ОС"
 	line "@"
 	text_ram wStringBuffer
+	text_start
 	cont "максимизированы."
 	prompt
 
@@ -169,6 +171,7 @@ _PPIncreasedText::
 	text "ОС"
 	line "@"
 	text_ram wStringBuffer
+	text_start
 	cont "повышены."
 	prompt
 
@@ -199,14 +202,30 @@ _TeachMachineMoveText::
 
 _MonCannotLearnMachineMoveText::
 	text_ram wcd6d
-	text " is not"
-	line "compatible with"
+	text " не"
+	line "совместим с"
 	cont "@"
 	text_ram wStringBuffer
 	text "."
 
-	para "It can't learn"
-	line "@"
+	para "Он не может"
+	line "выучить"
+	cont "@"
+	text_ram wStringBuffer
+	text "."
+	prompt
+
+_MonCannotLearnMachineMoveText_Female::
+	text_ram wcd6d
+	text " не"
+	line "совместима с"
+	cont "@"
+	text_ram wStringBuffer
+	text "."
+
+	para "Она не может"
+	line "выучить"
+	cont "@"
 	text_ram wStringBuffer
 	text "."
 	prompt
@@ -223,8 +242,8 @@ _ItemUseNotYoursToUseText::
 	prompt
 
 _ItemUseNoEffectText::
-	text "It won't have any"
-	line "effect."
+	text "Это не произведёт"
+	line "никакого эффекта."
 	prompt
 
 _ThrowBallAtTrainerMonText1::
@@ -245,7 +264,8 @@ _NoSurfingHereText::
 	text "СЁРФинг на"
 	line "@"
 	text_ram wcd6d
-	cont "здесь запрещён!"
+	text " здесь"
+	cont "запрещён!"
 	prompt
 
 _BoxFullCannotThrowBallText::

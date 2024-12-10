@@ -1,5 +1,5 @@
 _ItemUseText001::
-	text "<PLAYER> used@"
+	text "<PLAYER> использует@"
 	text_end
 
 _ItemUseText002::
@@ -8,7 +8,7 @@ _ItemUseText002::
 	done
 
 _GotOnBicycleText1::
-	text "<PLAYER> got on the@"
+	text "<PLAYER> сел на@"
 	text_end
 
 _GotOnBicycleText2::
@@ -17,184 +17,253 @@ _GotOnBicycleText2::
 	prompt
 
 _GotOffBicycleText1::
-	text "<PLAYER> got off@"
+	text "<PLAYER> убрал@"
 	text_end
 
 _GotOffBicycleText2::
-	text "the @"
+	text "@"
 	text_ram wStringBuffer
 	text "."
 	prompt
 
 _ThrewAwayItemText::
-	text "Threw away"
+	text "Выбросил"
 	line "@"
 	text_ram wcd6d
 	text "."
 	prompt
 
 _IsItOKToTossItemText::
-	text "Is it OK to toss"
+	text "Можно ли выбросить"
 	line "@"
 	text_ram wStringBuffer
 	text "?"
 	prompt
 
 _TooImportantToTossText::
-	text "That's too impor-"
-	line "tant to toss!"
+	text "Это слишком важно,"
+	line "чтобы выбросить!"
 	prompt
 
 _AlreadyKnowsText::
 	text_ram wcd6d
-	text " knows"
+	text " знает"
 	line "@"
 	text_ram wStringBuffer
 	text "!"
 	prompt
 
 _ConnectCableText::
-	text "Okay, connect the"
-	line "cable like so!"
+	text "Окей, подключай"
+	line "кабель вот так!"
 	prompt
 
 _TradedForText::
-	text "<PLAYER> traded"
+	text "<PLAYER> обменял"
 	line "@"
 	text_ram wInGameTradeGiveMonName
-	text " for"
+	text " на"
 	cont "@"
 	text_ram wInGameTradeReceiveMonName
 	text "!@"
 	text_end
 
 _WannaTrade1Text::
-	text "I'm looking for"
-	line "@"
+	text "Я ищу @"
 	text_ram wInGameTradeGiveMonName
-	text "! Wanna"
-
-	para "trade one for"
-	line "@"
+	text "!"
+	para "Хочешь обменяться"
+	line "на @"
 	text_ram wInGameTradeReceiveMonName
 	text "? "
 	done
 
 _NoTrade1Text::
-	text "Awww!"
-	line "Oh well..."
+	text "Оууу!"
+	line "Ну, ладно..."
 	done
 
 _WrongMon1Text::
-	text "What? That's not"
+	text "Что? Это не"
 	line "@"
 	text_ram wInGameTradeGiveMonName
 	text "!"
 
-	para "If you get one,"
-	line "come back here!"
+	para "Возвращайся, как"
+	line "получишь его!"
+	done
+
+_WrongMon1Text_Female::
+	text "Что? Это не"
+	line "@"
+	text_ram wInGameTradeGiveMonName
+	text "!"
+
+	para "Возвращайся, как"
+	line "получишь её!"
 	done
 
 _Thanks1Text::
-	text "Hey thanks!"
+	text "Хэй, спасибо!"
 	done
 
 _AfterTrade1Text::
-	text "Isn't my old"
-	line "@"
+	text "Мой @"
 	text_ram wInGameTradeReceiveMonName
-	text " great?"
+	text_start
+	line "прекрасен,"
+	cont "не так ли?"
+	done
+
+_AfterTrade1Text_Female::
+	text "Моя @"
+	text_ram wInGameTradeReceiveMonName
+	text_start
+	line "прекрасна,"
+	cont "не так ли?"
 	done
 
 _WannaTrade2Text::
-	text "Hello there! Do"
-	line "you want to trade"
+	text "Привет! Не хочешь"
+	line "обменять своего"
 
-	para "your @"
+	para "@"
 	text_ram wInGameTradeGiveMonName
 	text_start
-	line "for @"
+	line "на @"
+	text_ram wInGameTradeReceiveMonName
+	text "?"
+	done
+
+_WannaTrade2Text_Female::
+	text "Привет! Не хочешь"
+	line "обменять свою"
+
+	para "@"
+	text_ram wInGameTradeGiveMonName
+	text_start
+	line "на @"
 	text_ram wInGameTradeReceiveMonName
 	text "?"
 	done
 
 _NoTrade2Text::
-	text "Well, if you"
-	line "don't want to..."
+	text "Ну, раз ты не"
+	line "хочешь..."
 	done
 
 _WrongMon2Text::
-	text "Hmmm? This isn't"
+	text "Хммм? Это не"
 	line "@"
 	text_ram wInGameTradeGiveMonName
 	text "."
 
-	para "Think of me when"
-	line "you get one."
+	para "Вспомни обо мне,"
+	line "как получишь его."
+	done
+
+_WrongMon2Text_Female::
+	text "Хммм? Это не"
+	line "@"
+	text_ram wInGameTradeGiveMonName
+	text "."
+
+	para "Вспомни обо мне,"
+	line "как получишь её."
 	done
 
 _Thanks2Text::
-	text "Thanks!"
+	text "Спасибо!"
 	done
 
 _AfterTrade2Text::
-	text "The @"
+	text "Твой @"
 	text_ram wInGameTradeGiveMonName
-	text " you"
-	line "traded to me"
+	text_start
+	line "эволюционировал"
+	cont "во время обмена!"
+	done
 
-	para "went and evolved!"
+_AfterTrade2Text_Female::
+	text "Твой @"
+	text_ram wInGameTradeGiveMonName
+	text_start
+	line "эволюционировал"
+	cont "во время обмена!"
 	done
 
 _WannaTrade3Text::
-	text "Hi! Do you have"
-	line "@"
+	text "Привет! У тебя"
+	line "есть @"
 	text_ram wInGameTradeGiveMonName
 	text "?"
 
-	para "Want to trade it"
-	line "for @"
+	para "Хочешь обменяться"
+	line "на @"
 	text_ram wInGameTradeReceiveMonName
 	text "?"
 	done
 
 _NoTrade3Text::
-	text "That's too bad."
+	text "Очень жаль."
 	done
 
 _WrongMon3Text::
-	text "...This is no"
+	text "...Это не"
 	line "@"
 	text_ram wInGameTradeGiveMonName
 	text "."
 
-	para "If you get one,"
-	line "trade it with me!"
+	para "Если найдёшь его,"
+	line "обменяйся со мной!"
+	done
+
+_WrongMon3Text_Female::
+	text "...Это не"
+	line "@"
+	text_ram wInGameTradeGiveMonName
+	text "."
+
+	para "Если найдёшь её,"
+	line "обменяйся со мной!"
 	done
 
 _Thanks3Text::
-	text "Thanks pal!"
+	text "Спасибо, приятель!"
 	done
 
 _AfterTrade3Text::
-	text "How is my old"
+	text "Как поживает"
 	line "@"
 	text_ram wInGameTradeReceiveMonName
 	text "?"
 
-	para "My @"
+	para "Мой @"
 	text_ram wInGameTradeGiveMonName
-	text " is"
-	line "doing great!"
+	text_start
+	line "просто прекрасно!"
+	done
+
+_AfterTrade3Text_Female::
+	text "Как поживает"
+	line "@"
+	text_ram wInGameTradeReceiveMonName
+	text "?"
+
+	para "Мой @"
+	text_ram wInGameTradeGiveMonName
+	text_start
+	line "просто прекрасно!"
 	done
 
 _NothingToCutText::
-	text "There isn't"
-	line "anything to CUT!"
+	text "Здесь нечего"
+	line "ПОРЕЗать!"
 	prompt
 
 _UsedCutText::
+	text "ПОРЕЗ @"
 	text_ram wcd6d
-	text " hacked"
-	line "away with CUT!"
+	text_start
+	line "открыл путь!"
 	prompt

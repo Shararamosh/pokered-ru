@@ -90,6 +90,14 @@ _LearnedMove1Text::
 	text "!@"
 	text_end
 
+_LearnedMove1Text_Female::
+	text_ram wLearnMoveMonName
+	text " выучила"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
+
 _WhichMoveToForgetText::
 	text "Какая атака должна"
 	next "быть забыта?"
@@ -106,6 +114,15 @@ _DidNotLearnText::
 	text_ram wLearnMoveMonName
 	text_start
 	line "не выучил"
+	cont "@"
+	text_ram wStringBuffer
+	text "!"
+	prompt
+
+_DidNotLearnText_Female::
+	text_ram wLearnMoveMonName
+	text_start
+	line "не выучила"
 	cont "@"
 	text_ram wStringBuffer
 	text "!"

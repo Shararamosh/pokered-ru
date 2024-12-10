@@ -1,4 +1,5 @@
 # Pokémon Red and Blue Russian Version (Work In Progress) [![Build Status][ci-badge]][ci]
+<img src=".github/pokered.png" width="50%" alt="Покемон Красная Версия"/><img src=".github/pokeblue.png" width="50%" alt="Покемон Синяя Версия"/>
 
 This is a WIP Russian translation of Pokémon Red and Blue disassembly.
 

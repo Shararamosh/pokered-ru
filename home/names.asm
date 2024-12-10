@@ -139,3 +139,11 @@ GetMoveName::
 	ld de, wcd6d ; pointer to where move name is stored in RAM
 	pop hl
 	ret
+
+FemaleSpecies::
+INCLUDE "data/pokemon/female_species.asm"
+
+IsFemaleSpecie::
+	ld hl, FemaleSpecies
+	ld de, 1
+	jp IsInArray

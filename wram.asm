@@ -1560,7 +1560,8 @@ wMoves:: ds NUM_MOVES
 
 wMoveNum:: db
 
-wMovesString:: ds 56
+;wMovesString:: ds 56
+wMovesString:: ds 64 ;shara-add: Max length of moves is 16 now.
 
 wUnusedD119:: db
 

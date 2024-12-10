@@ -15,34 +15,12 @@ PrintSafariZoneBattleText:
 	;shara-add begin
 	push af
 	ld a, [wEnemyMonSpecies2] ;shara-add: Reading enemy Pokemon specie.
-	cp RATTATA
-    jr z, .female
-    cp RATICATE
-    jr z, .female
-    cp CLEFAIRY
-    jr z, .female
-    cp CLEFABLE
-    jr z, .female
-    cp PONYTA
-    jr z, .female
-    cp RAPIDASH
-    jr z, .female
-	cp GOLDEEN
-	jr z, .female
-	cp SEAKING
-	jr z, .female
-    cp CHANSEY
-    jr z, .female
-    cp JYNX
-    jr z, .female
-    cp KANGASKHAN
-    jr z, .female
-    cp NIDORAN_F
-    jr z, .female
-    cp NIDORINA
-    jr z, .female
-    cp NIDOQUEEN
-    jr z, .female
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
 	;shara-add end
 	ld hl, SafariZoneAngryText
 	jr .gotText ;shara-add: Continuing standard behavior.

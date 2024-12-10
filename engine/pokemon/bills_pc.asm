@@ -252,7 +252,22 @@ BillsPCDeposit:
 .next
 	ld [hli], a
 	ld [hl], "@"
+	;shara-add begin: Changing "stored" text depending on Pokemon specie.
+	push af
+	ld a, [wcf91]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld hl, MonWasStoredText
+	jr .gotText ;shara-add
+.female ;shara-add: Section for female species.
+	ld hl, MonWasStoredText_Female
+.gotText ;shara-add: Continuing standard behavior.
+	pop af
 	call PrintText
 	jp BillsPCMenu
 
@@ -289,7 +304,22 @@ BillsPCWithdraw:
 	ld [wRemoveMonFromBox], a
 	call RemovePokemon
 	call WaitForSoundToFinish
+	;shara-add begin: Changing "taken out" text depending on Pokemon specie.
+	push af
+	ld a, [wcf91]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld hl, MonIsTakenOutText
+	jr .gotText
+.female ;shara-add: Section for female species.
+	ld hl, MonIsTakenOutText_Female
+.gotText ;shara-add: Continuing standard behavior.
+	pop af
 	call PrintText
 	jp BillsPCMenu
 
@@ -316,7 +346,21 @@ BillsPCRelease:
 	call WaitForSoundToFinish
 	ld a, [wcf91]
 	call PlayCry
+	;shara-add begin
+	push af
+	ld a, [wcf91]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld hl, MonWasReleasedText
+	jr .gotText
+.female ;shara-add
+	ld hl, MonWasReleasedText_Female
+.gotText ;shara-add
 	call PrintText
 	jp BillsPCMenu
 
@@ -471,6 +515,10 @@ MonWasStoredText:
 	text_far _MonWasStoredText
 	text_end
 
+MonWasStoredText_Female: ;shara-add
+	text_far _MonWasStoredText_Female
+	text_end
+
 CantDepositLastMonText:
 	text_far _CantDepositLastMonText
 	text_end
@@ -481,6 +529,10 @@ BoxFullText:
 
 MonIsTakenOutText:
 	text_far _MonIsTakenOutText
+	text_end
+
+MonIsTakenOutText_Female: ;shara-add
+	text_far _MonIsTakenOutText_Female
 	text_end
 
 NoMonText:
@@ -501,6 +553,10 @@ OnceReleasedText:
 
 MonWasReleasedText:
 	text_far _MonWasReleasedText
+	text_end
+
+MonWasReleasedText_Female: ;shara-add
+	text_far _MonWasReleasedText_Female
 	text_end
 
 CableClubLeftGameboy::

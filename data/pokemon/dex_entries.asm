@@ -415,7 +415,7 @@ GrowlitheDexEntry:
 	text_end
 
 OnixDexEntry:
-	db "ЗМЕЯКАМЕНЬ@"
+	db "КАМЕН.ЗМЕЯ@"
 	db 88
 	dw 2100
 	text_far _OnixDexEntry

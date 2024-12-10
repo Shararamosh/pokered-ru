@@ -258,34 +258,12 @@ EnemyRan:
 	;shara-add begin
 	push af
 	ld a, [wEnemyMonSpecies2] ;shara-add: Reading enemy Pokemon specie.
-	cp RATTATA
-    jr z, .female
-    cp RATICATE
-    jr z, .female
-    cp CLEFAIRY
-    jr z, .female
-    cp CLEFABLE
-    jr z, .female
-    cp PONYTA
-    jr z, .female
-    cp RAPIDASH
-    jr z, .female
-	cp GOLDEEN
-	jr z, .female
-	cp SEAKING
-	jr z, .female
-    cp CHANSEY
-    jr z, .female
-    cp JYNX
-    jr z, .female
-    cp KANGASKHAN
-    jr z, .female
-    cp NIDORAN_F
-    jr z, .female
-    cp NIDORINA
-    jr z, .female
-    cp NIDOQUEEN
-    jr z, .female
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
 	;shara-add end
 	ld hl, WildRanText
 	jr .gotText ;shara-add: Continuing standard behavior.
@@ -1081,11 +1059,30 @@ RemoveFaintedPlayerMon:
 
 	ld a, [wBattleMonSpecies]
 	call PlayCry
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld hl, PlayerMonFaintedText
+	jr .gotText
+.female ;shara-add
+	ld hl, PlayerMonFaintedText_Female
+.gotText ;shara-add
+	pop af
 	jp PrintText
 
 PlayerMonFaintedText:
 	text_far _PlayerMonFaintedText
+	text_end
+
+PlayerMonFaintedText_Female: ;shara-add
+	text_far _PlayerMonFaintedText_Female
 	text_end
 
 ; asks if you want to use next mon
@@ -2075,12 +2072,12 @@ DisplayBattleMenu::
 	call CopyData
 ; the following simulates the keystrokes by drawing menus on screen
 	;hlcoord 9, 14
-	hlcoord 7, 14
+	hlcoord 7, 14 ;shara-add
 	ld [hl], "▶"
 	ld c, 80
 	call DelayFrames
 	ld [hl], " "
-	;hlcoord 9, 16
+	;hlcoord 9, 16 ;shara-add
 	hlcoord 7, 16
 	ld [hl], "▶"
 	ld c, 50
@@ -2107,17 +2104,17 @@ DisplayBattleMenu::
 	jr z, .safariLeftColumn
 ; put cursor in left column for normal battle menu (i.e. when it's not a Safari battle)
 	;ldcoord_a 15, 14 ; clear upper cursor position in right column
-	ldcoord_a 13, 14 ; clear upper cursor position in right column
+	ldcoord_a 13, 14 ; shara-add: clear upper cursor position in right column
 	;ldcoord_a 15, 16 ; clear lower cursor position in right column
-	ldcoord_a 13, 16 ; clear lower cursor position in right column
+	ldcoord_a 13, 16 ; shara-add: clear lower cursor position in right column
 	;ld b, $9 ; top menu item X
-	ld b, $7 ; top menu item X
+	ld b, $7 ; shara-add: top menu item X
 	jr .leftColumn_WaitForInput
 .safariLeftColumn
 	;ldcoord_a 13, 14
-	ldcoord_a 11, 14
+	ldcoord_a 11, 14 ;shara-add
 	;ldcoord_a 13, 16
-	ldcoord_a 11, 16
+	ldcoord_a 11, 16 ;shara-add
 	hlcoord 7, 14
 	ld de, wNumSafariBalls
 	lb bc, 1, 2
@@ -2145,9 +2142,9 @@ DisplayBattleMenu::
 	jr z, .safariRightColumn
 ; put cursor in right column for normal battle menu (i.e. when it's not a Safari battle)
 	;ldcoord_a 9, 14 ; clear upper cursor position in left column
-	ldcoord_a 7, 14 ; clear upper cursor position in left column
+	ldcoord_a 7, 14 ; shara-add: clear upper cursor position in left column
 	;ldcoord_a 9, 16 ; clear lower cursor position in left column
-	ldcoord_a 7, 16 ; clear lower cursor position in left column
+	ldcoord_a 7, 16 ; shara-add: clear lower cursor position in left column
 	;ld b, $f ; top menu item X
 	ld b, $d ; top menu item X
 	jr .rightColumn_WaitForInput
@@ -2159,7 +2156,7 @@ DisplayBattleMenu::
 	lb bc, 1, 2
 	call PrintNumber
 	;ld b, $d ; top menu item X
-	ld b, $b ; top menu item X
+	ld b, $b ; shara-add: top menu item X
 .rightColumn_WaitForInput
 	ld hl, wTopMenuItemY
 	ld a, $e
@@ -2377,9 +2374,9 @@ PartyMenuOrRockOrRun:
 	jp DisplayBattleMenu
 .partyMonDeselected
 	;hlcoord 11, 11
-	hlcoord 10, 11
+	hlcoord 10, 11 ;shara-add
 	;ld bc, 6 * SCREEN_WIDTH + 9
-	ld bc, 6 * SCREEN_WIDTH + 10
+	ld bc, 6 * SCREEN_WIDTH + 10 ;shara-add
 	ld a, " "
 	call FillMemory
 	xor a ; NORMAL_PARTY_MENU
@@ -2542,10 +2539,10 @@ MoveSelectionMenu:
 	ld hl, wBattleMonMoves
 	call .loadmoves
 	;hlcoord 4, 12
-	hlcoord 2, 12
+	hlcoord 18-ATTACK_NAME_LENGTH, 12 ;shara-add
 	ld b, 4
 	;ld c, 14
-	ld c, 16
+	ld c, ATTACK_NAME_LENGTH ;shara-add
 	di ; out of pure coincidence, it is possible for vblank to occur between the di and ei
 	   ; so it is necessary to put the di ei block to not cause tearing
 	call TextBoxBorder
@@ -2555,10 +2552,10 @@ MoveSelectionMenu:
 	ld [hl], $7e
 	ei
 	;hlcoord 6, 13
-	hlcoord 4, 13
+	hlcoord 20-ATTACK_NAME_LENGTH, 13 ;shara-add
 	call .writemoves
 	;ld b, $5
-	ld b, $3
+	ld b, $2 ;shara-add: No clue how to make it relative to ATTACK_NAME_LENGTH, so static value for now.
 	ld a, $c
 	jr .menuset
 .mimicmenu
@@ -2567,7 +2564,7 @@ MoveSelectionMenu:
 	hlcoord 0, 7
 	ld b, 4
 	;ld c, 14
-	ld c, 16
+	ld c, ATTACK_NAME_LENGTH ;shara-add
 	call TextBoxBorder
 	hlcoord 2, 8
 	call .writemoves
@@ -2581,16 +2578,16 @@ MoveSelectionMenu:
 	call AddNTimes
 	call .loadmoves
 	;hlcoord 4, 7
-	hlcoord 2, 7
+	hlcoord 18-ATTACK_NAME_LENGTH, 7 ;shara-add
 	ld b, 4
 	;ld c, 14
-	ld c, 16
+	ld c, ATTACK_NAME_LENGTH ;shara-add
 	call TextBoxBorder
 	;hlcoord 6, 8
-	hlcoord 4, 8
+	hlcoord 20-ATTACK_NAME_LENGTH, 8 ;shara-add
 	call .writemoves
 	;ld b, $5
-	ld b, $3
+	ld b, $2 ;shara-add: No clue how to make it relative to ATTACK_NAME_LENGTH, so static value for now.
 	ld a, $7
 .menuset
 	ld hl, wTopMenuItemY
@@ -2896,7 +2893,7 @@ PrintMenuItem:
 	hlcoord 0, 8
 	ld b, 3; Height of resulting text box.
 	;ld c, 9; Width of resulting text box.
-	ld c, 10
+	ld c, 10 ;shara-add: 
 	call TextBoxBorder
 	ld a, [wPlayerDisabledMove]
 	and a
@@ -3345,34 +3342,12 @@ PrintGhostText:
 	;shara-add begin: Jumping to .female section for certain Pokemon.
 	push af
 	ld a, [wBattleMonSpecies2]
-	cp RATTATA
-    jr z, .female
-    cp RATICATE
-    jr z, .female
-    cp CLEFAIRY
-    jr z, .female
-    cp CLEFABLE
-    jr z, .female
-    cp PONYTA
-    jr z, .female
-    cp RAPIDASH
-    jr z, .female
-	cp GOLDEEN
-	jr z, .female
-	cp SEAKING
-	jr z, .female
-    cp CHANSEY
-    jr z, .female
-    cp JYNX
-    jr z, .female
-    cp KANGASKHAN
-    jr z, .female
-    cp NIDORAN_F
-    jr z, .female
-    cp NIDORINA
-    jr z, .female
-    cp NIDOQUEEN
-    jr z, .female
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
 	;shara-add end
 	ld hl, ScaredText
 	jr .gotText ;shara-add: Continuing standard behavior.

@@ -22,7 +22,22 @@ DoInGameTradeDialogue:
 	pop af
 	ld l, a
 	ld h, 0
+	;shara-add begin
+	push af
+	ld a, [wInGameTradeGiveMonSpecies]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
 	ld de, InGameTradeTextPointers
+	jr .gotText
+.female
+	ld de, InGameTradeTextPointers_Female
+.gotText
+	pop af
 	add hl, hl
 	add hl, de
 	ld a, [hli]
@@ -238,12 +253,25 @@ InGameTradeTextPointers:
 	dw TradeTextPointers2
 	dw TradeTextPointers3
 
+InGameTradeTextPointers_Female: ;shara-add: If Player's Pokemon is female species.
+; entries correspond to TRADE_DIALOGSET_* constants
+	dw TradeTextPointers1_Female
+	dw TradeTextPointers2_Female
+	dw TradeTextPointers3_Female
+
 TradeTextPointers1:
 	dw WannaTrade1Text
 	dw NoTrade1Text
 	dw WrongMon1Text
 	dw Thanks1Text
 	dw AfterTrade1Text
+
+TradeTextPointers1_Female: ;shara-add: If Player's Pokemon is female species.
+	dw WannaTrade1Text
+	dw NoTrade1Text
+	dw WrongMon1Text_Female
+	dw Thanks1Text
+	dw AfterTrade1Text_Female
 
 TradeTextPointers2:
 	dw WannaTrade2Text
@@ -252,12 +280,26 @@ TradeTextPointers2:
 	dw Thanks2Text
 	dw AfterTrade2Text
 
+TradeTextPointers2_Female: ;shara-add: If Player's Pokemon is female species.
+	dw WannaTrade2Text_Female
+	dw NoTrade2Text
+	dw WrongMon2Text_Female
+	dw Thanks2Text
+	dw AfterTrade2Text_Female
+
 TradeTextPointers3:
 	dw WannaTrade3Text
 	dw NoTrade3Text
 	dw WrongMon3Text
 	dw Thanks3Text
 	dw AfterTrade3Text
+
+TradeTextPointers3_Female: ;shara-add: If Player's Pokemon is female species.
+	dw WannaTrade3Text
+	dw NoTrade3Text
+	dw WrongMon3Text_Female
+	dw Thanks3Text
+	dw AfterTrade3Text_Female
 
 ConnectCableText:
 	text_far _ConnectCableText
@@ -280,6 +322,9 @@ NoTrade1Text:
 WrongMon1Text:
 	text_far _WrongMon1Text
 	text_end
+WrongMon1Text_Female: ;shara-add: If Player's Pokemon is female species.
+	text_far _WrongMon1Text_Female
+	text_end
 
 Thanks1Text:
 	text_far _Thanks1Text
@@ -289,8 +334,16 @@ AfterTrade1Text:
 	text_far _AfterTrade1Text
 	text_end
 
+AfterTrade1Text_Female: ;shara-add: If Player's Pokemon is female species.
+	text_far _AfterTrade1Text_Female
+	text_end
+
 WannaTrade2Text:
 	text_far _WannaTrade2Text
+	text_end
+
+WannaTrade2Text_Female: ;shara-add: If Player's Pokemon is female species.
+	text_far _WannaTrade2Text_Female
 	text_end
 
 NoTrade2Text:
@@ -301,12 +354,20 @@ WrongMon2Text:
 	text_far _WrongMon2Text
 	text_end
 
+WrongMon2Text_Female: ;shara-add: If Player's Pokemon is female species.
+	text_far _WrongMon2Text_Female
+	text_end
+
 Thanks2Text:
 	text_far _Thanks2Text
 	text_end
 
 AfterTrade2Text:
 	text_far _AfterTrade2Text
+	text_end
+
+AfterTrade2Text_Female: ;shara-add: If Player's Pokemon is female species.
+	text_far _AfterTrade2Text_Female
 	text_end
 
 WannaTrade3Text:
@@ -321,10 +382,18 @@ WrongMon3Text:
 	text_far _WrongMon3Text
 	text_end
 
+WrongMon3Text_Female: ;shara-add: If Player's Pokemon is female species.
+	text_far _WrongMon3Text_Female
+	text_end
+
 Thanks3Text:
 	text_far _Thanks3Text
 	text_end
 
 AfterTrade3Text:
+	text_far _AfterTrade3Text
+	text_end
+
+AfterTrade3Text_Female: ;shara-add: If Player's Pokemon is female species.
 	text_far _AfterTrade3Text
 	text_end
