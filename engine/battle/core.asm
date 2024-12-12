@@ -499,11 +499,36 @@ HandlePoisonBurnLeechSeed:
 	and (1 << BRN) | (1 << PSN)
 	jr z, .notBurnedOrPoisoned
 	push hl
+	;shara-add begin
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .femaleCheck
+	;shara-add end
+.standard ;shara-add
+	pop af
 	ld hl, HurtByPoisonText
 	ld a, [de]
 	and 1 << BRN
 	jr z, .poisoned
 	ld hl, HurtByBurnText
+	jr .poisoned ;shara-add
+.femaleCheck ;shara-add
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	jr .standard
+.female ;shara-add
+	pop af
+	ld hl, HurtByPoisonText_Female
+	ld a, [de]
+	and 1 << BRN
+	jr z, .poisoned
+	ld hl, HurtByBurnText_Female
 .poisoned
 	call PrintText
 	xor a
@@ -554,8 +579,16 @@ HurtByPoisonText:
 	text_far _HurtByPoisonText
 	text_end
 
+HurtByPoisonText_Female:
+	text_far _HurtByPoisonText_Female
+	text_end
+
 HurtByBurnText:
 	text_far _HurtByBurnText
+	text_end
+
+HurtByBurnText_Female:
+	text_far _HurtByBurnText_Female
 	text_end
 
 HurtByLeechSeedText:
@@ -3484,7 +3517,23 @@ CheckPlayerStatusConditions:
 	jr nz, .IsConfused
 	ld hl, wPlayerBattleStatus1
 	res CONFUSED, [hl] ; if confused counter hit 0, reset confusion status
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .confusedCheckFemaleText
+	pop af
+	;shara-add end
 	ld hl, ConfusedNoMoreText
+	jr .gotText ;shara-add
+.confusedCheckFemaleText ;shara-add
+	pop af
+	ld hl, ConfusedNoMoreText_Female
+.gotText ;shara-add
 	call PrintText
 	jr .TriedToUseDisabledMoveCheck
 .IsConfused
@@ -3692,8 +3741,16 @@ HurtItselfText:
 	text_far _HurtItselfText
 	text_end
 
+HurtItselfText_Female: ;shara-add
+	text_far _HurtItselfText_Female
+	text_end
+
 ConfusedNoMoreText:
 	text_far _ConfusedNoMoreText
+	text_end
+
+ConfusedNoMoreText_Female: ;shara-add
+	text_far _ConfusedNoMoreText_Female
 	text_end
 
 SavingEnergyText:
@@ -3739,7 +3796,29 @@ MoveIsDisabledText:
 	text_end
 
 HandleSelfConfusionDamage:
+	;shara-add begin
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .femaleCheck
+	;shara-add end
+.standard: ;shara-add
+	pop af
 	ld hl, HurtItselfText
+	jr .gotText
+.femaleCheck: ;shara-add
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	jr .standard
+.female
+	pop af
+	ld hl, HurtItselfText_Female
+.gotText:
 	call PrintText
 	ld hl, wEnemyMonDefense
 	ld a, [hli]

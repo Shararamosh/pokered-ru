@@ -112,7 +112,7 @@ _AfterTrade1Text::
 	text_ram wInGameTradeReceiveMonName
 	text_start
 	line "прекрасен,"
-	cont "не так ли?"
+	cont "не правда ли?"
 	done
 
 _AfterTrade1Text_Female::
@@ -120,7 +120,7 @@ _AfterTrade1Text_Female::
 	text_ram wInGameTradeReceiveMonName
 	text_start
 	line "прекрасна,"
-	cont "не так ли?"
+	cont "не правда ли?"
 	done
 
 _WannaTrade2Text::
@@ -250,7 +250,7 @@ _AfterTrade3Text_Female::
 	text_ram wInGameTradeReceiveMonName
 	text "?"
 
-	para "Мой @"
+	para "Моя @"
 	text_ram wInGameTradeGiveMonName
 	text_start
 	line "просто прекрасно!"

@@ -77,7 +77,7 @@ _TradeTakeCareText::
 
 _TradeWillTradeText::
 	text_ram wLinkEnemyTrainerName
-	text " меняет"
+	text " обменивает"
 	line "@"
 	text_ram wcd6d
 	text_start
@@ -393,7 +393,7 @@ _CinnabarQuizQuestionsText5::
 
 _CinnabarQuizQuestionsText6::
 	text "TM28 содержит"
-	line "ГРОБНИЦУКАМНЯ?"
+	line "ГРОБНИЦАКАМНЯ?"
 	done
 
 _CinnabarGymQuizCorrectText::
@@ -681,7 +681,7 @@ _ViridianSchoolBlackboardText2::
 
 _ViridianBlackboardSleepText::
 	text "Спящий #МОН не"
-	line "может атакаовать!"
+	line "может атаковать!"
 
 	para "#МОН спит даже"
 	line "даже после конца"
@@ -737,8 +737,8 @@ _ViridianBlackboardFrozenText::
 	para "Заморозка остаётся"
 	line "после конца битв."
 
-	para "Используй АНТИЛЁД"
-	line "для разморозки!"
+	para "Для разморозки"
+	line "есть АНТИЛЁД!"
 	prompt
 
 _VermilionGymTrashText::
@@ -877,13 +877,23 @@ _EnemyRanText::
 	prompt
 
 _HurtByPoisonText::
-	text "<USER>:"
-	line "урон от яда!"
+	text "<USER>"
+	line "поражён ядом!"
+	prompt
+
+_HurtByPoisonText_Female::
+	text "<USER>"
+	line "поражена ядом!"
 	prompt
 
 _HurtByBurnText::
-	text "<USER>:"
-	line "урон от ожога!"
+	text "<USER>"
+	line "ранен от ожога!"
+	prompt
+
+_HurtByBurnText_Female::
+	text "<USER>"
+	line "ранена от ожога!"
 	prompt
 
 _HurtByLeechSeedText::
@@ -1082,9 +1092,19 @@ _HurtItselfText::
 	line "бьёт себя!"
 	prompt
 
+_HurtItselfText_Female::
+	text "В смятении она"
+	line "бьёт себя!"
+	prompt
+
 _ConfusedNoMoreText::
 	text "<USER>"
 	line "больше не смятён!"
+	prompt
+
+_ConfusedNoMoreText_Female::
+	text "<USER>"
+	line "больше не смятена!"
 	prompt
 
 _SavingEnergyText::

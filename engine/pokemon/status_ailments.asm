@@ -10,37 +10,37 @@ PrintStatusAilment::
 	jr nz, .par
 	and SLP
 	ret z
-	ld a, "S"
+	ld a, "С"
 	ld [hli], a
-	ld a, "L"
+	ld a, "О"
 	ld [hli], a
-	ld [hl], "P"
+	ld [hl], "Н"
 	ret
 .psn
-	ld a, "P"
+	ld a, "Я"
 	ld [hli], a
-	ld a, "S"
+	ld a, "Д"
 	ld [hli], a
-	ld [hl], "N"
+	ld [hl], " "
 	ret
 .brn
-	ld a, "B"
+	ld a, "О"
 	ld [hli], a
-	ld a, "R"
+	ld a, "Ж"
 	ld [hli], a
-	ld [hl], "N"
+	ld [hl], "Г"
 	ret
 .frz
-	ld a, "F"
+	ld a, "З"
 	ld [hli], a
-	ld a, "R"
+	ld a, "М"
 	ld [hli], a
-	ld [hl], "Z"
+	ld [hl], "З"
 	ret
 .par
-	ld a, "P"
+	ld a, "П"
 	ld [hli], a
-	ld a, "A"
+	ld a, "А"
 	ld [hli], a
-	ld [hl], "R"
+	ld [hl], "Р"
 	ret

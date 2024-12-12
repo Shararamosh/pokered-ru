@@ -25,18 +25,20 @@ DoInGameTradeDialogue:
 	;shara-add begin
 	push af
 	ld a, [wInGameTradeGiveMonSpecies]
+	push hl
 	push de
 	push bc
 	call IsFemaleSpecie
 	pop bc
 	pop de
+	pop hl
 	jr c, .female
 	;shara-add end
 	ld de, InGameTradeTextPointers
 	jr .gotText
-.female
+.female ;shara-add
 	ld de, InGameTradeTextPointers_Female
-.gotText
+.gotText ;shara-add
 	pop af
 	add hl, hl
 	add hl, de
@@ -395,5 +397,5 @@ AfterTrade3Text:
 	text_end
 
 AfterTrade3Text_Female: ;shara-add: If Player's Pokemon is female species.
-	text_far _AfterTrade3Text
+	text_far _AfterTrade3Text_Female
 	text_end

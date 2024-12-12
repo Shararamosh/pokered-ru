@@ -85,17 +85,17 @@ PoisonEffect:
 	ld de, wEnemyMoveEffect
 .poisonEffect
 	call CheckTargetSubstitute
-	jr nz, .noEffect ; can't poison a substitute target
+	jp nz, .noEffect ; can't poison a substitute target. shara-add jr -> jp
 	ld a, [hli]
 	ld b, a
 	and a
-	jr nz, .noEffect ; miss if target is already statused
+	jp nz, .noEffect ; miss if target is already statused. shara-add jr -> jp
 	ld a, [hli]
 	cp POISON ; can't poison a poison-type target
-	jr z, .noEffect
+	jp z, .noEffect ;shara-add jr -> jp
 	ld a, [hld]
 	cp POISON ; can't poison a poison-type target
-	jr z, .noEffect
+	jp z, .noEffect ;shara-add jr -> jp
 	ld a, [de]
 	cp POISON_SIDE_EFFECT1
 	ld b, 20 percent + 1 ; chance of poisoning
@@ -137,9 +137,51 @@ PoisonEffect:
 	set BADLY_POISONED, [hl] ; else set Toxic battstatus
 	xor a
 	ld [de], a
+	;shara-add begin
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .badPoisonStandard
+	;shara-add end
+.badPoisonFemaleCheck ;shara-add
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .badPoisonFemale
+	jr .badPoisonStandard
+.badPoisonFemale ;shara-add
+	pop af
+	ld hl, BadlyPoisonedText_Female
+	jr .continue
+.badPoisonStandard ;shara-add
+	pop af
 	ld hl, BadlyPoisonedText
 	jr .continue
 .normalPoison
+	;shara-add begin
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .normalPoisonStandard
+	;shara-add end
+.normalPoisonFemaleCheck ;shara-add
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .normalPoisonFemale
+	jr .normalPoisonStandard
+.normalPoisonFemale ;shara-add
+	pop af
+	ld hl, PoisonedText_Female
+	jr .continue
+.normalPoisonStandard
+	pop af
 	ld hl, PoisonedText
 .continue
 	pop de
@@ -165,8 +207,16 @@ PoisonedText:
 	text_far _PoisonedText
 	text_end
 
+PoisonedText_Female: ;shara-add
+	text_far _PoisonedText_Female
+	text_end
+
 BadlyPoisonedText:
 	text_far _BadlyPoisonedText
+	text_end
+
+BadlyPoisonedText_Female: ;shara-add
+	text_far _BadlyPoisonedText_Female
 	text_end
 
 DrainHPEffect:

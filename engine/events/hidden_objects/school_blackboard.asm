@@ -112,7 +112,8 @@ ViridianSchoolBlackboard::
 	ld hl, wd730
 	set 6, [hl]
 	hlcoord 0, 0
-	lb bc, 6, 10
+	;lb bc, 6, 10
+	lb bc, 6, 11 ;shara-add: "Exit" word is 1 tile longer.
 	call TextBoxBorder
 	hlcoord 1, 2
 	ld de, StatusAilmentText1
@@ -186,14 +187,14 @@ ViridianSchoolBlackboardText2:
 	text_end
 
 StatusAilmentText1:
-	db   " SLP"
-	next " PSN"
-	next " PAR@"
+	db   " СОН"
+	next " ЯД"
+	next " ПАР@"
 
 StatusAilmentText2:
-	db   " BRN"
-	next " FRZ"
-	next " QUIT@"
+	db   " ОЖГ"
+	next " ЗМЗ"
+	next " ВЫХОД@"
 
 	db "@" ; unused
 

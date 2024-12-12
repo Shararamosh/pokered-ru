@@ -81,6 +81,11 @@ _FellAsleepText::
 	line "уснул!"
 	prompt
 
+_FellAsleepText_Female::
+	text "<TARGET>"
+	line "уснула!"
+	prompt
+
 _AlreadyAsleepText::
 	text "<TARGET>"
 	line "уже спит!"
@@ -91,19 +96,39 @@ _PoisonedText::
 	line "отравлен!"
 	prompt
 
+_PoisonedText_Female::
+	text "<TARGET>"
+	line "отравлена!"
+	prompt
+
 _BadlyPoisonedText::
 	text "<TARGET>"
 	line "сильно отравлен!"
 	prompt
 
+_BadlyPoisonedText_Female::
+	text "<TARGET>"
+	line "сильно отравлена!"
+	prompt
+
 _BurnedText::
 	text "<TARGET>"
-	line "обожжён!"
+	line "обжёгся!"
+	prompt
+
+_BurnedText_Female::
+	text "<TARGET>"
+	line "обожглась!"
 	prompt
 
 _FrozenText::
 	text "<TARGET>"
 	line "заморожен!"
+	prompt
+
+_FrozenText_Female::
+	text "<TARGET>"
+	line "заморожена!"
 	prompt
 
 _FireDefrostedText::
@@ -300,6 +325,11 @@ _GettingPumpedText::
 _WasSeededText::
 	text "<TARGET>"
 	line "был засеян!"
+	prompt
+
+_WasSeededText_Female::
+	text "<TARGET>"
+	line "была засеян!"
 	prompt
 
 _EvadedAttackText::

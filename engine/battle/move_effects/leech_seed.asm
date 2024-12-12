@@ -23,7 +23,26 @@ LeechSeedEffect_:
 	jr nz, .moveMissed
 	set SEEDED, [hl]
 	callfar PlayCurrentMoveAnimation
+	;shara-add begin: Re-routing depending on whose turn.
+	push af ;Saving current move to buffer.
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .standard
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
+.standard ;shara-add: Our Pokemon used Leech Seed on enemy Pokemon or enemy Pokemon used Leech Seed on our male Pokemon.
+	pop af
 	ld hl, WasSeededText
+	jp PrintText
+.female ;shara-add: Enemy Pokemon used Leech Seed on our female Pokemon.
+	pop af
+	ld hl, WasSeededText_Female
 	jp PrintText
 .moveMissed
 	ld c, 50
@@ -33,6 +52,10 @@ LeechSeedEffect_:
 
 WasSeededText:
 	text_far _WasSeededText
+	text_end
+
+WasSeededText_Female: ;shara-add: Leech Seed text for certain Pokemon species.
+	text_far _WasSeededText_Female
 	text_end
 
 EvadedAttackText:
