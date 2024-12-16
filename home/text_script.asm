@@ -185,12 +185,32 @@ DisplaySafariGameOverText::
 	jp AfterDisplayingTextID
 
 DisplayPokemonFaintedText::
+	;shara-add begin
+	push af
+	ld a, [wd11e]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	pop af
+	;shara-add end
 	ld hl, PokemonFaintedText
+	call PrintText
+	jp AfterDisplayingTextID
+.female ;shara-add
+	pop af
+	ld hl, PokemonFaintedText_Female
 	call PrintText
 	jp AfterDisplayingTextID
 
 PokemonFaintedText::
 	text_far _PokemonFaintedText
+	text_end
+
+PokemonFaintedText_Female:: ;shara-add
+	text_far _PokemonFaintedText_Female
 	text_end
 
 DisplayPlayerBlackedOutText::

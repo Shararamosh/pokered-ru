@@ -19,4 +19,4 @@ PrintWaitingText::
 	jp DelayFrames
 
 WaitingText:
-	db "ОЖИДАНИЕ...!@"
+	db "Ожидание...!@"

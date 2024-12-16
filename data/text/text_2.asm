@@ -1056,9 +1056,19 @@ _WokeUpText::
 	line "проснулся!"
 	prompt
 
+_WokeUpText_Female::
+	text "<USER>"
+	line "проснулась!"
+	prompt
+
 _IsFrozenText::
 	text "<USER>"
 	line "заморожен!"
+	prompt
+
+_IsFrozenText_Female::
+	text "<USER>"
+	line "заморожена!"
 	prompt
 
 _FullyParalyzedText::
@@ -1066,9 +1076,19 @@ _FullyParalyzedText::
 	line "парализован!"
 	prompt
 
+_FullyParalyzedText_Female::
+	text "<USER>"
+	line "парализована!"
+	prompt
+
 _FlinchedText::
 	text "<USER>"
 	line "дрогнул!"
+	prompt
+
+_FlinchedText_Female::
+	text "<USER>"
+	line "дрогнула!"
 	prompt
 
 _MustRechargeText::
@@ -1191,10 +1211,21 @@ _AttackMissedText::
 	line "промахнулся!"
 	prompt
 
+_AttackMissedText_Female::
+	text "<USER>"
+	line "промахнулась!"
+	prompt
+
 _KeptGoingAndCrashedText::
 	text "<USER>"
 	line "продолжил и"
 	cont "упал!"
+	prompt
+
+_KeptGoingAndCrashedText_Female::
+	text "<USER>"
+	line "продолжила и"
+	cont "упала!"
 	prompt
 
 _UnaffectedText::
@@ -1228,6 +1259,12 @@ _BeganToNapText::
 	line "начал спать!"
 	prompt
 
+_BeganToNapText_Female::
+	text_ram wBattleMonNick
+	text_start
+	line "начала спать!"
+	prompt
+
 _WontObeyText::
 	text_ram wBattleMonNick
 	text_start
@@ -1238,6 +1275,12 @@ _TurnedAwayText::
 	text_ram wBattleMonNick
 	text_start
 	line "отвернулся!"
+	prompt
+
+_TurnedAwayText_Female::
+	text_ram wBattleMonNick
+	text_start
+	line "отвернулась!"
 	prompt
 
 _IgnoredOrdersText::
@@ -1302,6 +1345,14 @@ _GrewLevelText::
 	text "!@"
 	text_end
 
+_GrewLevelText_Female::
+	text_ram wcd6d
+	text " выросла"
+	line "до уровня @"
+	text_decimal wCurEnemyLVL, 1, 3
+	text "!@"
+	text_end
+
 _WildMonAppearedText::
 	text "Появился дикий"
 	line "@"
@@ -1339,7 +1390,7 @@ _TrainerWantsToFightText::
 _UnveiledGhostText::
 	text "SILPH SCOPE"
 	line "раскрыл сущность"
-	cont "ПРИЗРАКА!"
+	cont "ПРИЗРАКа!"
 	prompt
 
 _GhostCantBeIDdText::
@@ -1558,14 +1609,12 @@ _FullHealText_Female::
 _ReviveText::
 	text_ram wcd6d
 	text " был"
-	text_start
 	line "возрождён!"
 	done
 
 _ReviveText_Female::
 	text_ram wcd6d
 	text " была"
-	text_start
 	line "возрождена!"
 	done
 

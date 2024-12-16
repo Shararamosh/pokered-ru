@@ -3447,7 +3447,24 @@ CheckPlayerStatusConditions:
 	call PrintText
 	jr .sleepDone
 .WakeUp
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .WakeUpFemale
+	;shara-add end
+.WakeUpStandard
+	pop af
 	ld hl, WokeUpText
+	call PrintText
+	jr .sleepDone
+.WakeUpFemale
+	pop af
+	ld hl, WokeUpText_Female
 	call PrintText
 .sleepDone
 	xor a
@@ -3458,8 +3475,26 @@ CheckPlayerStatusConditions:
 .FrozenCheck
 	bit FRZ, [hl] ; frozen?
 	jr z, .HeldInPlaceCheck
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .FrozenTextFemale
+	;shara-add end
+.FrozenTextStandard
+	pop af
 	ld hl, IsFrozenText
 	call PrintText
+	jr .FrozenCheckContinue
+.FrozenTextFemale
+	pop af
+	ld hl, IsFrozenText_Female
+	call PrintText
+.FrozenCheckContinue
 	xor a
 	ld [wPlayerUsedMove], a
 	ld hl, ExecutePlayerMoveDone ; player can't move this turn
@@ -3479,8 +3514,24 @@ CheckPlayerStatusConditions:
 	bit FLINCHED, [hl]
 	jp z, .HyperBeamCheck
 	res FLINCHED, [hl] ; reset player's flinch status
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .FlincheckTextFemale
+	;shara-add end
+.FlinchedTextStandard
 	ld hl, FlinchedText
 	call PrintText
+	jr .FlinchedTextContinue
+.FlincheckTextFemale
+	ld hl, FlinchedText
+	call PrintText
+.FlinchedTextContinue
 	ld hl, ExecutePlayerMoveDone ; player can't move this turn
 	jp .returnToHL
 
@@ -3572,7 +3623,24 @@ CheckPlayerStatusConditions:
 	call BattleRandom
 	cp $3F ; 25% to be fully paralyzed
 	jr nc, .BideCheck
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .ParalysisCheckFemale
+	;shara-add end
+.ParalysisCheckStandard ;shara-add
+	pop af
 	ld hl, FullyParalyzedText
+	call PrintText
+	jr .MonHurtItselfOrFullyParalysed
+.ParalysisCheckFemale ;shara-add
+	pop af
+	ld hl, FullyParalyzedText_Female
 	call PrintText
 
 .MonHurtItselfOrFullyParalysed
@@ -3713,16 +3781,32 @@ WokeUpText:
 	text_far _WokeUpText
 	text_end
 
+WokeUpText_Female: ;shara-add
+	text_far _WokeUpText_Female
+	text_end
+
 IsFrozenText:
 	text_far _IsFrozenText
+	text_end
+
+IsFrozenText_Female: ;shara-add
+	text_far _IsFrozenText ;shara-add
 	text_end
 
 FullyParalyzedText:
 	text_far _FullyParalyzedText
 	text_end
 
+FullyParalyzedText_Female: ;shara-add
+	text_far _FullyParalyzedText_Female
+	text_end
+
 FlinchedText:
 	text_far _FlinchedText
+	text_end
+
+FlinchedText_Female: ;shara-add
+	text_far _FlinchedText_Female
 	text_end
 
 MustRechargeText:
@@ -4006,7 +4090,28 @@ PrintMoveFailureText:
 	ld a, [wDamageMultipliers]
 	and $7f
 	jr z, .gotTextToPrint
+	;shara-add begin
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .AttackMissedFemaleCheck
+	;shara-add end
+.AttackMissedStandard ;shara-add
+	pop af
 	ld hl, AttackMissedText
+	jr .gotText
+.AttackMissedFemaleCheck ;shara-add
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .AttackMissedFemale
+	jr .AttackMissedStandard
+.AttackMissedFemale ;shara-add
+	pop af
+	ld hl, AttackMissedText_Female
+.gotText ;shara-add
 	ld a, [wCriticalHitOrOHKO]
 	cp $ff
 	jr nz, .gotTextToPrint
@@ -4041,8 +4146,31 @@ PrintMoveFailureText:
 	inc a
 	ld [hl], a
 .applyRecoil
+	;shara-add begin
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .KeptGoingAndCrashedFemaleCheck
+	;shara-add end
+.KeptGoingAndCrashedStandard
+	pop af
 	ld hl, KeptGoingAndCrashedText
 	call PrintText
+	jr .KeptGoingAndCrashedGotText
+.KeptGoingAndCrashedFemaleCheck
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .KeptGoingAndCrashedFemale
+	jr .KeptGoingAndCrashedStandard
+.KeptGoingAndCrashedFemale
+	pop af
+	ld hl, KeptGoingAndCrashedText_Female
+	call PrintText
+.KeptGoingAndCrashedGotText
 	ld b, $4
 	predef PredefShakeScreenHorizontally
 	ldh a, [hWhoseTurn]
@@ -4056,8 +4184,16 @@ AttackMissedText:
 	text_far _AttackMissedText
 	text_end
 
+AttackMissedText_Female: ;shara-add
+	text_far _AttackMissedText_Female
+	text_end
+
 KeptGoingAndCrashedText:
 	text_far _KeptGoingAndCrashedText
+	text_end
+
+KeptGoingAndCrashedText_Female: ;shara-add
+	text_far _KeptGoingAndCrashedText_Female
 	text_end
 
 UnaffectedText:
@@ -4192,7 +4328,23 @@ CheckForDisobedience:
 	and SLP ; sleep mask
 	jr z, .monNaps ; keep trying until we get at least 1 turn of sleep
 	ld [wBattleMonStatus], a
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .monNapsFemale
+	;shara-add end
+.monNapsStandard ;shara-add
+	pop af
 	ld hl, BeganToNapText
+	jr .printText
+.monNapsFemale ;shara-add
+	pop af
+	ld hl, BeganToNapText_Female
 	jr .printText
 .monDoesNothing
 	call BattleRandom
@@ -4203,10 +4355,28 @@ CheckForDisobedience:
 	ld hl, WontObeyText
 	dec a
 	jr z, .printText
-	ld hl, TurnedAwayText
+	;shara-add begin
 	dec a
-	jr z, .printText
+	jr z, .printTurnedAwayText
+	;shara-add end
 	ld hl, IgnoredOrdersText
+	jr .printText
+.printTurnedAwayText ;shara-add
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .monDoesNothingFemale
+.monDoesNothingStandard ;shara-add
+	pop af
+	ld hl, TurnedAwayText
+	jr .printText
+.monDoesNothingFemale ;shara-add
+	pop af
+	ld hl, TurnedAwayText_Female
 .printText
 	call PrintText
 	jr .cannotUseMove
@@ -4294,12 +4464,20 @@ BeganToNapText:
 	text_far _BeganToNapText
 	text_end
 
+BeganToNapText_Female: ;shara-add
+	text_far _BeganToNapText_Female
+	text_end
+
 WontObeyText:
 	text_far _WontObeyText
 	text_end
 
 TurnedAwayText:
 	text_far _TurnedAwayText
+	text_end
+
+TurnedAwayText_Female: ;shara-add
+	text_far _TurnedAwayText_Female
 	text_end
 
 IgnoredOrdersText:

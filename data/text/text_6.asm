@@ -139,14 +139,14 @@ _CoinCaseNumCoinsText::
 	prompt
 
 _ItemfinderFoundItemText::
-	text "Yes! ITEMFINDER"
-	line "indicates there's"
-	cont "an item nearby."
+	text "Да! ВЕЩЕИСКАТЕЛЬ"
+	line "указывает, что"
+	cont "рядом есть вещь."
 	prompt
 
 _ItemfinderFoundNothingText::
-	text "Nope! ITEMFINDER"
-	line "isn't responding."
+	text "Неа! ВЕЩЕИСКАТЕЛЬ"
+	line "не отвечает."
 	prompt
 
 _RaisePPWhichTechniqueText::
@@ -160,7 +160,7 @@ _RestorePPWhichTechniqueText::
 	done
 
 _PPMaxedOutText::
-	text "ОС"
+	text "ОС техники"
 	line "@"
 	text_ram wStringBuffer
 	text_start
@@ -168,7 +168,7 @@ _PPMaxedOutText::
 	prompt
 
 _PPIncreasedText::
-	text "ОС"
+	text "ОС техники"
 	line "@"
 	text_ram wStringBuffer
 	text_start

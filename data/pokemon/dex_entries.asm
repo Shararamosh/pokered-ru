@@ -527,7 +527,7 @@ GolemDexEntry:
 	text_end
 
 MagmarDexEntry:
-	db "СПИТФАЙР@"
+	db "ОГНЕДЫШ.@"
 	db 13
 	dw 445
 	text_far _MagmarDexEntry

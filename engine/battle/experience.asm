@@ -240,7 +240,24 @@ GainExperience:
 	callfar PrintEmptyString
 	call SaveScreenTilesToBuffer1
 .printGrewLevelText
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .printGreLevelTextFemale
+	;shara-add end
+.printGrewLevelTextStandard ;shara-add
+	pop af
 	ld hl, GrewLevelText
+	jr .printGrewLevelTextGotText
+.printGreLevelTextFemale ;shara-add
+	pop af
+	ld hl, GrewLevelText_Female
+.printGrewLevelTextGotText ;shara-add
 	call PrintText
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
@@ -367,6 +384,11 @@ ExpPointsText:
 	text_end
 
 GrewLevelText:
+	text_far _GrewLevelText
+	sound_level_up
+	text_end
+
+GrewLevelText_Female: ;shara-add
 	text_far _GrewLevelText
 	sound_level_up
 	text_end

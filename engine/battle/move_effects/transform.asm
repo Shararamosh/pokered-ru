@@ -124,7 +124,28 @@ TransformEffect_:
 	ld hl, wEnemyMonStatMods
 	ld de, wPlayerMonStatMods
 	call .copyBasedOnTurn ; stat mods
+	;shara-add begin
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .femaleCheck
+	;shara-add end
+.standard ;shara-add
+	pop af
 	ld hl, TransformedText
+	jp PrintText
+.femaleCheck
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	jr .standard
+.female
+	pop af
+	ld hl, TransformedText_Female
 	jp PrintText
 
 .copyBasedOnTurn
@@ -145,4 +166,8 @@ TransformEffect_:
 
 TransformedText:
 	text_far _TransformedText
+	text_end
+
+TransformedText_Female: ;shara-add
+	text_far _TransformedText_Female
 	text_end

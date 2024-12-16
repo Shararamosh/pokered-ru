@@ -201,7 +201,7 @@ RedrawPartyMenu_::
 	and $0F
 	;shara-add begin: Jumping to .female section for certain Pokemon.
 	push af
-	ld a, [wEnemyMonSpecies2]
+	ld a, [wBattleMonSpecies2]
 	push de
 	push bc
 	call IsFemaleSpecie

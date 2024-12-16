@@ -62,13 +62,36 @@ SleepEffect:
 	jr z, .setSleepCounter
 	ld [de], a
 	call PlayCurrentMoveAnimation2
+	;shara-add begin
+	ldh a, [hWhoseTurn]
+	and a
+	jp z, .FellAsleepStandard
+	;shara-add end
+.FellAsleepFemaleCheck ;shara-add
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .FellAsleepFemale
+.FellAsleepStandard ;shara-add
+	pop af
 	ld hl, FellAsleepText
+	jp PrintText
+.FellAsleepFemale ;shara-add
+	pop af
+	ld hl, FellAsleepText_Female
 	jp PrintText
 .didntAffect
 	jp PrintDidntAffectText
 
 FellAsleepText:
 	text_far _FellAsleepText
+	text_end
+
+FellAsleepText_Female: ;shara-add
+	text_far _FellAsleepText_Female
 	text_end
 
 AlreadyAsleepText:
@@ -151,14 +174,13 @@ PoisonEffect:
 	pop bc
 	pop de
 	jr c, .badPoisonFemale
-	jr .badPoisonStandard
-.badPoisonFemale ;shara-add
-	pop af
-	ld hl, BadlyPoisonedText_Female
-	jr .continue
 .badPoisonStandard ;shara-add
 	pop af
 	ld hl, BadlyPoisonedText
+	jr .continue
+.badPoisonFemale ;shara-add
+	pop af
+	ld hl, BadlyPoisonedText_Female
 	jr .continue
 .normalPoison
 	;shara-add begin
@@ -340,21 +362,59 @@ FreezeBurnParalyzeEffect:
 	ld a, 1 << BRN
 	ld [wBattleMonStatus], a
 	call HalveAttackDueToBurn
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .burn2Female
+	pop af
+	;shara-add end
 	ld hl, BurnedText
+	jp PrintText
+.burn2Female ;shara-add
+	pop af
+	ld hl, BurnedText_Female
 	jp PrintText
 .freeze2
 ; hyper beam bits aren't reseted for opponent's side
 	ld a, 1 << FRZ
 	ld [wBattleMonStatus], a
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .freeze2Female
+	pop af
+	;shara-add end
 	ld hl, FrozenText
+	jp PrintText
+.freeze2Female ;shara-add
+	pop af
+	ld hl, FrozenText_Female
 	jp PrintText
 
 BurnedText:
 	text_far _BurnedText
 	text_end
 
+BurnedText_Female: ;shara-add
+	text_far _BurnedText_Female
+	text_end
+
 FrozenText:
 	text_far _FrozenText
+	text_end
+
+FrozenText_Female: ;shara-add
+	text_far _FrozenText_Female
 	text_end
 
 CheckDefrost:
@@ -1158,7 +1218,28 @@ ChargeEffect:
 	call PlayBattleAnimation
 	ld a, [de]
 	ld [wChargeMoveNum], a
+	;shara-add begin: Re-routing depending on whose turn.
+	push af
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .femaleCheck
+	;shara-add end
+.standard ;shara-add
+	pop af
 	ld hl, ChargeMoveEffectText
+	jp PrintText
+.femaleCheck ;shara-add
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	jr .standard
+.female ;shara-add
+	pop af
+	ld hl, ChargeMoveEffectText_Female
 	jp PrintText
 
 ChargeMoveEffectText:
@@ -1185,16 +1266,52 @@ ChargeMoveEffectText:
 .gotText
 	ret
 
+ChargeMoveEffectText_Female: ;shara-add
+	text_far _ChargeMoveEffectText
+	text_asm
+	ld a, [wChargeMoveNum]
+	cp RAZOR_WIND
+	ld hl, MadeWhirlwindText_Female
+	jr z, .gotText
+	cp SOLARBEAM
+	ld hl, TookInSunlightText_Female
+	jr z, .gotText
+	cp SKULL_BASH
+	ld hl, LoweredItsHeadText_Female
+	jr z, .gotText
+	cp SKY_ATTACK
+	ld hl, SkyAttackGlowingText
+	jr z, .gotText
+	cp FLY
+	ld hl, FlewUpHighText_Female
+	jr z, .gotText
+	cp DIG
+	ld hl, DugAHoleText_Female
+.gotText
+	ret
+
 MadeWhirlwindText:
 	text_far _MadeWhirlwindText
+	text_end
+
+MadeWhirlwindText_Female: ;shara-add
+	text_far _MadeWhirlwindText_Female
 	text_end
 
 TookInSunlightText:
 	text_far _TookInSunlightText
 	text_end
 
+TookInSunlightText_Female: ;shara-add
+	text_far _TookInSunlightText_Female
+	text_end
+
 LoweredItsHeadText:
 	text_far _LoweredItsHeadText
+	text_end
+
+LoweredItsHeadText_Female: ;shara-add
+	text_far _LoweredItsHeadText_Female
 	text_end
 
 SkyAttackGlowingText:
@@ -1205,8 +1322,16 @@ FlewUpHighText:
 	text_far _FlewUpHighText
 	text_end
 
+FlewUpHighText_Female: ;shara-add
+	text_far _FlewUpHighText_Female
+	text_end
+
 DugAHoleText:
 	text_far _DugAHoleText
+	text_end
+
+DugAHoleText_Female: ;shara-add
+	text_far _DugAHoleText_Female
 	text_end
 
 TrappingEffect:
@@ -1597,7 +1722,7 @@ PrintMayNotAttackText:
 	pop bc
 	pop de
 	jr c, .female
-.standard
+.standard ;shara-add: Continuing standard behavior.
 	pop af
 	ld hl, ParalyzedMayNotAttackText
 	jp PrintText
@@ -1610,8 +1735,8 @@ ParalyzedMayNotAttackText:
 	text_far _ParalyzedMayNotAttackText
 	text_end
 
-ParalyzedMayNotAttackText_Female:
-	text_far _ParalyzedMayNotAttackText
+ParalyzedMayNotAttackText_Female: ;shara-add
+	text_far _ParalyzedMayNotAttackText_Female
 	text_end
 
 CheckTargetSubstitute:

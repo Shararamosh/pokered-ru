@@ -6,7 +6,13 @@ _PokemartGreetingText::
 _PokemonFaintedText::
 	text_ram wcd6d
 	text_start
-	line "fainted!"
+	line "повержен!"
+	done
+
+_PokemonFaintedText_Female::
+	text_ram wcd6d
+	text_start
+	line "повержена!"
 	done
 
 _PlayerBlackedOutText::

@@ -205,14 +205,29 @@ _MadeWhirlwindText::
 	line "вызвал вихрь!"
 	prompt
 
+_MadeWhirlwindText_Female::
+	text_start
+	line "вызвала вихрь!"
+	prompt
+
 _TookInSunlightText::
 	text_start
-	line "собирает солнце!"
+	line "собрал солнце!"
+	prompt
+
+_TookInSunlightText_Female::
+	text_start
+	line "собрала солнце!"
 	prompt
 
 _LoweredItsHeadText::
 	text_start
 	line "опустил голову!"
+	prompt
+
+_LoweredItsHeadText_Female::
+	text_start
+	line "опустила голову!"
 	prompt
 
 _SkyAttackGlowingText::
@@ -225,9 +240,19 @@ _FlewUpHighText::
 	line "взлетел ввысь!"
 	prompt
 
+_FlewUpHighText_Female::
+	text_start
+	line "взлетела ввысь!"
+	prompt
+
 _DugAHoleText::
 	text_start
 	line "вырыл нору!"
+	prompt
+
+_DugAHoleText_Female::
+	text_start
+	line "вырыла нору!"
 	prompt
 
 _BecameConfusedText::
@@ -374,8 +399,16 @@ _RegainedHealthText::
 
 _TransformedText::
 	text "<USER>"
-	line "transformed into"
-	cont "@"
+	line "трансформировался"
+	cont "в @"
+	text_ram wcd6d
+	text "!"
+	prompt
+
+_TransformedText_Female::
+	text "<USER>"
+	line "трансформирова-"
+	cont "лась в @"
 	text_ram wcd6d
 	text "!"
 	prompt
