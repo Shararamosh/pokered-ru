@@ -439,8 +439,7 @@ ItemUseBall:
 ; Determine the message to display from the animation.
 	ld a, [wPokeBallAnimData]
 	cp $10
-	ld hl, ItemUseBallText00
-	jp z, .printMessage
+	jp z, .ItemUseBallText00 ;shara-add
 	cp $20
 	ld hl, ItemUseBallText01
 	jp z, .printMessage
@@ -448,12 +447,44 @@ ItemUseBall:
 	ld hl, ItemUseBallText02
 	jp z, .printMessage
 	cp $62
-	ld hl, ItemUseBallText03
-	jp z, .printMessage
+	jp z, .ItemUseBallText03 ;shara-add
 	cp $63
 	ld hl, ItemUseBallText04
 	jp z, .printMessage
-
+	jr .standard
+.ItemUseBallText00 ;shara-add
+	push af
+	ld a, [wEnemyMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .ItemUseBallText00Female
+	pop af
+	ld hl, ItemUseBallText00
+	jp .printMessage
+.ItemUseBallText00Female ;shara-add
+	pop af
+	ld hl, ItemUseBallText00_Female
+	jp .printMessage
+.ItemUseBallText03 ;shara-add
+	push af
+	ld a, [wEnemyMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .ItemUseBallText03Female
+	pop af
+	ld hl, ItemUseBallText03
+	jp .printMessage
+.ItemUseBallText03Female ;shara-add
+	pop af
+	ld hl, ItemUseBallText03_Female
+	jp .printMessage
+.standard ;shara-add
 ; Save current HP.
 	ld hl, wEnemyMonHP
 	ld a, [hli]
@@ -621,6 +652,11 @@ ItemUseBallText00:
 ;"This pokemon can't be caught"
 	text_far _ItemUseBallText00
 	text_end
+ItemUseBallText00_Female: ;shara-add
+;"It dodged the thrown ball!"
+;"This pokemon can't be caught"
+	text_far _ItemUseBallText00_Female
+	text_end
 ItemUseBallText01:
 ;"You missed the pokemon!"
 	text_far _ItemUseBallText01
@@ -632,6 +668,10 @@ ItemUseBallText02:
 ItemUseBallText03:
 ;"Aww! It appeared to be caught!"
 	text_far _ItemUseBallText03
+	text_end
+ItemUseBallText03_Female: ;shara-add
+;"Aww! It appeared to be caught!"
+	text_far _ItemUseBallText03_Female
 	text_end
 ItemUseBallText04:
 ;"Shoot! It was so close too!"

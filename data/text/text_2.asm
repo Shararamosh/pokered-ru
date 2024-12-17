@@ -467,7 +467,7 @@ _OakLabEmailText::
 	done
 
 _GameCornerCoinCaseText::
-	text "Нужен КЕЙС ДЛЯ"
+	text "Нужен ЧЕХОЛ ДЛЯ"
 	line "МОНЕТ!"
 	done
 
@@ -844,8 +844,9 @@ _TownMapText::
 	text_end
 
 _PokemonStuffText::
-	text "Вау! Тонны вещей"
-	line "с #МОНами!"
+	text "Вау! Тонны вещей,"
+	line "связанных с #-"
+	cont "МОНами!"
 	done
 
 _OutOfSafariBallsText::

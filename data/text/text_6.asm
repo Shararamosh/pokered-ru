@@ -1,9 +1,17 @@
 _ItemUseBallText00::
-	text "It dodged the"
-	line "thrown BALL!"
+	text "Он увернулся от"
+	line "брошенного БОЛЛа!"
 
-	para "This #MON"
-	line "can't be caught!"
+	para "Этот #МОН не"
+	line "может быть пойман!"
+	prompt
+
+_ItemUseBallText00_Female::
+	text "Она увернулась от"
+	line "брошенного БОЛЛа!"
+
+	para "Этот #МОН не"
+	line "может быть пойман!"
 	prompt
 
 _ItemUseBallText01::
@@ -18,7 +26,12 @@ _ItemUseBallText02::
 
 _ItemUseBallText03::
 	text "Оу! А ведь почти"
-	line "помайлся! "
+	line "поймался! "
+	prompt
+
+_ItemUseBallText03_Female::
+	text "Оу! А ведь почти"
+	line "поймалась! "
 	prompt
 
 _ItemUseBallText04::

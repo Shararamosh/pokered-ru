@@ -1,104 +1,111 @@
 _CableClubNPCPleaseComeAgainText::
-	text "Please come again!"
+	text "Приходите снова!"
 	done
 
 _CableClubNPCMakingPreparationsText::
-	text "We're making"
-	line "preparations."
-	cont "Please wait."
+	text "Мы проводим"
+	line "подготовку."
+	cont "Пожалуйста,"
+	cont "подождите."
 	done
 
 _UsedStrengthText::
 	text_ram wcd6d
-	text " used"
-	line "STRENGTH.@"
+	text_start
+	line "использует СИЛУ.@"
 	text_end
 
 _CanMoveBouldersText::
 	text_ram wcd6d
-	text " can"
-	line "move boulders."
+	text " может"
+	line "перемещать валуны."
 	prompt
 
 _CurrentTooFastText::
-	text "The current is"
-	line "much too fast!"
+	text "Течение слишком"
+	line "быстрое!"
 	prompt
 
 _CyclingIsFunText::
-	text "Cycling is fun!"
-	line "Forget SURFing!"
+	text "Велосипед - это"
+	line "весело! Забудь о"
+	cont "СЁРФинге!"
 	prompt
 
 _FlashLightsAreaText::
-	text "A blinding FLASH"
-	line "lights the area!"
+	text "Ослепляющая ВСПЫШ-"
+	line "КА всё осветила!"
 	prompt
 
 _WarpToLastPokemonCenterText::
-	text "Warp to the last"
-	line "#MON CENTER."
+	text "Перемещение в"
+	line "последний ЦЕНТР"
+	cont "#МОНов."
 	done
 
 _CannotUseTeleportNowText::
 	text_ram wcd6d
-	text " can't"
-	line "use TELEPORT now."
+	text_start
+	line "не может исполь-"
+	cont "зовать ТЕЛЕПОРТ"
+	cont "сейчас."
 	prompt
 
 _CannotFlyHereText::
 	text_ram wcd6d
-	text " can't"
-	line "FLY here."
+	text_start
+	line "не может исполь-"
+	cont "зовать ПОЛЁТ"
+	cont "здесь."
 	prompt
 
 _NotHealthyEnoughText::
-	text "Not healthy"
-	line "enough."
+	text "Недостаточно"
+	line "здоровья."
 	prompt
 
 _NewBadgeRequiredText::
-	text "No! A new BADGE"
-	line "is required."
+	text "Нет! Необходим"
+	line "новый ЗНАЧОК."
 	prompt
 
 _CannotUseItemsHereText::
-	text "You can't use items"
-	line "here."
+	text "Здесь нельзя ис-"
+	line "пользовать ВЕЩИ."
 	prompt
 
 _CannotGetOffHereText::
-	text "You can't get off"
-	line "here."
+	text "Здесь нельзя"
+	line "сойти."
 	prompt
 
 _GotMonText::
-	text "<PLAYER> got"
+	text "<PLAYER> поймал"
 	line "@"
 	text_ram wcd6d
 	text "!@"
 	text_end
 
 _SentToBoxText::
-	text "There's no more"
-	line "room for #MON!"
+	text "Не места для"
+	line "#МОНов!"
 	cont "@"
 	text_ram wBoxMonNicks
-	text " was"
-	cont "sent to #MON"
-	cont "BOX @"
+	text " был"
+	cont "отправлен на ПК в"
+	cont "#МОН BOX @"
 	text_ram wStringBuffer
-	text " on PC!"
+	text "!"
 	done
 
 _BoxIsFullText::
-	text "There's no more"
-	line "room for #MON!"
+	text "Нет места для"
+	line "#МОНов!"
 
-	para "The #MON BOX"
-	line "is full and can't"
-	cont "accept any more!"
+	para "#МОН BOX"
+	line "заполнен и не"
+	cont "принять их!"
 
-	para "Change the BOX at"
-	line "a #MON CENTER!"
+	para "Поменяй BOX в"
+	line "ЦЕНТРЕ #МОНов!"
 	done

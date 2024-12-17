@@ -15,18 +15,11 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 ## Translation status
 
-- Pokémon.
-- Attacks.
-- Items.
-- Trainer classes.
-- Pokédex (except for entries)
-- PC interface.
 - Super Game Boy borders.
-- Hall of Fame.
-- Introduction, Pallet Town and Oak's Lab.
-- Celadon Department Store.
-- Battle interface (most messages, some are also verb-corrected).
-- Menus (Title, Pause, Save, Town Map, Items, Pokémon list and stats, Options, Cable Club, Trainer info).
+- All fonts (main, battle interface).
+- All names (Pokémon, Attacks, Items, Trainer classes, Pokédex species).
+- All generic texts (introduction, menus, battle messages, generic NPC texts)
+- Maps: Pallet Town, Oak's Lab, Celadon City, Celadon Department Store, Celadon Mansion Roof.
 
 ## Patching
 
