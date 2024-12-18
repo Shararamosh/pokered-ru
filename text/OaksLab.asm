@@ -1,173 +1,175 @@
 _OaksLabGaryText1::
-	text "<RIVAL>: Yo"
-	line "<PLAYER>! Gramps"
-	cont "isn't around!"
+	text "<RIVAL>: Йо,"
+	line "<PLAYER>! Деда"
+	cont "здесь нет!"
 	done
 
 _OaksLabText40::
-	text "<RIVAL>: Heh, I"
-	line "don't need to be"
-	cont "greedy like you!"
+	text "<RIVAL>: Хех, я"
+	line "не такой жадный"
+	cont "как ты!"
 
-	para "Go ahead and"
-	line "choose, <PLAYER>!"
+	para "Давай выбирай,"
+	line "<PLAYER>!"
 	done
 
 _OaksLabText41::
-	text "<RIVAL>: My"
-	line "#MON looks a"
-	cont "lot stronger."
+	text "<RIVAL>: Мой"
+	line "#МОН выглядит"
+	cont "намного сильнее!"
 	done
 
 _OaksLabText39::
-	text "Those are #"
-	line "BALLs. They"
-	cont "contain #MON!"
+	text "Это # БОЛЛЫ."
+	line "В них находятся"
+	cont "#МОНЫ!"
 	done
 
 _OaksLabCharmanderText::
-	text "So! You want the"
-	line "fire #MON,"
-	cont "CHARMANDER?"
+	text "Итак! Ты хочешь"
+	line "огненного #-"
+	cont "МОНА ЧАРМАНДЕРа?"
 	done
 
 _OaksLabSquirtleText::
-	text "So! You want the"
-	line "water #MON,"
-	cont "SQUIRTLE?"
+	text "Итак! Ты хочешь"
+	line "водного #-"
+	cont "МОНА СКВИРТЛа?"
 	done
 
 _OaksLabBulbasaurText::
-	text "So! You want the"
-	line "plant #MON,"
-	cont "BULBASAUR?"
+	text "Итак! Ты хочешь"
+	line "травяного #-"
+	cont "МОНА БУЛЬБАЗАВРа?"
 	done
 
 _OaksLabMonEnergeticText::
-	text "This #MON is"
-	line "really energetic!"
+	text "Этот #МОН очень"
+	line "энергичный!"
 	prompt
 
 _OaksLabReceivedMonText::
-	text "<PLAYER> received"
-	line "a @"
+	text "<PLAYER> получил"
+	line "@"
 	text_ram wcd6d
 	text "!@"
 	text_end
 
 _OaksLabLastMonText::
-	text "That's PROF.OAK's"
-	line "last #MON!"
+	text "Это последний"
+	line "#МОН ПРОФ.ОУКа!"
 	done
 
 _OaksLabText_1d2f0::
-	text "OAK: Now, <PLAYER>,"
-	line "which #MON do"
-	cont "you want?"
+	text "ОУК: Итак, <PLAYER>,"
+	line "какого #МОНа"
+	cont "ты хочешь?"
 	done
 
 _OaksLabText_1d2f5::
-	text "OAK: If a wild"
-	line "#MON appears,"
-	cont "your #MON can"
-	cont "fight against it!"
+	text "ОУК: Если появится"
+	line "дикий #МОН,"
+	cont "твой #МОН"
+	cont "может сразиться"
+	cont "с ним!"
 	done
 
 _OaksLabText_1d2fa::
-	text "OAK: <PLAYER>,"
-	line "raise your young"
-	cont "#MON by making"
-	cont "it fight!"
+	text "ОУК: <PLAYER>,"
+	line "развивай своего"
+	cont "#МОНа,"
+	cont "сражаясь им!"
 	done
 
 _OaksLabDeliverParcelText1::
-	text "OAK: Oh, <PLAYER>!"
+	text "ОУК: Оу, <PLAYER>!"
 
-	para "How is my old"
-	line "#MON?"
+	para "Как там мой"
+	line "старина #МОН?"
 
-	para "Well, it seems to"
-	line "like you a lot."
+	para "Что ж, похоже, он"
+	line "тебя очень любит."
 
-	para "You must be"
-	line "talented as a"
-	cont "#MON trainer!"
+	para "Должно быть, ты"
+	line "талантливый"
+	cont "тренер #МОНов!"
 
-	para "What? You have"
-	line "something for me?"
+	para "Что? Ты мне что-то"
+	line "принёс?"
 
-	para "<PLAYER> delivered"
-	line "OAK's PARCEL.@"
+	para "<PLAYER> доставил"
+	line "ПОСЫЛКУ ОУКА.@"
 	text_end
 
 _OaksLabDeliverParcelText2::
 	text_start
-	para "Ah! This is the"
-	line "custom # BALL"
-	cont "I ordered!"
-	cont "Thank you!"
+	para "Ах! Это же мой"
+	line "заказной #"
+	cont "БОЛЛ!"
+	cont "Спасибо!"
 	done
 
 _OaksLabAroundWorldText::
-	text "#MON around the"
-	line "world wait for"
-	cont "you, <PLAYER>!"
+	text "#МОНы всего"
+	line "мира ждут тебя,"
+	cont "<PLAYER>!"
 	done
 
 _OaksLabGivePokeballsText1::
-	text "OAK: You can't get"
-	line "detailed data on"
-	cont "#MON by just"
-	cont "seeing them."
+	text "ОУК: Ты не можешь"
+	line "получить точные"
+	cont "данные о #МОНе,"
+	cont "лишь увидев его!"
 
-	para "You must catch"
-	line "them! Use these"
-	cont "to capture wild"
-	cont "#MON."
+	para "Ты должен ловить"
+	line "их! Используй это"
+	cont "для поимки диких"
+	cont "#МОНОВ."
 
-	para "<PLAYER> got 5"
-	line "# BALLs!@"
+	para "<PLAYER> получил 5"
+	line "# БОЛЛов!@"
 	text_end
 
 _OaksLabGivePokeballsText2::
 	text_start
-	para "When a wild"
-	line "#MON appears,"
-	cont "it's fair game."
+	para "Когда дикий ПОКé-"
+	line "МОН появляется,"
+	cont "начинается игра."
 
-	para "Just throw a #"
-	line "BALL at it and try"
-	line "to catch it!"
+	para "Кинь в него #"
+	line "БОЛЛ и попробуй"
+	line "поймать его!"
 
-	para "This won't always"
-	line "work, though."
+	para "Однако это не"
+	line "всегда работает."
 
-	para "A healthy #MON"
-	line "could escape. You"
-	cont "have to be lucky!"
+	para "Здоровый #МОН"
+	line "может сбежать. Ты"
+	cont "должен быть удач-"
+	cont "ливым!"
 	done
 
 _OaksLabPleaseVisitText::
-	text "OAK: Come see me"
-	line "sometimes."
+	text "ОУК: Заходи ко мне"
+	line "иногда."
 
-	para "I want to know how"
-	line "your #DEX is"
-	cont "coming along."
+	para "Я хочу знать, как"
+	line "идёт прогресс"
+	cont "твоего #DEXа."
 	done
 
 _OaksLabText_1d31d::
-	text "OAK: Good to see "
-	line "you! How is your "
-	cont "#DEX coming? "
-	cont "Here, let me take"
-	cont "a look!"
+	text "ОУК: Рад тебя"
+	line "видеть! Как дела"
+	cont "с #DEXом? "
+	cont "Позволь мне"
+	cont "взглянуть!"
 	prompt
 
 _OaksLabText_1d32c::
-	text "It's encyclopedia-"
-	line "like, but the"
-	cont "pages are blank!"
+	text "Это похоже на"
+	line "энциклопедию,"
+	cont "только пустую!"
 	done
 
 _OaksLabText8::
@@ -175,192 +177,197 @@ _OaksLabText8::
 	done
 
 _OaksLabText_1d340::
-	text "PROF.OAK is the"
-	line "authority on"
-	cont "#MON!"
+	text "ПРОФ.ОУК - авто-"
+	line "ритет в области"
+	cont "#МОНов!"
 
-	para "Many #MON"
-	line "trainers hold him"
-	cont "in high regard!"
+	para "Многие тренеры"
+	line "#МОНов высоко"
+	cont "ценят его!"
 	done
 
 _OaksLabRivalWaitingText::
-	text "<RIVAL>: Gramps!"
-	line "I'm fed up with"
-	cont "waiting!"
+	text "<RIVAL>: Деда!"
+	line "Мне надоело ждать!"
 	done
 
 _OaksLabChooseMonText::
 	text "OAK: <RIVAL>?"
-	line "Let me think..."
+	line "Минутку..."
 
-	para "Oh, that's right,"
-	line "I told you to"
-	cont "come! Just wait!"
+	para "Ох, точно,"
+	line "Я говорил тебе"
+	cont "прийти! Погоди!"
 
-	para "Here, <PLAYER>!"
+	para "Вот, <PLAYER>!"
 
-	para "There are 3"
-	line "#MON here!"
+	para "Здесь 3 #МОНа!"
 
-	para "Haha!"
+	para "Ха-ха!"
 
-	para "They are inside"
-	line "the # BALLs."
+	para "Они внутри #"
+	line "БОЛЛов."
 
-	para "When I was young,"
-	line "I was a serious"
-	cont "#MON trainer!"
+	para "В своей молодости"
+	line "я был серьёзным"
+	cont "тренером #-"
+	cont "МОНов!"
 
-	para "In my old age, I"
-	line "have only 3 left,"
-	cont "but you can have"
-	cont "one! Choose!"
+	para "На старости лет"
+	line "у меня осталось"
+	cont "их лишь 3, но ты"
+	cont "можешь взять"
+	cont "одного! Выбирай!"
 	done
 
 _OaksLabRivalInterjectionText::
-	text "<RIVAL>: Hey!"
-	line "Gramps! What"
-	cont "about me?"
+	text "<RIVAL>: Эй!"
+	line "Деда! А что"
+	cont "насчёт меня?"
 	done
 
 _OaksLabBePatientText::
-	text "OAK: Be patient!"
-	line "<RIVAL>, you can"
-	cont "have one too!"
+	text "ОУК: Потерпи!"
+	line "<RIVAL>, ты тоже"
+	cont "может выбрать"
+	cont "одного!"
 	done
 
 _OaksLabLeavingText::
-	text "OAK: Hey! Don't go"
-	line "away yet!"
+	text "ОУК: Эй! Не уходи"
+	line "пока!"
 	done
 
 _OaksLabRivalPickingMonText::
-	text "<RIVAL>: I'll take"
-	line "this one, then!"
+	text "<RIVAL>: Тогда я"
+	line "возьму этого!"
 	done
 
 _OaksLabRivalReceivedMonText::
-	text "<RIVAL> received"
-	line "a @"
+	text "<RIVAL> получил"
+	line "@"
 	text_ram wcd6d
 	text "!@"
 	text_end
 
 _OaksLabRivalChallengeText::
-	text "<RIVAL>: Wait"
+	text "<RIVAL>: Подожди,"
 	line "<PLAYER>!"
-	cont "Let's check out"
-	cont "our #MON!"
+	cont "Давай проверим"
+	cont "наших #МОНов!"
 
-	para "Come on, I'll take"
-	line "you on!"
+	para "Ну же, я уделаю"
+	line "тебя!"
 	done
 
 _OaksLabText_1d3be::
-	text "WHAT?"
-	line "Unbelievable!"
-	cont "I picked the"
-	cont "wrong #MON!"
+	text "ЧТО?"
+	line "Невероятно!"
+	cont "Я выбрал не того"
+	cont "#МОНа!"
 	prompt
 
 _OaksLabText_1d3c3::
-	text "<RIVAL>: Yeah! Am"
-	line "I great or what?"
+	text "<RIVAL>: Ха! Я"
+	line "что, настолько"
+	cont "крут?"
 	prompt
 
 _OaksLabRivalToughenUpText::
-	text "<RIVAL>: Okay!"
-	line "I'll make my"
-	cont "#MON fight to"
-	cont "toughen it up!"
+	text "<RIVAL>: Окей!"
+	line "Я буду усиливать"
+	cont "своих #МОНов,"
+	cont "сражаясь ими!"
 
-	para "<PLAYER>! Gramps!"
-	line "Smell you later!"
+	para "<PLAYER>! Деда!"
+	line "Снюхаемся позже!"
 	done
 
 _OaksLabText21::
-	text "<RIVAL>: Gramps!"
+	text "<RIVAL>: Деда!"
 	done
 
 _OaksLabText22::
-	text "<RIVAL>: What did"
-	line "you call me for?"
+	text "<RIVAL>: Зачем ты"
+	line "меня позвал?"
 	done
 
 _OaksLabText23::
-	text "OAK: Oh right! I"
-	line "have a request"
-	cont "of you two."
+	text "OAK: Ох, точно! У"
+	line "меня есть к вам"
+	cont "просьба."
 	done
 
 _OaksLabText24::
-	text "On the desk there"
-	line "is my invention,"
+	text "На столе лежит моё"
+	line "изобретение - "
 	cont "#DEX!"
 
-	para "It automatically"
-	line "records data on"
-	cont "#MON you've"
-	cont "seen or caught!"
+	para "Он автоматически"
+	line "записывает данные"
+	cont "об обнаруженных"
+	cont "или пойманных"
+	cont "#МОНах!"
 
-	para "It's a hi-tech"
-	line "encyclopedia!"
+	para "Это энциклопедия"
+	line "нового поколения!"
 	done
 
 _OaksLabText25::
-	text "OAK: <PLAYER> and"
-	line "<RIVAL>! Take"
-	cont "these with you!"
+	text "OAK: <PLAYER> и"
+	line "<RIVAL>! Возьмите"
+	cont "их с собой!"
 
-	para "<PLAYER> got"
-	line "#DEX from OAK!@"
+	para "<PLAYER> получил"
+	line "#DEX от ОУКа!@"
 	text_end
 
 _OaksLabText26::
-	text "To make a complete"
-	line "guide on all the"
-	cont "#MON in the"
-	cont "world..."
+	text "Сделать полный"
+	line "путеводитель по"
+	cont "всем #МОНАМ"
+	cont "мира..."
 
-	para "That was my dream!"
+	para "Это моя мечта!"
 
-	para "But, I'm too old!"
-	line "I can't do it!"
+	para "Но я слишком стар!"
+	line "Я не смогу её"
+	cont "осуществить!"
 
-	para "So, I want you two"
-	line "to fulfill my"
-	cont "dream for me!"
+	para "Поэтому я хочу,"
+	line "чтобы вы это"
+	cont "были именно вы!"
 
-	para "Get moving, you"
-	line "two!"
+	para "Вперёд, вы двое!"
 
-	para "This is a great"
-	line "undertaking in"
-	cont "#MON history!"
+	para "Это великое дело"
+	line "в истории #-"
+	cont "МОНОВ!"
 	done
 
 _OaksLabText27::
-	text "<RIVAL>: Alright"
-	line "Gramps! Leave it"
-	cont "all to me!"
+	text "<RIVAL>: Ладно,"
+	line "деда! Предоставь"
+	cont "это мне!"
 
-	para "<PLAYER>, I hate to"
-	line "say it, but I"
-	cont "don't need you!"
+	para "<PLAYER>, жаль"
+	line "это говорить, но"
+	cont "я справлюсь и"
+	cont "без тебя!"
 
-	para "I know! I'll"
-	line "borrow a TOWN MAP"
-	cont "from my sis!"
+	para "Знаю! Я возьму"
+	line "КАРТУ ГОРОДОВ у"
+	cont "своей сестры!"
 
-	para "I'll tell her not"
-	line "to lend you one,"
-	cont "<PLAYER>! Hahaha!"
+	para "И скажу ей не"
+	line "отдавать её тебе,"
+	cont "<PLAYER>! Ха-ха-ха!"
 	done
 
 _OaksLabText_1d405::
-	text "I study #MON as"
-	line "PROF.OAK's AIDE."
+	text "Я ПОМОЩНИК ПРОФ."
+	line "ОУКа в изучении"
+	cont "#МОНов!"
 	done
 
 _OaksLabText_441cc::
@@ -380,104 +387,106 @@ _OaksLabText_441cc::
 	prompt
 
 _OaksLabText_44201::
-	text "You still have"
-	line "lots to do."
-	cont "Look for #MON"
-	cont "in grassy areas!"
+	text "У тебя ещё много"
+	line "работы."
+	cont "Ищи #МОНов в"
+	cont "высокой траве!"
 	done
 
 _OaksLabText_44206::
-	text "You're on the"
-	line "right track! "
-	cont "Get a FLASH HM"
-	cont "from my AIDE!"
+	text "Ты на верном пути! "
+	line "Получи HM ВСПЫШКА"
+	cont "у моего ПОМОЩНИКа!"
 	done
 
 _OaksLabText_4420b::
-	text "You still need"
-	line "more #MON!"
-	cont "Try to catch"
-	cont "other species!"
+	text "Тебе всё ещё нужно"
+	line "больше #МОНов!"
+	cont "Попробуй ловить"
+	cont "другие виды!"
 	done
 
 _OaksLabText_44210::
-	text "Good, you're"
-	line "trying hard!"
-	cont "Get an ITEMFINDER"
-	cont "from my AIDE!"
+	text "Ты отлично"
+	line "справляешься!"
+	cont "Получи ВЕЩЕИСКА-"
+	cont "ТЕЛЬ у моего"
+	cont "ПОМОЩНИКа!"
 	done
 
 _OaksLabText_44215::
-	text "Looking good!"
-	line "Go find my AIDE"
-	cont "when you get 50!"
+	text "Выглядит здорово!"
+	line "Как поймаешь 50,"
+	cont "найди моего"
+	cont "ПОМОЩНИКа!"
 	done
 
 _OaksLabText_4421a::
-	text "You finally got at"
-	line "least 50 species!"
-	cont "Be sure to get"
-	cont "EXP.ALL from my"
-	cont "AIDE!"
+	text "Ты всё-таки сумел"
+	line "поймать 50 видов!"
+	cont "Не забудь взять"
+	cont "ДЕЛИТЕЛЬ ОПЫТА у"
+	cont "моего ПОМОЩНИКа!"
 	done
 
 _OaksLabText_4421f::
-	text "Ho! This is geting"
-	line "even better!"
+	text "Хо! Становится всё"
+	line "лучше и лучше!"
 	done
 
 _OaksLabText_44224::
-	text "Very good!"
-	line "Go fish for some"
-	cont "marine #MON!"
+	text "Отлично!"
+	line "Полови морских"
+	cont "#МОНов УДОЧКОЙ!"
 	done
 
 _OaksLabText_44229::
-	text "Wonderful!"
-	line "Do you like to"
-	cont "collect things?"
+	text "Замечательно!"
+	line "Тебе нравится"
+	cont "коллекционировать?"
 	done
 
 _OaksLabText_4422e::
-	text "I'm impressed!"
-	line "It must have been"
-	cont "difficult to do!"
+	text "Я впечатлён!"
+	line "Должно быть, это"
+	cont "было очень сложно!"
 	done
 
 _OaksLabText_44233::
-	text "You finally got at"
-	line "least 100 species!"
-	cont "I can't believe"
-	cont "how good you are!"
+	text "Ты наконец-то"
+	line "поймал 100 видов!"
+	cont "Не могу поверить,"
+	cont "как ты хорош!"
 	done
 
 _OaksLabText_44238::
-	text "You even have the"
-	line "evolved forms of"
-	cont "#MON! Super!"
+	text "У тебя есть даже"
+	line "эволюции #-"
+	cont "МОНов! Супер!"
 	done
 
 _OaksLabText_4423d::
-	text "Excellent! Trade"
-	line "with friends to"
-	cont "get some more!"
+	text "Восхитительно!"
+	line "Обменивайся с"
+	cont "друзьями, чтобы"
+	cont "получить ещё!"
 	done
 
 _OaksLabText_44242::
-	text "Outstanding!"
-	line "You've become a"
-	cont "real pro at this!"
+	text "Невероятно!"
+	line "Ты настоящий"
+	cont "профессионал!"
 	done
 
 _OaksLabText_44247::
-	text "I have nothing"
-	line "left to say!"
-	cont "You're the"
-	cont "authority now!"
+	text "Мне нечего"
+	line "сказать!"
+	cont "Ты теперь"
+	cont "авторитет!"
 	done
 
 _OaksLabText_4424c::
-	text "Your #DEX is"
-	line "entirely complete!"
-	cont "Congratulations!"
+	text "Твой #DEX пол-"
+	line "ностью завершён!"
+	cont "Поздравляю!"
 	done

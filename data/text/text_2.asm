@@ -368,8 +368,8 @@ _CinnabarQuizQuestionsText1::
 
 _CinnabarQuizQuestionsText2::
 	text "Всего существует"
-	line "9 ЗНАЧКов ЛИГИ"
-	cont "#МОНов?"
+	line "9 ЗНАЧКОВ ЛИГИ"
+	cont "#МОНОВ?"
 	done
 
 _CinnabarQuizQuestionsText3::
@@ -448,7 +448,7 @@ _OakLabEmailText::
 	cont "МОНов!"
 
 	para "Элитные тренеры"
-	line "ЛИГИ #МОНов"
+	line "ЛИГИ #МОНОВ"
 	cont "готовы принять"
 	cont "всех!"
 
@@ -582,7 +582,7 @@ _ViridianSchoolNotebookText4::
 
 	para "С ЭЛИТНОЙ ЧЕТВЁР-"
 	line "КОЙ ЛИГИ #-"
-	cont "МОНов!"
+	cont "МОНОВ!"
 	prompt
 
 _EnemiesOnEverySideText::
@@ -601,7 +601,7 @@ _FightingDojoText::
 
 _IndigoPlateauHQText::
 	text "ПЛАТО ИНДИГО"
-	line "ЛИГА #МОНов"
+	line "ЛИГА #МОНОВ"
 	done
 
 _RedBedroomSNESText::
@@ -816,12 +816,12 @@ _IndigoPlateauStatuesText1::
 _IndigoPlateauStatuesText2::
 	text "Главная цель"
 	line "тренеров!"
-	cont "ЛИГА #МОНов"
+	cont "ЛИГА #МОНОВ"
 	done
 
 _IndigoPlateauStatuesText3::
 	text "Высший авторитет"
-	line "ЛИГА #МОНов"
+	line "ЛИГА #МОНОВ"
 	done
 
 _PokemonBooksText::
@@ -1740,10 +1740,10 @@ _TossHowManyText::
 _AccessedHoFPCText::
 	text "Получен доступ к"
 	line "сайту ЛИГИ #-"
-	cont "МОНов."
+	cont "МОНОВ."
 
 	para "Получен доступ к"
-	line "ЗАЛУ СЛАВЫ."
+	line "ЗАЛу СЛАВЫ."
 	prompt
 
 _SwitchOnText::

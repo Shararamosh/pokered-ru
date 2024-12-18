@@ -1,6 +1,6 @@
 _CeladonMart4Text2::
 	text "Я хочу купить"
-	line "# КУКЛу для"
+	line "# КУКЛУ для"
 	cont "своей подруги!"
 	done
 
@@ -11,7 +11,7 @@ _CeladonMart4Text3::
 	para "От дикого #МОНа"
 	line "можно сбежать,"
 	cont "если отвлечь его"
-	cont "# КУКЛой!"
+	cont "# КУКЛОЙ!"
 	done
 
 _CeladonMart4Text4::

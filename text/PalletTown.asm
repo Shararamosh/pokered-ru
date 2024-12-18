@@ -13,7 +13,7 @@ _OakWalksUpText::
 	cont "МОН для защиты."
 	cont "Я знаю!"
 
-	para "Пойдём за мной!"
+	para "Пойдём со мной!"
 	done
 
 _PalletTownText2::
@@ -21,9 +21,8 @@ _PalletTownText2::
 	line "ПОКéМОНов!"
 
 	para "Когда они станут"
-	line "сильными, они"
-	cont "смогут защищать"
-	cont "меня!"
+	line "сильными, смогут"
+	cont "защищать меня!"
 	done
 
 _PalletTownText3::
@@ -31,9 +30,9 @@ _PalletTownText3::
 	line "невероятно!"
 
 	para "Теперь ты можешь"
-	line "принимать и отп-" 
-	cont "равлять вещи и"
-	cont "ПОКéМОНов через"
+	line "забирать и вно-" 
+	cont "сить вещи и #-"
+	cont "МОНов через"
 	cont "компьютер."
 	done
 

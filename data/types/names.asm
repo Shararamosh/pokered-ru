@@ -33,7 +33,7 @@ ENDR
 .Water:    db "ВОДНЫЙ@"
 .Grass:    db "ТРАВЯНОЙ@"
 .Electric: db "ЭЛЕКТРО@"
-.Psychic:  db "ПСИХО@"
+.Psychic:  db "ПСИХИЧ.@"
 .Ice:      db "ЛЕДЯНОЙ@"
 .Ground:   db "ЗЕМЛЯНОЙ@"
 .Rock:     db "КАМЕННЫЙ@"
