@@ -5,11 +5,11 @@ _OakAppearsText::
 _OakWalksUpText::
 	text "ОУК: Это опасно!"
 	line "В высокой траве"
-	cont "живут дикие ПОКé-"
+	cont "живут дикие #-"
 	cont "МОНы!"
 
 	para "Тебе нужен свой"
-	line "собственный ПОКé-"
+	line "собственный #-"
 	cont "МОН для защиты."
 	cont "Я знаю!"
 
@@ -18,7 +18,7 @@ _OakWalksUpText::
 
 _PalletTownText2::
 	text "Я тоже выращиваю"
-	line "ПОКéМОНов!"
+	line "#МОНов!"
 
 	para "Когда они станут"
 	line "сильными, смогут"

@@ -2105,13 +2105,13 @@ DisplayBattleMenu::
 	call CopyData
 ; the following simulates the keystrokes by drawing menus on screen
 	;hlcoord 9, 14
-	hlcoord 7, 14 ;shara-add
+	hlcoord 23-ATTACK_NAME_LENGTH, 14 ;shara-add
 	ld [hl], "▶"
 	ld c, 80
 	call DelayFrames
 	ld [hl], " "
-	;hlcoord 9, 16 ;shara-add
-	hlcoord 7, 16
+	;hlcoord 9, 16
+	hlcoord 23-ATTACK_NAME_LENGTH, 16 ;shara-add
 	ld [hl], "▶"
 	ld c, 50
 	call DelayFrames
@@ -2119,7 +2119,7 @@ DisplayBattleMenu::
 	ld a, $2 ; select the "ITEM" menu
 	jp .upperLeftMenuItemWasNotSelected
 .oldManName
-	db "OLD MAN@"
+	db "СТАРИК@"
 .handleBattleMenuInput
 	ld a, [wBattleAndStartSavedMenuItem]
 	ld [wCurrentMenuItem], a
@@ -2686,7 +2686,8 @@ SelectMenuItem:
 	ld a, [wMenuItemToSwap]
 	and a
 	jr z, .select
-	hlcoord 5, 13
+	;hlcoord 5, 13
+	hlcoord 19-ATTACK_NAME_LENGTH, 13 ;shara-add
 	dec a
 	ld bc, SCREEN_WIDTH
 	call AddNTimes
@@ -3790,7 +3791,7 @@ IsFrozenText:
 	text_end
 
 IsFrozenText_Female: ;shara-add
-	text_far _IsFrozenText ;shara-add
+	text_far _IsFrozenText_Female
 	text_end
 
 FullyParalyzedText:

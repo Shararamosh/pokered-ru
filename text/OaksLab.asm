@@ -1,6 +1,6 @@
 _OaksLabGaryText1::
 	text "<RIVAL>: Йо,"
-	line "<PLAYER>! Деда"
+	line "<PLAYER>! Деды"
 	cont "здесь нет!"
 	done
 
@@ -118,13 +118,14 @@ _OaksLabAroundWorldText::
 _OaksLabGivePokeballsText1::
 	text "ОУК: Ты не можешь"
 	line "получить точные"
-	cont "данные о #МОНе,"
-	cont "лишь увидев его!"
+	cont "данные, лишь"
+	cont "обнаружив #-"
+	cont "МОНа!"
 
-	para "Ты должен ловить"
-	line "их! Используй это"
-	cont "для поимки диких"
-	cont "#МОНОВ."
+	para "Ты должен поймать"
+	line "его! Используй"
+	cont "это для ловли"
+	cont "диких #МОНОВ."
 
 	para "<PLAYER> получил 5"
 	line "# БОЛЛов!@"
@@ -132,13 +133,13 @@ _OaksLabGivePokeballsText1::
 
 _OaksLabGivePokeballsText2::
 	text_start
-	para "Когда дикий ПОКé-"
+	para "Когда дикий #-"
 	line "МОН появляется,"
 	cont "начинается игра."
 
 	para "Кинь в него #"
 	line "БОЛЛ и попробуй"
-	line "поймать его!"
+	cont "поймать его!"
 
 	para "Однако это не"
 	line "всегда работает."
