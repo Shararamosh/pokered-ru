@@ -4,13 +4,13 @@ _FileDataDestroyedText::
 	prompt
 
 _WouldYouLikeToSaveText::
-	text "Хочешь ЗАПИСать"
+	text "Хочешь ЗАПИСАТЬ"
 	line "данные?"
 	done
 
 _GameSavedText::
-	text "<PLAYER> записал"
-	line "данные!"
+	text "<PLAYER> сохранил"
+	line "игру!"
 	done
 
 _OlderFileWillBeErasedText::

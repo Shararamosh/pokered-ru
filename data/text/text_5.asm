@@ -40,7 +40,7 @@ _FlashLightsAreaText::
 _WarpToLastPokemonCenterText::
 	text "Перемещение в"
 	line "последний ЦЕНТР"
-	cont "#МОНов."
+	cont "#МОНОВ."
 	done
 
 _CannotUseTeleportNowText::
@@ -107,5 +107,5 @@ _BoxIsFullText::
 	cont "принять их!"
 
 	para "Поменяй BOX в"
-	line "ЦЕНТРЕ #МОНов!"
+	line "ЦЕНТРЕ #МОНОВ!"
 	done

@@ -172,7 +172,7 @@ _GymStatueText2::
 	done
 
 _ViridianCityPokecenterGuyText::
-	text "ЦЕНТР #МОНов"
+	text "ЦЕНТР #МОНОВ"
 	line "лечит уставших,"
 	cont "раненых или"
 	cont "поверженных"

@@ -54,7 +54,7 @@ _MartSignText::
 
 _PokeCenterSignText::
 	text "Лечим #МОНов!"
-	line "ЦЕНТР #МОНов"
+	line "ЦЕНТР #МОНОВ"
 	done
 
 _FoundItemText::

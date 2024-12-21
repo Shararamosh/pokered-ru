@@ -183,7 +183,7 @@ _HMCantDeleteText::
 
 _PokemonCenterWelcomeText::
 	text "Добро пожаловать в"
-	line "ЦЕНТР #МОНов!"
+	line "ЦЕНТР #МОНОВ!"
 
 	para "Мы полностью лечим"
 	line "ваших #МОНов!"
