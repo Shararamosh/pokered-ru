@@ -368,3 +368,29 @@ SetPartyMenuHPBarColor:
 	ld hl, wWhichPartyMenuHPBar
 	inc [hl]
 	ret
+	
+DrawPartySprites:: ;By ZetaPhoenix.
+    hlcoord 3, 0
+    ld de, wPartySpecies
+    xor a
+    ld c, a
+    ldh [hPartyMonIndex], a
+.loop
+    ld a, [de]
+    cp $FF ; reached the terminator?
+    ret z
+    push bc
+    push de
+    push hl
+    ld a, c
+    ldh [hPartyMonIndex], a
+    farcall WriteMonPartySpriteOAMByPartyIndex ; place the appropriate pokemon icon
+; prepare next loop
+    pop hl
+    ld bc, 40
+    add hl, bc
+    pop de
+    pop bc
+    inc de
+    inc c
+    jr .loop

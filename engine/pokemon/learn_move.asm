@@ -151,13 +151,13 @@ TryingToLearn:
 	ld hl, WhichMoveToForgetText
 	call PrintText
 	;hlcoord 4, 7
-	hlcoord 18-ATTACK_NAME_LENGTH, 7
+	hlcoord 0, 7
 	ld b, 4
 	;ld c, 14
-	ld c, ATTACK_NAME_LENGTH ;shara-add: Giving bigger buffer to attack name. Length is defined in text_constants.asm.
+	ld c, SCREEN_WIDTH-2 ;shara-add: The text width is now identical to screen width.
 	call TextBoxBorder
 	;hlcoord 6, 8
-	hlcoord 20-ATTACK_NAME_LENGTH, 8
+	hlcoord 2, 8
 	ld de, wMovesString
 	ldh a, [hUILayoutFlags]
 	set 2, a
@@ -170,7 +170,7 @@ TryingToLearn:
 	ld a, 8
 	ld [hli], a ; wTopMenuItemY
 	;ld a, 5
-	ld a, 2
+	ld a, 1 ;shara-add
 	ld [hli], a ; wTopMenuItemX
 	xor a
 	ld [hli], a ; wCurrentMenuItem
@@ -182,6 +182,17 @@ TryingToLearn:
 	ld [hl], 0 ; wLastMenuItem
 	ld hl, hUILayoutFlags
 	set 1, [hl]
+	;shara-add begin
+	push hl
+	push de
+	push bc
+	push af
+	call Clean3LastPartySprites
+	pop af
+	pop bc
+	pop de
+	pop hl
+	;shara-add end
 	call HandleMenuInput
 	ld hl, hUILayoutFlags
 	res 1, [hl]
@@ -209,11 +220,34 @@ TryingToLearn:
 	and a
 	ret
 .hm
+	;shara-add begin
+	push hl
+	push de
+	push bc
+	push af
+	callfar DrawPartySprites
+	pop af
+	pop bc
+	pop de
+	pop hl
+	;shara-add end
 	ld hl, HMCantDeleteText
 	call PrintText
 	pop hl
-	jr .loop
+	;jr .loop
+	jp .loop
 .cancel
+	;shara-add begin
+	push hl
+	push de
+	push bc
+	push af
+	callfar DrawPartySprites
+	pop af
+	pop bc
+	pop de
+	pop hl
+	;shara-add end
 	scf
 	ret
 
@@ -268,3 +302,15 @@ ForgotAndText:
 HMCantDeleteText:
 	text_far _HMCantDeleteText
 	text_end
+
+Clean3LastPartySprites: ;by Engezerstorung
+	ld a, 160 ; move the sprite to Y 160 to hide them
+	ld hl, wOAMBufferSprite14 ; where to start in OAM, here the first tile of the 4th pokemon
+	ld de, 4 ; the value to add to base adress to go from previous to next sprite Y byte
+	ld b, 12 ; number of sprites to affect (remember than one sprite = one tile, so each full menu sprites have 4 sprite each)
+.loop
+	ld [hl], a
+	add hl, de
+	dec b
+	jr nz, .loop
+	ret
