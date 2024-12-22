@@ -392,12 +392,14 @@ INCLUDE "data/pokemon/title_mons.asm"
 
 ; prints version text (red, blue)
 PrintGameVersionOnTitleScreen:
+	;shara-add begin: Different horizontal offset depending on version.
 	IF DEF(_RED)
 		hlcoord 5, 8
 	ENDC
 	IF DEF(_BLUE)
 		hlcoord 6, 8
 	ENDC
+	;shara-add end
 	;hlcoord 7, 8
 	ld de, VersionOnTitleScreenText
 	jp PlaceString

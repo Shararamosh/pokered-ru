@@ -115,7 +115,7 @@ _NotEnoughCoinsSlotMachineText::
 	prompt
 
 _OneMoreGoSlotMachineText::
-	text "Сыграем ещё раз?"
+	text "Сыграем ещё?"
 	done
 
 _LinedUpText::
@@ -123,7 +123,7 @@ _LinedUpText::
 	line "Заработано @"
 	text_ram wStringBuffer
 	text_start
-	line "монет!"
+	cont "монет!"
 	done
 
 _NotThisTimeText::
