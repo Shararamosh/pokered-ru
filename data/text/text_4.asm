@@ -176,6 +176,18 @@ _ForgotAndText::
 	para "И..."
 	prompt
 
+_ForgotAndText_Female::
+	text_start
+	para "@"
+	text_ram wLearnMoveMonName
+	text " забыла"
+	line "@"
+	text_ram wcd6d
+	text "!"
+
+	para "И..."
+	prompt
+
 _HMCantDeleteText::
 	text "Техники HM нельзя"
 	line "удалить!"

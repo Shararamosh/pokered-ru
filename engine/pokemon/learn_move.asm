@@ -31,6 +31,17 @@ DontAbandonLearning:
 	push de
 	ld [wd11e], a
 	call GetMoveName
+	;shara-add begin
+	push hl
+	push de
+	push bc
+	push af
+	callfar DrawPartySprites
+	pop af
+	pop bc
+	pop de
+	pop hl
+	;shara-add end
 	ld hl, OneTwoAndText
 	call PrintText
 	pop de
@@ -289,7 +300,22 @@ OneTwoAndText:
 	text_asm
 	ld a, SFX_SWAP
 	call PlaySoundWaitForCurrent
+	;shara-add begin
+	push af
+	ld a, [wcf91] ;Pokemon specie.
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .female
+	;shara-add end
+	pop af
 	ld hl, PoofText
+	ret
+.female ;shara-add
+	pop af
+	ld hl, PoofText_Female
 	ret
 
 PoofText:
@@ -297,6 +323,13 @@ PoofText:
 	text_pause
 ForgotAndText:
 	text_far _ForgotAndText
+	text_end
+
+PoofText_Female: ;shara-add
+	text_far _PoofText
+	text_pause
+ForgotAndText_Female: ;shara-add
+	text_far _ForgotAndText_Female
 	text_end
 
 HMCantDeleteText:

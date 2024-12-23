@@ -146,7 +146,24 @@ GainExperience:
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
 	call GetPartyMonName
+	;shara-add begin
+	push af
+	ld a, [wBattleMonSpecies2]
+	push de
+	push bc
+	call IsFemaleSpecie
+	pop bc
+	pop de
+	jr c, .GainedTextF
+	;shara-add end
+.GainedTextM ;shara-add
+	pop af
 	ld hl, GainedText
+	jr .GainedTextContinue
+.GainedTextF ;shara-add
+	pop af
+	ld hl, GainedText_Female
+.GainedTextContinue ;shara-add
 	call PrintText
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
@@ -358,6 +375,20 @@ BoostExp:
 
 GainedText:
 	text_far _GainedText
+	text_asm
+	ld a, [wBoostExpByExpAll]
+	ld hl, WithExpAllText
+	and a
+	ret nz
+	ld hl, ExpPointsText
+	ld a, [wGainBoostedExp]
+	and a
+	ret z
+	ld hl, BoostedText
+	ret
+
+GainedText_Female:
+	text_far _GainedText_Female
 	text_asm
 	ld a, [wBoostExpByExpAll]
 	ld hl, WithExpAllText

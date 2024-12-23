@@ -1323,6 +1323,12 @@ _GainedText::
 	line "@"
 	text_end
 
+_GainedText_Female::
+	text_ram wcd6d
+	text " получила"
+	line "@"
+	text_end
+
 _WithExpAllText::
 	text "от ДЕЛИТЕЛЯ ОПЫТА"
 	cont "@"
