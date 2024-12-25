@@ -971,8 +971,9 @@ _TrainerAboutToUseText::
 
 _TrainerSentOutText::
 	text_ram wTrainerName
-	text " высылает"
-	line "@"
+	text_start
+	line "высылает"
+	auto "@"
 	text_ram wEnemyMonNick
 	text "!"
 	done

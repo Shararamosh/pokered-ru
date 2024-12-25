@@ -1210,7 +1210,8 @@ wMissableObjectCounter:: db
 ; 13 bytes for the letters of the opposing trainer
 ; the name is terminated with $50 with possible
 ; unused trailing letters
-wTrainerName:: ds 13
+;wTrainerName:: ds 13
+wTrainerName:: ds 14 ;shara-add: Max trainer name is now 13 symbols + terminator symbol.
 
 ; lost battle, this is -1
 ; no battle, this is 0
