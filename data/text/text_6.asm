@@ -269,8 +269,8 @@ _ThrowBallAtTrainerMonText2::
 	prompt
 
 _NoCyclingAllowedHereText::
-	text "Велосипед здесь"
-	next "запрещён."
+	text "Здесь нельзя"
+	next "кататься."
 	prompt
 
 _NoSurfingHereText::

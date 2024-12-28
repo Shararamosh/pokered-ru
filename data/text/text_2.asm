@@ -1837,9 +1837,8 @@ _OnceReleasedText::
 	text "Если отпустить,"
 	line "@"
 	text_ram wStringBuffer
-	text_start
-	cont "уйдёт навсегда."
-	cont "ОК?"
+	text " уйдёт"
+	cont "навсегда. ОК?"
 	done
 
 _MonWasReleasedText::
