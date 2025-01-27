@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        
+      - name: Install libpng
+        run: sudo apt-get install libpng
 
       - name: Checkout rgbds
         uses: actions/checkout@master
@@ -19,7 +22,7 @@ jobs:
           path: rgbds
           ref: v0.5.2
           repository: gbdev/rgbds
-      
+
       - name: Install rgbds
         working-directory: rgbds
         run: sudo make install
@@ -48,7 +51,7 @@ jobs:
       - name: Remove rgbds
         run: |
           rm -rf rgbds
-      
+
       - name: Install unzip, download Floating IPS and create patches
         run: |
           sudo apt-get install unzip
