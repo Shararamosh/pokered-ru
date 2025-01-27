@@ -232,7 +232,7 @@ _LoweredItsHeadText_Female::
 
 _SkyAttackGlowingText::
 	text_start
-	text " сияет!"
+	line " сияет!"
 	prompt
 
 _FlewUpHighText::

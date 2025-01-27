@@ -387,7 +387,7 @@ GainedText:
 	ld hl, BoostedText
 	ret
 
-GainedText_Female:
+GainedText_Female: ;shara-add
 	text_far _GainedText_Female
 	text_asm
 	ld a, [wBoostExpByExpAll]

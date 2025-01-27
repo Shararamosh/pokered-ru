@@ -1326,8 +1326,9 @@ _GainedText::
 
 _GainedText_Female::
 	text_ram wcd6d
-	text " получила"
-	line "@"
+	text_start
+	line "получила"
+	auto "@"
 	text_end
 
 _WithExpAllText::
