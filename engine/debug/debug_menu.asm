@@ -58,14 +58,14 @@ IF DEF(_DEBUG)
 	jp StartNewGameDebug
 
 DebugPlayerName:
-	db "Tom@"
+	db "Том@"
 
 DebugRivalName:
-	db "Juerry@"
+	db "Джерри@"
 
 DebugMenuOptions:
-	db   "FIGHT"
-	next "DEBUG@"
+	db   "БИТВА"
+	next "ОТЛАДКА@"
 ELSE
 	ret
 ENDC
