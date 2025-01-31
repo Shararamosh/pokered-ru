@@ -56,7 +56,7 @@ jobs:
         run: |
           sudo apt-get install unzip
           wget "https://github.com/Alcaro/Flips/releases/latest/download/flips-linux.zip"
-          unzip -p flips-linux.zip builds/linux-x64-gui.zip/flips >flips
+          unzip flips-linux.zip
           rm flips-linux.zip
           chmod +x flips
           ./flips -c -b pokered.gbc pokered-ru.gbc pokered-ru.bps
