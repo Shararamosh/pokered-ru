@@ -68,7 +68,7 @@ _CeladonCityText6::
 	line "друг - ПОЛИВРАТ!"
 
 	para "Он эволюционировал"
-	line "из ПОЛИВИРЛА,"
+	line "из ПОЛИВИРЛа,"
 	cont "когда я использо-"
 	cont "вал КАМЕНЬ ВОДЫ!"
 	done
@@ -154,5 +154,5 @@ _CeladonCityText17::
 _CeladonCityText18::
 	text "УГОЛОК ИГР РАКЕТЫ"
 	line "Игровая площадка"
-	cont "на вырост!"
+	cont "для взрослых!"
 	done

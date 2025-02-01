@@ -177,19 +177,19 @@ _Thanks2Text::
 	done
 
 _AfterTrade2Text::
-	text "Твой @"
+	text "Привет! Твой ста-"
+	line "рина @"
 	text_ram wInGameTradeGiveMonName
 	text_start
-	line "эволюционировал"
-	cont "во время обмена!"
+	cont "великолепен!"
 	done
 
 _AfterTrade2Text_Female::
-	text "Твой @"
+	text "Привет! Твоя ста-"
+	line "рина @"
 	text_ram wInGameTradeGiveMonName
 	text_start
-	line "эволюционировал"
-	cont "во время обмена!"
+	cont "великолепна!"
 	done
 
 _WannaTrade3Text::
