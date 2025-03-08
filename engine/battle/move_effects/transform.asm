@@ -134,7 +134,7 @@ TransformEffect_:
 	pop af
 	ld hl, TransformedText
 	jp PrintText
-.femaleCheck
+.femaleCheck ;shara-add
 	ld a, [wBattleMonSpecies2]
 	push de
 	push bc
@@ -143,7 +143,7 @@ TransformEffect_:
 	pop de
 	jr c, .female
 	jr .standard
-.female
+.female ;shara-add
 	pop af
 	ld hl, TransformedText_Female
 	jp PrintText

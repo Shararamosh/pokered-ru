@@ -3458,14 +3458,13 @@ CheckPlayerStatusConditions:
 	pop de
 	jr c, .WakeUpFemale
 	;shara-add end
-.WakeUpStandard
-	pop af
+.WakeUpStandard ;shara-add
 	ld hl, WokeUpText
-	call PrintText
-	jr .sleepDone
-.WakeUpFemale
-	pop af
+	jr .WakeUpGotText
+.WakeUpFemale ;shara-add
 	ld hl, WokeUpText_Female
+.WakeUpGotText ;shara-add
+	pop af
 	call PrintText
 .sleepDone
 	xor a
@@ -3486,16 +3485,14 @@ CheckPlayerStatusConditions:
 	pop de
 	jr c, .FrozenTextFemale
 	;shara-add end
-.FrozenTextStandard
-	pop af
+.FrozenTextStandard ;shara-add
 	ld hl, IsFrozenText
-	call PrintText
 	jr .FrozenCheckContinue
-.FrozenTextFemale
-	pop af
+.FrozenTextFemale ;shara-add
 	ld hl, IsFrozenText_Female
+.FrozenCheckContinue ;shara-add
+	pop af
 	call PrintText
-.FrozenCheckContinue
 	xor a
 	ld [wPlayerUsedMove], a
 	ld hl, ExecutePlayerMoveDone ; player can't move this turn
@@ -3523,16 +3520,16 @@ CheckPlayerStatusConditions:
 	call IsFemaleSpecie
 	pop bc
 	pop de
-	jr c, .FlincheckTextFemale
+	jr c, .FlinchedTextFemale
 	;shara-add end
-.FlinchedTextStandard
+.FlinchedTextStandard ;shara-add
 	ld hl, FlinchedText
-	call PrintText
 	jr .FlinchedTextContinue
-.FlincheckTextFemale
+.FlinchedTextFemale ;shara-add
 	ld hl, FlinchedText
+.FlinchedTextContinue ;shara-add
+	pop af
 	call PrintText
-.FlinchedTextContinue
 	ld hl, ExecutePlayerMoveDone ; player can't move this turn
 	jp .returnToHL
 
@@ -3578,14 +3575,13 @@ CheckPlayerStatusConditions:
 	pop bc
 	pop de
 	jr c, .confusedCheckFemaleText
-	pop af
 	;shara-add end
 	ld hl, ConfusedNoMoreText
 	jr .gotText ;shara-add
 .confusedCheckFemaleText ;shara-add
-	pop af
 	ld hl, ConfusedNoMoreText_Female
 .gotText ;shara-add
+	pop af
 	call PrintText
 	jr .TriedToUseDisabledMoveCheck
 .IsConfused
@@ -3888,7 +3884,6 @@ HandleSelfConfusionDamage:
 	jr z, .femaleCheck
 	;shara-add end
 .standard: ;shara-add
-	pop af
 	ld hl, HurtItselfText
 	jr .gotText
 .femaleCheck: ;shara-add
@@ -3900,10 +3895,10 @@ HandleSelfConfusionDamage:
 	pop de
 	jr c, .female
 	jr .standard
-.female
-	pop af
+.female ;shara-add
 	ld hl, HurtItselfText_Female
-.gotText:
+.gotText: ;shara-add
+	pop af
 	call PrintText
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
@@ -4092,6 +4087,7 @@ PrintMoveFailureText:
 	and $7f
 	jr z, .gotTextToPrint
 	;shara-add begin
+	push af
 	ldh a, [hWhoseTurn]
 	and a
 	jr z, .AttackMissedFemaleCheck
@@ -4153,12 +4149,12 @@ PrintMoveFailureText:
 	and a
 	jr z, .KeptGoingAndCrashedFemaleCheck
 	;shara-add end
-.KeptGoingAndCrashedStandard
+.KeptGoingAndCrashedStandard ;shara-add
 	pop af
 	ld hl, KeptGoingAndCrashedText
 	call PrintText
 	jr .KeptGoingAndCrashedGotText
-.KeptGoingAndCrashedFemaleCheck
+.KeptGoingAndCrashedFemaleCheck ;shara-add
 	ld a, [wBattleMonSpecies2]
 	push de
 	push bc
@@ -4167,11 +4163,11 @@ PrintMoveFailureText:
 	pop de
 	jr c, .KeptGoingAndCrashedFemale
 	jr .KeptGoingAndCrashedStandard
-.KeptGoingAndCrashedFemale
+.KeptGoingAndCrashedFemale ;shara-add
 	pop af
 	ld hl, KeptGoingAndCrashedText_Female
 	call PrintText
-.KeptGoingAndCrashedGotText
+.KeptGoingAndCrashedGotText ;shara-add
 	ld b, $4
 	predef PredefShakeScreenHorizontally
 	ldh a, [hWhoseTurn]

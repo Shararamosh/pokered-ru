@@ -361,6 +361,7 @@ BillsPCRelease:
 .female ;shara-add
 	ld hl, MonWasReleasedText_Female
 .gotText ;shara-add
+	pop af
 	call PrintText
 	jp BillsPCMenu
 

@@ -35,7 +35,7 @@ DoInGameTradeDialogue:
 	jr c, .female
 	;shara-add end
 	ld de, InGameTradeTextPointers
-	jr .gotText
+	jr .gotText ;shara-add
 .female ;shara-add
 	ld de, InGameTradeTextPointers_Female
 .gotText ;shara-add

@@ -157,13 +157,12 @@ GainExperience:
 	jr c, .GainedTextF
 	;shara-add end
 .GainedTextM ;shara-add
-	pop af
 	ld hl, GainedText
 	jr .GainedTextContinue
 .GainedTextF ;shara-add
-	pop af
 	ld hl, GainedText_Female
 .GainedTextContinue ;shara-add
+	pop af
 	call PrintText
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
@@ -267,14 +266,12 @@ GainExperience:
 	pop de
 	jr c, .printGreLevelTextFemale
 	;shara-add end
-.printGrewLevelTextStandard ;shara-add
-	pop af
 	ld hl, GrewLevelText
 	jr .printGrewLevelTextGotText
 .printGreLevelTextFemale ;shara-add
-	pop af
 	ld hl, GrewLevelText_Female
 .printGrewLevelTextGotText ;shara-add
+	pop af
 	call PrintText
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a

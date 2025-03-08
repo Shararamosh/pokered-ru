@@ -619,7 +619,7 @@ ItemUseBall:
 	jr nz, .printTransferredToPCText
 	ld hl, ItemUseBallText08
 	jr .printTransferredToPCText
-.sendToBoxFemale; Sending different message for certain Pokemon species.
+.sendToBoxFemale ;shara-add: Sending different message for certain Pokemon species.
 	pop af
 	ld hl, ItemUseBallText07_Female
 	CheckEvent EVENT_MET_BILL
@@ -913,8 +913,8 @@ ItemUseMedicine:
 	ld [wActionResultOrTookBattleTurn], a ; item use failed
 	jp PrintText
 .emptyPartyText
-	text "You don't have"
-	line "any #MON!"
+	text "У тебя нет"
+	line "#МОНов!"
 	prompt
 .notUsingSoftboiled
 	call DisplayPartyMenu
@@ -2326,7 +2326,7 @@ ItemUseTMHM:
 	jr .gotText ;shara-add
 .female ;shara-add: Section for female species.
 	ld hl, MonCannotLearnMachineMoveText_Female
-.gotText
+.gotText ;shara-add
 	pop af
 	call PrintText
 	jr .chooseMon

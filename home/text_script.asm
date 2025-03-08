@@ -194,14 +194,13 @@ DisplayPokemonFaintedText::
 	pop bc
 	pop de
 	jr c, .female
-	pop af
 	;shara-add end
 	ld hl, PokemonFaintedText
-	call PrintText
-	jp AfterDisplayingTextID
+	jr .gotText ;shara-add
 .female ;shara-add
-	pop af
 	ld hl, PokemonFaintedText_Female
+.gotText ;shara-add
+	pop af
 	call PrintText
 	jp AfterDisplayingTextID
 

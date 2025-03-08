@@ -128,9 +128,9 @@ PrintLearnedMove:
 	;shara-add end
 	ld hl, LearnedMove1Text
 	jr .gotText ;shara-add
-.female
+.female ;shara-add
 	ld hl, LearnedMove1Text_Female
-.gotText
+.gotText ;shara-add
 	pop af
 	call PrintText
 	ld b, 1
@@ -310,12 +310,12 @@ OneTwoAndText:
 	pop de
 	jr c, .female
 	;shara-add end
-	pop af
 	ld hl, PoofText
-	ret
+	jr .gotText ;shara-add
 .female ;shara-add
 	pop af
 	ld hl, PoofText_Female
+.gotText ;shara-add
 	ret
 
 PoofText:
