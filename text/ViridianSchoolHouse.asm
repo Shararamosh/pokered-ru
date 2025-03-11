@@ -1,13 +1,13 @@
 _SchoolText1::
-	text "Whew! I'm trying"
-	line "to memorize all"
-	cont "my notes."
+	text "Фью! Я пытаюсь"
+	line "запомнить все"
+	cont "свои записи."
 	done
 
 _SchoolText2::
-	text "Okay!"
+	text "Окей!"
 
-	para "Be sure to read"
-	line "the blackboard"
-	cont "carefully!"
+	para "Обязательно"
+	line "прочитай всё,"
+	cont "что на доске!"
 	done

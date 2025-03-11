@@ -1,19 +1,20 @@
 _PewterHouse2Text1::
-	text "#MON learn new"
-	line "techniques as"
-	cont "they grow!"
+	text "С ростом #-"
+	line "МОНы изучают"
+	cont "новые техники!"
 
-	para "But, some moves"
-	line "must be taught by"
-	cont "the trainer!"
+	para "Однако некоторым"
+	line "движениям их"
+	cont "должен обучить"
+	cont "сам тренер!"
 	done
 
 _PewterHouse2Text2::
-	text "#MON become"
-	line "easier to catch"
-	cont "when they are"
-	cont "hurt or asleep!"
+	text "#МОНов легче"
+	line "ловить, когда"
+	cont "они ранены или"
+	cont "спят!"
 
-	para "But, it's not a"
-	line "sure thing!"
+	para "Но это не"
+	line "наверняка!"
 	done

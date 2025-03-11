@@ -1,12 +1,13 @@
 _Route2GateText_5d616::
-	text "The HM FLASH"
-	line "lights even the"
-	cont "darkest dungeons."
+	text "HM ВСПЫШКА"
+	line "освещает даже"
+	cont "тёмные подземелья."
 	done
 
 _Route2GateText2::
-	text "Once a #MON"
-	line "learns FLASH, you"
-	cont "can get through"
-	cont "ROCK TUNNEL."
+	text "Как только обучишь"
+	line "#МОНа ВСПЫШКЕ,"
+	cont "сможешь пройти"
+	cont "через КАМЕННЫЙ"
+	cont "ТОННЕЛЬ."
 	done

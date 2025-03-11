@@ -1,145 +1,151 @@
 _Route3Text1::
-	text "Whew... I better"
-	line "take a rest..."
-	cont "Groan..."
+	text "Уфф... Мне бы"
+	line "отдохнуть..."
+	cont "Уфф..."
 
-	para "That tunnel from"
-	line "CERULEAN takes a"
-	cont "lot out of you!"
+	para "Этот тоннель из"
+	line "ЦЕРУЛИНА отнял"
+	cont "у меня все силы!"
 	done
 
 _Route3BattleText1::
-	text "Hey! I met you in"
-	line "VIRIDIAN FOREST!"
+	text "Хэй! Я встречал"
+	line "тебя в ЛЕСу"
+	cont "ВИРИДИАНА!"
 	done
 
 _Route3EndBattleText1::
-	text "You"
-	line "beat me again!"
+	text "Ты снова меня"
+	line "победил!"
 	prompt
 
 _Route3AfterBattleText1::
-	text "There are other"
-	line "kinds of #MON"
-	cont "than those found"
-	cont "in the forest!"
+	text "В отличие от леса,"
+	line "здесь водятся"
+	cont "другие виды"
+	cont "#МОНов!"
 	done
 
 _Route3BattleText2::
-	text "Hi! I like shorts!"
-	line "They're comfy and"
-	cont "easy to wear!"
+	text "Привет! Я люблю"
+	line "шорты! В них"
+	cont "удобно и носятся"
+	cont "легко!"
 	done
 
 _Route3EndBattleText2::
-	text "I don't"
-	line "believe it!"
+	text "Поверить не"
+	line "могу!"
 	prompt
 
 _Route3AfterBattleText2::
-	text "Are you storing"
-	line "your #MON on"
-	cont "PC? Each BOX can"
-	cont "hold 20 #MON!"
+	text "А ты хранишь своих"
+	line "#МОНов в ПК?"
+	cont "В каждом BOXе"
+	cont "может быть по"
+	cont "20 #МОНов!"
 	done
 
 _Route3BattleText3::
-	text "You looked at me,"
-	line "didn't you?"
+	text "Ты взглянул на"
+	line "меня, не так ли?"
 	done
 
 _Route3EndBattleText3::
-	text "You're"
-	line "mean!"
+	text "Грубиян!"
 	prompt
 
 _Route3AfterBattleText3::
-	text "Quit staring if"
-	line "you don't want to"
-	cont "fight!"
+	text "Хватит таращиться,"
+	line "если не хочешь"
+	cont "сражаться!"
 	done
 
 _Route3BattleText4::
-	text "Are you a trainer?"
-	line "Let's fight!"
+	text "Ты тренер?"
+	line "Давай сразимся!"
 	done
 
 _Route3EndBattleText4::
-	text "If I"
-	line "had new #MON I"
-	cont "would've won!"
+	text "Будь у меня"
+	line "новый #МОН,"
+	cont "я бы выйграл!"
 	prompt
 
 _Route3AfterBattleText4::
-	text "If a #MON BOX"
-	line "on the PC gets"
-	cont "full, just switch"
-	cont "to another BOX!"
+	text "Если BOX с #-"
+	line "МОНами на ПК"
+	cont "заполнился,"
+	cont "просто поменяй"
+	cont "его на другой!"
 	done
 
 _Route3BattleText5::
-	text "That look you"
-	line "gave me, it's so"
-	cont "intriguing!"
+	text "Этот твой взгляд,"
+	line "он такой"
+	cont "интригующий!"
 	done
 
 _Route3EndBattleText5::
-	text "Be nice!"
+	text "Будь поласковей!"
 	prompt
 
 _Route3AfterBattleText5::
-	text "Avoid fights by"
-	line "not letting"
-	cont "people see you!"
+	text "Избегай сражений,"
+	line "не позволяя дру-"
+	cont "гим видеть себя!"
 	done
 
 _Route3BattleText6::
-	text "Hey! You're not"
-	line "wearing shorts!"
+	text "Хэй! Ты не в"
+	line "шортах!"
 	done
 
 _Route3EndBattleText6::
-	text "Lost!"
-	line "Lost! Lost!"
+	text "Проиграл!"
+	line "Проиграл!"
+	cont "Проиграл!"
 	prompt
 
 _Route3AfterBattleText6::
-	text "I always wear"
-	line "shorts, even in"
-	cont "winter!"
+	text "Я всегда ношу"
+	line "шорты, даже зимой!"
 	done
 
 _Route3BattleText7::
-	text "You can fight my"
-	line "new #MON!"
+	text "Можешь сразиться"
+	line "с моим новым"
+	cont "#МОНом!"
 	done
 
 _Route3EndBattleText7::
-	text "Done"
-	line "like dinner!"
+	text "Разбит в пух"
+	line "и прах!"
 	prompt
 
 _Route3AfterBattleText7::
-	text "Trained #MON"
-	line "are stronger than"
-	cont "the wild ones!"
+	text "Натренированные"
+	line "#МОНы сильнее"
+	cont "чем дикие!"
 	done
 
 _Route3BattleText8::
-	text "Eek! Did you"
-	line "touch me?"
+	text "Ик! Ты что,"
+	line "тронул меня?"
 	done
 
 _Route3EndBattleText8::
-	text "That's it?"
+	text "И это всё?"
 	prompt
 
 _Route3AfterBattleText8::
-	text "ROUTE 4 is at the"
-	line "foot of MT.MOON."
+	text "ДОРОГА 4 находится"
+	line "у подножия ЛУННОЙ"
+	cont "ГОРЫ."
 	done
 
 _Route3Text10::
-	text "ROUTE 3"
-	line "MT.MOON AHEAD"
+	text "ДОРОГА 3"
+	line "ВПЕРЕДИ ЛУННАЯ"
+	cont "ГОРА"
 	done

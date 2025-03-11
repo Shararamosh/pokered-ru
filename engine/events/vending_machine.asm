@@ -88,7 +88,7 @@ DrinkText:
 	db   "СВЕЖАЯ ВОДА"
 	next "СОДОВАЯ"
 	next "ЛИМОНАД"
-	next "CANCEL@"
+	next "ЗАКРЫТЬ@"
 
 DrinkPriceText:
 	db   "¥200"

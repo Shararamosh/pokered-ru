@@ -1,50 +1,50 @@
 _Route1ViridianMartSampleText::
-	text "Hi! I work at a"
-	line "#MON MART."
+	text "Привет! Я работаю"
+	line "в #МОН МАРТе."
 
-	para "It's a convenient"
-	line "shop, so please"
-	cont "visit us in"
-	cont "VIRIDIAN CITY."
+	para "Это удобный"
+	line "магазин, так что"
+	cont "посетите нас в"
+	cont "ВИРИДИАН СИТИ."
 
-	para "I know, I'll give"
-	line "you a sample!"
-	cont "Here you go!"
+	para "Знаю, дам вам"
+	line "образец!"
+	cont "Держите!"
 	prompt
 
 _Route1Text_1cae8::
-	text "<PLAYER> got"
+	text "<PLAYER> получил"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
 _Route1Text_1caee::
-	text "We also carry"
-	line "# BALLs for"
-	cont "catching #MON!"
+	text "А ещё мы продаём"
+	line "# БОЛЛы для"
+	cont "ловли #МОНов!"
 	done
 
 _Route1Text_1caf3::
-	text "You have too much"
-	line "stuff with you!"
+	text "У тебя слишком"
+	line "много вещей!"
 	done
 
 _Route1Text2::
-	text "See those ledges"
-	line "along the road?"
+	text "Видишь эти уступы"
+	line "вдоль дороги?"
 
-	para "It's a bit scary,"
-	line "but you can jump"
-	cont "from them."
+	para "Немного страшно,"
+	line "но с них можно"
+	cont "прыгать."
 
-	para "You can get back"
-	line "to PALLET TOWN"
-	cont "quicker that way."
+	para "Таким путём можно"
+	line "быстрее вернуться"
+	cont "в ПАЛЛЕТ ТАУН."
 	done
 
 _Route1Text3::
-	text "ROUTE 1"
-	line "PALLET TOWN -"
-	cont "VIRIDIAN CITY"
+	text "ДОРОГА 1"
+	line "ПАЛЛЕТ ТАУН -"
+	cont "ВИРИДИАН СИТИ"
 	done

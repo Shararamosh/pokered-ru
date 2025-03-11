@@ -1,16 +1,18 @@
 _ViridianPokeCenterText2::
-	text "You can use that"
-	line "PC in the corner."
+	text "Ты можешь исполь-"
+	line "зовать тот ПК"
+	cont "в углу."
 
-	para "The receptionist"
-	line "told me. So kind!"
+	para "Это мне сказала"
+	line "администратор."
+	cont "Такая добрая!"
 	done
 
 _ViridianPokeCenterText3::
-	text "There's a #MON"
-	line "CENTER in every"
-	cont "town ahead."
+	text "В каждом городе"
+	line "есть ЦЕНТР"
+	cont "#МОНов."
 
-	para "They don't charge"
-	line "any money either!"
+	para "И к тому же они"
+	line "не берут денег!"
 	done

@@ -1,181 +1,177 @@
 _ViridianCityText1::
-	text "Those # BALLs"
-	line "at your waist!"
-	cont "You have #MON!"
+	text "Эти # БОЛЛы"
+	line "на поясе! У тебя"
+	cont "есть #МОН!"
 
-	para "It's great that"
-	line "you can carry and"
-	cont "use #MON any"
-	cont "time, anywhere!"
+	para "Как же здорово"
+	line "носить #МОНов"
+	cont "когда угодно и"
+	cont "куда угодно!"
 	done
 
 _ViridianCityText_19122::
-	text "This #MON GYM"
-	line "is always closed."
+	text "Этот ЗАЛ #МОНов"
+	line "всегда закрыт."
 
-	para "I wonder who the"
-	line "LEADER is?"
+	para "Интересно, кто"
+	line "его ЛИДЕР?"
 	done
 
 _ViridianCityText_19127::
-	text "VIRIDIAN GYM's"
-	line "LEADER returned!"
+	text "ЛИДЕР ЗАЛА ВИРИДИ-"
+	line "АНА вернулся!"
 	done
 
 _ViridianCityText_1914d::
-	text "You want to know"
-	line "about the 2 kinds"
-	cont "of caterpillar"
-	cont "#MON?"
+	text "Хочешь узнать о 2"
+	line "видах #МОНов-"
+	cont "гусениц?"
 	done
 
 _ViridianCityText_19152::
-	text "Oh, OK then!"
+	text "Оу, ну ладно!"
 	done
 
 _ViridianCityText_19157::
-	text "CATERPIE has no"
-	line "poison, but"
-	cont "WEEDLE does."
+	text "КАТЕРПИ не"
+	line "ядовит, в отличие"
+	cont "от ВИДЛа."
 
-	para "Watch out for its"
-	line "POISON STING!"
+	para "Берегись его"
+	line "ЯДОВИТОГО ЖАЛА!"
 	done
 
 _ViridianCityText_19175::
-	text "Oh Grandpa! Don't"
-	line "be so mean!"
-	cont "He hasn't had his"
-	cont "coffee yet."
+	text "Оу, деда! Не будь"
+	line "так груб!"
+	cont "Он ещё не выпил"
+	cont "свой кофе."
 	done
 
 _ViridianCityText_1917a::
-	text "When I go shop in"
-	line "PEWTER CITY, I"
-	cont "have to take the"
-	cont "winding trail in"
-	cont "VIRIDIAN FOREST."
+	text "Каждый раз, когда"
+	line "я иду в магазин в"
+	cont "ПЬЮТЕР СИТИ, мне"
+	cont "приходится изви-"
+	cont "ваться по ЛЕСУ"
+	cont "ВИРИДИАНА."
 	done
 
 _ViridianCityText_19191::
-	text "You can't go"
-	line "through here!"
+	text "Тебе сюда нельзя!"
 
-	para "This is private"
-	line "property!"
+	para "Это частная"
+	line "территория!"
 	done
 
 _ViridianCityText_191ca::
-	text "Yawn!"
-	line "I must have dozed"
-	cont "off in the sun."
+	text "Зёв!"
+	line "Похоже, я прикор-"
+	cont "нул под солнцем."
 
-	para "I had this dream"
-	line "about a DROWZEE"
-	cont "eating my dream."
-	cont "What's this?"
-	cont "Where did this TM"
-	cont "come from?"
+	para "У меня был сон о"
+	line "ДРАУЗИ, который"
+	cont "его пожирал."
+	cont "А это ещё что?"
+	cont "Откуда взяла эта"
+	cont "TM?"
 
-	para "This is spooky!"
-	line "Here, you can"
-	cont "have this TM."
+	para "Вот это жуть!"
+	line "Вот, можешь"
+	cont "забрать эту TM."
 	prompt
 
 _ReceivedTM42Text::
-	text "<PLAYER> received"
+	text "<PLAYER> получил"
 	line "TM42!@"
 	text_end
 
 _TM42Explanation::
-	text "TM42 contains"
-	line "DREAM EATER..."
-	cont "...Snore..."
+	text "TM42 содержит"
+	line "ПОЖИРАТЕЛЬ СНОВ.."
+	cont "...Хрр..."
 	done
 
 _TM42NoRoomText::
-	text "You have too much"
-	line "stuff already."
+	text "У тебя уже слишком"
+	line "много вещей."
 	done
 
 _ViridianCityText_1920a::
-	text "Ahh, I've had my"
-	line "coffee now and I"
-	cont "feel great!"
+	text "Ах, я выпил свой"
+	line "кофе и чувствую"
+	cont "себя прекрасно!"
 
-	para "Sure you can go"
-	line "through!"
+	para "Конечно, можешь"
+	line "проходить!"
 
-	para "Are you in a"
-	line "hurry?"
+	para "А ты спешишь?"
 	done
 
 _ViridianCityText_1920f::
-	text "I see you're using"
-	line "a #DEX."
+	text "Вижу, у тебя есть"
+	line "#DEX."
 
-	para "When you catch a"
-	line "#MON, #DEX"
-	cont "is automatically"
-	cont "updated."
+	para "Когда ловишь"
+	line "#МОНа, #DEX"
+	cont "автоматически"
+	cont "обновляется."
 
-	para "What? Don't you"
-	line "know how to catch"
-	cont "#MON?"
+	para "Что? Не знаешь,"
+	line "как ловить"
+	cont "#МОНов?"
 
-	para "I'll show you"
-	line "how to then."
+	para "Тогда я тебе"
+	line "покажу."
 	done
 
 _ViridianCityText_19214::
-	text "Time is money..."
-	line "Go along then."
+	text "Время - деньги..."
+	line "Иди своим путём."
 	done
 
 _ViridianCityText_19219::
-	text "First, you need"
-	line "to weaken the"
-	cont "target #MON."
+	text "Сперва необходимо"
+	line "ослабить #МОНа."
 	done
 
 _ViridianCityText8::
-	text "VIRIDIAN CITY "
-	line "The Eternally"
-	cont "Green Paradise"
+	text "ВИРИДИАН СИТИ "
+	line "Вечнозелёный рай"
 	done
 
 _ViridianCityText9::
-	text "TRAINER TIPS"
+	text "СОВЕТЫ ТРЕНЕРУ"
 
-	para "Catch #MON"
-	line "and expand your"
-	cont "collection!"
+	para "Лови #МОНов и"
+	line "расширяй свою"
+	cont "коллекцию!"
 
-	para "The more you have,"
-	line "the easier it is"
-	cont "to fight!"
+	para "Чем их больше, тем"
+	line "легче сражаться!"
 	done
 
 _ViridianCityText10::
-	text "TRAINER TIPS"
+	text "СОВЕТЫ ТРЕНЕРУ"
 
-	para "The battle moves"
-	line "of #MON are"
-	cont "limited by their"
-	cont "POWER POINTs, PP."
+	para "Движения в битвах"
+	line "#МОНов"
+	cont "ограничены их"
+	cont "ОЧКАМИ СИЛЫ, ОС."
 
-	para "To replenish PP,"
-	line "rest your tired"
-	cont "#MON at a"
-	cont "#MON CENTER!"
+	para "Для восполнения"
+	line "ОС, давай #-"
+	cont "МОНам отдыхать"
+	cont "в ЦЕНТРе"
+	cont "#МОНов!"
 	done
 
 _ViridianCityText13::
-	text "VIRIDIAN CITY"
-	line "#MON GYM"
+	text "ВИРИДИАН СИТИ"
+	line "ЗАЛ #МОНов"
 	done
 
 _ViridianCityText14::
-	text "The GYM's doors"
-	line "are locked..."
+	text "Двери ЗАЛа"
+	line "закрыты..."
 	done

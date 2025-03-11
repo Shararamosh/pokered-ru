@@ -1,31 +1,32 @@
 _ViridianMartText1::
-	text "Okay! Say hi to"
-	line "PROF.OAK for me!"
+	text "Окей! Передай"
+	line "ПРОФ.ОУКу от меня"
+	cont "привет!"
 	done
 
 _ViridianMartText4::
-	text "Hey! You came from"
-	line "PALLET TOWN?"
+	text "Хэй! Ты же пришёл"
+	line "из ПАЛЛЕТ ТАУНа?"
 	done
 
 ViridianMartParcelQuestText::
-	text "You know PROF."
-	line "OAK, right?"
+	text "Ты ведь знаешь"
+	line "ПРОФ.ОУКа?"
 
-	para "His order came in."
-	line "Will you take it"
-	cont "to him?"
+	para "Его заказ пришёл."
+	line "Сможешь отнести"
+	cont "его?"
 
-	para "<PLAYER> got"
-	line "OAK's PARCEL!@"
+	para "<PLAYER> получил"
+	line "ПОСЫЛКУ ОУКА!@"
 	text_end
 
 _ViridianMartText2::
-	text "This shop sells"
-	line "many ANTIDOTEs."
+	text "В этом магазине"
+	line "много АНТИДОТов."
 	done
 
 _ViridianMartText3::
-	text "No! POTIONs are"
-	line "all sold out."
+	text "Нет! Все ЗЕЛЬЯ"
+	line "распроданы."
 	done

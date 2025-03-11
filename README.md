@@ -19,7 +19,7 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 - All fonts (main, battle interface).
 - All names (Pokémon, Attacks, Items, Trainer classes, Pokédex species).
 - All generic texts (introduction, menus, battle messages, generic NPC texts)
-- Maps: Pallet Town, Oak's Lab, Celadon City, Celadon Department Store, Celadon Mansion Roof.
+- Maps: Pallet Town, Oak's Lab, Viridian City, Pewter City, Celadon City, Celadon Department Store, Celadon Mansion Roof.
 
 ## Patching
 

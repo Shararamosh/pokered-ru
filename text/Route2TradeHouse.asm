@@ -1,6 +1,9 @@
 _Route2HouseText1::
-	text "A fainted #MON"
-	line "can't fight. But, "
-	cont "it can still use "
-	cont "moves like CUT!"
+	text "Поверженный #-"
+	line "МОН не может"
+	cont "сражаться, однако"
+	cont "способен исполь-"
+	cont "зовать такие"
+	cont "движения как"
+	cont "ПОРЕЗ!"
 	done

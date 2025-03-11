@@ -4,9 +4,9 @@ _CeladonMart1Text1::
 	cont "УНИВЕРМАГ"
 	cont "СЕЛАДОНА."
 
-	para "Доска справа"
-	line "описывает струк-"
-	cont "туру магазина."
+	para "На доске справа"
+	line "описана структура"
+	cont "магазина."
 	done
 
 _CeladonMart1Text2::

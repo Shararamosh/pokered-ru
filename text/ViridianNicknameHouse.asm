@@ -1,23 +1,22 @@
 _ViridianHouseText1::
-	text "Coming up with"
-	line "nicknames is fun,"
-	cont "but hard."
+	text "Придумывать"
+	line "никнеймы весело,"
+	cont "но сложно."
 
-	para "Simple names are"
-	line "the easiest to"
-	cont "remember."
+	para "Простые имена"
+	line "легче запомнить."
 	done
 
 _ViridianHouseText2::
-	text "My Daddy loves"
-	line "#MON too."
+	text "Мой папочка тоже"
+	line "любит #МОНов!"
 	done
 
 _ViridianHouseText_1d5b1::
-	text "SPEARY: Tetweet!"
+	text "СПИРИ: Титвит!"
 	done
 
 _ViridianHouseText4::
-	text "SPEAROW"
-	line "Name: SPEARY"
+	text "СПИРОУ"
+	line "Имя: СПИРИ"
 	done

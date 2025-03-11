@@ -1,117 +1,120 @@
 _PewterCityText1::
-	text "It's rumored that"
-	line "CLEFAIRYs came"
-	cont "from the moon!"
+	text "Ходят слухи, что"
+	line "КЛЕФЭЙРИ пришли"
+	cont "с луны!"
 
-	para "They appeared "
-	line "after MOON STONE"
-	cont "fell on MT.MOON."
+	para "Они появились"
+	line "после того, как"
+	cont "ЛУННЫЙ КАМЕНЬ"
+	cont "упал на ЛУННУЮ"
+	cont "ГОРУ."
 	done
 
 _PewterCityText2::
-	text "There aren't many"
-	line "serious #MON"
-	cont "trainers here!"
+	text "Здесь не так много"
+	line "серьёзных трене-"
+	cont "ров #МОНов!"
 
-	para "They're all like"
-	line "BUG CATCHERs,"
-	cont "but PEWTER GYM's"
-	cont "BROCK is totally"
-	cont "into it!"
+	para "Они все как"
+	line "ЛОВЦЫ ЖУКОВ, но"
+	cont "БРОК из ЗАЛА"
+	cont "ПЬЮТЕРА совсем"
+	cont "другой!"
 	done
 
 _PewterCityText_193f1::
-	text "Did you check out"
-	line "the MUSEUM?"
+	text "Ты уже был в"
+	line "МУЗЕЕ?"
 	done
 
 _PewterCityText_193f6::
-	text "Weren't those"
-	line "fossils from MT."
-	cont "MOON amazing?"
+	text "Разве те окамене-"
+	line "лости с ЛУННОЙ"
+	cont "ГОРЫ не прекрасны?"
 	done
 
 _PewterCityText_193fb::
-	text "Really?"
-	line "You absolutely"
-	cont "have to go!"
+	text "Серьёзно?"
+	line "Тебе обязательно"
+	cont "следует сходить!"
 	done
 
 _PewterCityText13::
-	text "It's right here!"
-	line "You have to pay"
-	cont "to get in, but"
-	cont "it's worth it!"
-	cont "See you around!"
+	text "Вот и он!"
+	line "Тебе нужно запла-"
+	cont "тить за вход, но"
+	cont "это того стоит!"
+	cont "Увидимся!"
 	done
 
 _PewterCityText_19427::
-	text "Psssst!"
-	line "Do you know what"
-	cont "I'm doing?"
+	text "Пссст!"
+	line "Знаешь, что я"
+	cont "здесь делаю?"
 	done
 
 _PewterCityText_1942c::
-	text "That's right!"
-	line "It's hard work!"
+	text "Вот именно!"
+	line "И это сложно!"
 	done
 
 _PewterCityText_19431::
-	text "I'm spraying REPEL"
-	line "to keep #MON"
-	cont "out of my garden!"
+	text "Я распыляю РЕПЕЛ-"
+	line "ЛЕНТ, чтобы отго-"
+	cont "родить свой сад"
+	cont "от #МОНов!"
 	done
 
 _PewterCityText_1945d::
-	text "You're a trainer"
-	line "right? BROCK's"
-	cont "looking for new"
-	cont "challengers!"
-	cont "Follow me!"
+	text "Ты ведь тренер?"
+	line "БРОК ищет новых"
+	cont "претендентов!"
+	cont "Пойдём со мной!"
 	done
 
 _PewterCityText14::
-	text "If you have the"
-	line "right stuff, go"
-	cont "take on BROCK!"
+	text "Как будешь готов,"
+	line "иди и брось вызов"
+	cont "БРОКу!"
 	done
 
 _PewterCityText6::
-	text "TRAINER TIPS"
+	text "СОВЕТЫ ТРЕНЕРУ"
 
-	para "Any #MON that"
-	line "takes part in"
-	cont "battle, however"
-	cont "short, earns EXP!"
+	para "Любой #МОН,"
+	line "участвующий в"
+	cont "битве, зарабаты-"
+	cont "вает ОПЫТ!"
 	done
 
 _PewterCityText7::
-	text "NOTICE!"
+	text "ВНИМАНИЕ!"
 
-	para "Thieves have been"
-	line "stealing #MON"
-	cont "fossils at MT."
-	cont "MOON! Please call"
-	cont "PEWTER POLICE"
-	cont "with any info!"
+	para "Воры крадут окаме-"
+	line "нелости #МОНов"
+	cont "из ЛУННОЙ ГОРЫ!"
+	cont "Если у вас есть"
+	cont "информация,"
+	cont "звоните в ПОЛИ-"
+	cont "ЦИЮ ПЬЮТЕРА!"
 	done
 
 _PewterCityText10::
-	text "PEWTER MUSEUM"
-	line "OF SCIENCE"
+	text "МУЗЕЙ НАУКИ"
+	line "ПЬЮТЕРА"
 	done
 
 _PewterCityText11::
-	text "PEWTER CITY"
-	line "#MON GYM"
-	cont "LEADER: BROCK"
+	text "ПЬЮТЕР СИТИ"
+	line "ЛИДЕР ЗАЛА"
+	cont "#МОНов: БРОК"
 
-	para "The Rock Solid"
-	line "#MON Trainer!"
+	para "Твёрдый как скала"
+	line "тренер #МОНов!"
 	done
 
 _PewterCityText12::
-	text "PEWTER CITY"
-	line "A Stone Gray"
-	cont "City"
+	text "ПЬЮТЕР СИТИ"
+	line "Каменно-серый"
+	cont "город"
 	done

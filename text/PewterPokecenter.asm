@@ -1,14 +1,15 @@
 _PewterPokecenterText2::
-	text "What!?"
+	text "Что!?"
 
-	para "TEAM ROCKET is"
-	line "at MT.MOON? Huh?"
-	cont "I'm on the phone!"
+	para "КОМАНДА РАКЕТА"
+	line "в ЛУННОЙ ГОРЕ?"
+	cont "Что?"
+	cont "Я на телефоне!"
 
-	para "Scram!"
+	para "Кыш!"
 	done
 
 _PewterJigglypuffText::
-	text "JIGGLYPUFF: Puu"
-	line "pupuu!"
+	text "ДЖИГЛИПАФФ: Пуу"
+	line "пупуу!"
 	done
