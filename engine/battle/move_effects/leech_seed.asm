@@ -28,6 +28,8 @@ LeechSeedEffect_:
 	ldh a, [hWhoseTurn]
 	and a
 	jr z, .standard
+	;shara-add end
+.femaleCheck ;shara-add: Checking if our Pokemon is female.
 	ld a, [wBattleMonSpecies2]
 	push de
 	push bc
@@ -35,14 +37,13 @@ LeechSeedEffect_:
 	pop bc
 	pop de
 	jr c, .female
-	;shara-add end
 .standard ;shara-add: Our Pokemon used Leech Seed on enemy Pokemon or enemy Pokemon used Leech Seed on our male Pokemon.
-	pop af
 	ld hl, WasSeededText
-	jp PrintText
+	jr .gotText
 .female ;shara-add: Enemy Pokemon used Leech Seed on our female Pokemon.
-	pop af
 	ld hl, WasSeededText_Female
+.gotText ;shara-add
+	pop af
 	jp PrintText
 .moveMissed
 	ld c, 50

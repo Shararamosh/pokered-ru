@@ -461,13 +461,12 @@ ItemUseBall:
 	pop bc
 	pop de
 	jr c, .ItemUseBallText00Female
-	pop af
+.ItemUsedBallText00Standard ;shara-add
 	ld hl, ItemUseBallText00
-	jp .printMessage
+	jr .ItemUseBallGotText
 .ItemUseBallText00Female ;shara-add
-	pop af
 	ld hl, ItemUseBallText00_Female
-	jp .printMessage
+	jr .ItemUseBallGotText
 .ItemUseBallText03 ;shara-add
 	push af
 	ld a, [wEnemyMonSpecies2]
@@ -477,12 +476,13 @@ ItemUseBall:
 	pop bc
 	pop de
 	jr c, .ItemUseBallText03Female
-	pop af
+.ItemUseBallText03Standard ;shara-add
 	ld hl, ItemUseBallText03
-	jp .printMessage
+	jr .ItemUseBallGotText
 .ItemUseBallText03Female ;shara-add
-	pop af
 	ld hl, ItemUseBallText03_Female
+.ItemUseBallGotText ;shara-add
+	pop af
 	jp .printMessage
 .standard ;shara-add
 ; Save current HP.
@@ -553,13 +553,14 @@ ItemUseBall:
 	call IsFemaleSpecie
 	pop bc
 	pop de
-	jr c, .female
+	jr c, .ItemUseBallText05Female
 	;shara-add end
+.ItemUseBallText05Standard ;shara-add
 	ld hl, ItemUseBallText05
-	jr .printText ;shara-add
-.female
+	jr .ItemUseBallText05GotText
+.ItemUseBallText05Female ;shara-add
 	ld hl, ItemUseBallText05_Female
-.printText
+.ItemUseBallText05GotText ;shara-add
 	pop af
 	call PrintText
 
@@ -612,8 +613,9 @@ ItemUseBall:
 	pop bc
 	pop de
 	jr c, .sendToBoxFemale
-	pop af
 	;shara-add end
+.sendToBoxStandard ;shara-add
+	pop af
 	ld hl, ItemUseBallText07
 	CheckEvent EVENT_MET_BILL
 	jr nz, .printTransferredToPCText

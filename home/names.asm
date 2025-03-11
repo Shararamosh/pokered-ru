@@ -140,6 +140,7 @@ GetMoveName::
 	pop hl
 	ret
 
+;shara-add begin
 FemaleSpecies::
 INCLUDE "data/pokemon/female_species.asm"
 
@@ -147,3 +148,4 @@ IsFemaleSpecie::
 	ld hl, FemaleSpecies
 	ld de, 1
 	jp IsInArray
+;shara-add end

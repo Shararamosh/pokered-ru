@@ -131,9 +131,8 @@ TransformEffect_:
 	jr z, .femaleCheck
 	;shara-add end
 .standard ;shara-add
-	pop af
 	ld hl, TransformedText
-	jp PrintText
+	jr .gotText
 .femaleCheck ;shara-add
 	ld a, [wBattleMonSpecies2]
 	push de
@@ -144,8 +143,9 @@ TransformEffect_:
 	jr c, .female
 	jr .standard
 .female ;shara-add
-	pop af
 	ld hl, TransformedText_Female
+.gotText
+	pop af
 	jp PrintText
 
 .copyBasedOnTurn

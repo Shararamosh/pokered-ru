@@ -63,6 +63,7 @@ SleepEffect:
 	ld [de], a
 	call PlayCurrentMoveAnimation2
 	;shara-add begin
+	push af
 	ldh a, [hWhoseTurn]
 	and a
 	jp z, .FellAsleepStandard
@@ -76,12 +77,12 @@ SleepEffect:
 	pop de
 	jr c, .FellAsleepFemale
 .FellAsleepStandard ;shara-add
-	pop af
 	ld hl, FellAsleepText
-	jp PrintText
+	jr .FellAsleepGotText
 .FellAsleepFemale ;shara-add
-	pop af
 	ld hl, FellAsleepText_Female
+.FellAsleepGotText
+	pop af
 	jp PrintText
 .didntAffect
 	jp PrintDidntAffectText
@@ -175,11 +176,9 @@ PoisonEffect:
 	pop de
 	jr c, .badPoisonFemale
 .badPoisonStandard ;shara-add
-	pop af
 	ld hl, BadlyPoisonedText
 	jr .continue
 .badPoisonFemale ;shara-add
-	pop af
 	ld hl, BadlyPoisonedText_Female
 	jr .continue
 .normalPoison
@@ -199,13 +198,12 @@ PoisonEffect:
 	jr c, .normalPoisonFemale
 	jr .normalPoisonStandard
 .normalPoisonFemale ;shara-add
-	pop af
 	ld hl, PoisonedText_Female
 	jr .continue
 .normalPoisonStandard
-	pop af
 	ld hl, PoisonedText
 .continue
+	pop af ;shara-add: Restoring whatever was in that register.
 	pop de
 	ld a, [de]
 	cp POISON_EFFECT
@@ -371,13 +369,14 @@ FreezeBurnParalyzeEffect:
 	pop bc
 	pop de
 	jr c, .burn2Female
-	pop af
 	;shara-add end
+.burn2Standard ;shara-add
 	ld hl, BurnedText
-	jp PrintText
+	jr .burn2GotText
 .burn2Female ;shara-add
-	pop af
 	ld hl, BurnedText_Female
+.burn2GotText
+	pop af
 	jp PrintText
 .freeze2
 ; hyper beam bits aren't reseted for opponent's side
@@ -392,13 +391,14 @@ FreezeBurnParalyzeEffect:
 	pop bc
 	pop de
 	jr c, .freeze2Female
-	pop af
 	;shara-add end
+.freeze2Standard ;shara-add
 	ld hl, FrozenText
-	jp PrintText
+	jr .freeze2GotText
 .freeze2Female ;shara-add
-	pop af
 	ld hl, FrozenText_Female
+.freeze2GotText
+	pop af
 	jp PrintText
 
 BurnedText:
@@ -1017,20 +1017,19 @@ SwitchAndTeleportEffect:
 .enemyTurnText ;shara-add: Getting text for enemy turn depending on Pokemon specie.
 	pop af ;Restoring current move from buffer.
 	cp TELEPORT
-	jr z, .EnemyRanFromBattleFemaleCheck ;Enemy used Teleport, so we check its specie.
+	jr z, .RanFromBattleStandard ;Enemy used Teleport, so just print out standard text.
 	cp ROAR
 	jp z, .RanAwayScaredFemaleCheck ;Enemy used Roar, so we check our specie.
-	jp .WasBlownAwayFemaleCheck ;Enemy used Whirlwind, so we also check our specie.
+	jr .WasBlownAwayFemaleCheck ;Enemy used Whirlwind, so we also check our specie.
 .playerTurnText ;shara-add: Getting text for our turn depending on Pokemon specie.
 	pop af ;Restoring current move from buffer.
 	cp TELEPORT
 	jr z, .RanFromBattleFemaleCheck ;We used Teleport, so we check our specie.
-	ld hl, RanAwayScaredText
 	cp ROAR
-	jp z, .printText ;We used Roar, so we don't need to edit text.
-	ld hl, WasBlownAwayText ;We used Whirlwind, so we don't need to edit text.
-	jp PrintText
-.RanFromBattleFemaleCheck ;shara-add: Our Pokemon used Teleport.
+	jp z, .RanAwayScaredStandard ;We used Roar, so we don't need to edit text.
+	jr .WasBlownAwayStandard ;We used Whirlwind, so we don't need to edit text.
+.RanFromBattleFemaleCheck ;shara-add: Checking if our Pokemon is female.
+	push af
 	ld a, [wBattleMonSpecies2]
 	push de
 	push bc
@@ -1038,25 +1037,14 @@ SwitchAndTeleportEffect:
 	pop bc
 	pop de
 	jr c, .RanFromBattleFemale
-	pop af
+.RanFromBattleStandard ;shara-add: Standard ran away text.
 	ld hl, RanFromBattleText
-	jp PrintText
-.RanFromBattleFemale ;shara-add: Female enemy or our Pokemon used Teleport.
-	pop af
+	jr .RanAwayGotText
+.RanFromBattleFemale ;shara-add: Our female Pokemon ran away.
 	ld hl, RanFromBattleText_Female
-	jp PrintText
-.EnemyRanFromBattleFemaleCheck; shara-add: Enemy Pokemon used Teleport.
-	ld a, [wEnemyMonSpecies2]
-	push de
-	push bc
-	call IsFemaleSpecie
-	pop bc
-	pop de
-	jr c, .RanFromBattleFemale
-	pop af
-	ld hl, RanFromBattleText
-	jp PrintText
-.RanAwayScaredFemaleCheck ;shara-add: Enemy Pokemon used Roar.
+	jr .RanAwayGotText
+.RanAwayScaredFemaleCheck ;shara-add: Checking if our Pokemon is female.
+	push af
 	ld a, [wBattleMonSpecies2]
 	push de
 	push bc
@@ -1064,14 +1052,13 @@ SwitchAndTeleportEffect:
 	pop bc
 	pop de
 	jr c, .RanAwayScaredFemale
-	pop af
-	ld hl, RanFromBattleText
-	jp PrintText
+.RanAwayScaredStandard
+	ld hl, RanAwayScaredText
+	jr .RanAwayGotText
 .RanAwayScaredFemale ;shara-add: Enemy Pokemon used Roar on female Pokemon.
-	pop af
 	ld hl, RanAwayScaredText_Female
-	jp PrintText
-.WasBlownAwayFemaleCheck ;shara-add: Enemy used Whirlwind on our Pokemon.
+	jr .RanAwayGotText
+.WasBlownAwayFemaleCheck ;shara-add: Checking if our Pokemon is female.
 	push af
 	ld a, [wBattleMonSpecies2]
 	push de
@@ -1080,21 +1067,20 @@ SwitchAndTeleportEffect:
 	pop bc
 	pop de
 	jr c, .WasBlownAwayFemale
-	pop af
+.WasBlownAwayStandard ;shara-add: Standard blown away text.
 	ld hl, WasBlownAwayText
-	jp PrintText
+	jr .RanAwayGotText
 .WasBlownAwayFemale ;shara-add: Enemy used Whirlwind on female Pokemon.
-	pop af
 	ld hl, WasBlownAwayText_Female
-	jp PrintText
-.printText
+.RanAwayGotText
+	pop af
 	jp PrintText
 
 RanFromBattleText:
 	text_far _RanFromBattleText
 	text_end
 
-RanFromBattleText_Female:
+RanFromBattleText_Female: ;shara-add
 	text_far _RanFromBattleText_Female
 	text_end
 
@@ -1102,7 +1088,7 @@ RanAwayScaredText:
 	text_far _RanAwayScaredText
 	text_end
 
-RanAwayScaredText_Female:
+RanAwayScaredText_Female: ;shara-add
 	text_far _RanAwayScaredText_Female
 	text_end
 
@@ -1110,7 +1096,7 @@ WasBlownAwayText:
 	text_far _WasBlownAwayText
 	text_end
 
-WasBlownAwayText_Female:
+WasBlownAwayText_Female: ;shara-add
 	text_far _WasBlownAwayText_Female
 	text_end
 
@@ -1225,9 +1211,8 @@ ChargeEffect:
 	jr z, .femaleCheck
 	;shara-add end
 .standard ;shara-add
-	pop af
 	ld hl, ChargeMoveEffectText
-	jp PrintText
+	jr .gotText
 .femaleCheck ;shara-add
 	ld a, [wBattleMonSpecies2]
 	push de
@@ -1238,8 +1223,9 @@ ChargeEffect:
 	jr c, .female
 	jr .standard
 .female ;shara-add
-	pop af
 	ld hl, ChargeMoveEffectText_Female
+.gotText
+	pop af
 	jp PrintText
 
 ChargeMoveEffectText:
@@ -1531,9 +1517,8 @@ MimicEffect:
 	jr z, .femaleCheck
 	;shara-add end
 .standard ;shara-add
-	pop af
 	ld hl, MimicLearnedMoveText
-	jp PrintText
+	jr .gotText
 .femaleCheck ;shara-add: Getting text for our turn depending on Pokemon specie.
 	ld a, [wBattleMonSpecies2]
 	push de
@@ -1544,8 +1529,9 @@ MimicEffect:
 	jr c, .female
 	jr .standard
 .female
-	pop af
 	ld hl, MimicLearnedMoveText_Female
+.gotText
+	pop af
 	jp PrintText
 .mimicMissed
 	jp PrintButItFailedText_
@@ -1723,12 +1709,12 @@ PrintMayNotAttackText:
 	pop de
 	jr c, .female
 .standard ;shara-add: Continuing standard behavior.
-	pop af
 	ld hl, ParalyzedMayNotAttackText
-	jp PrintText
+	jr .gotText
 .female ;shara-add: Female enemy or our Pokemon used Teleport.
-	pop af
 	ld hl, ParalyzedMayNotAttackText_Female
+.gotText
+	pop af
 	jp PrintText
 
 ParalyzedMayNotAttackText:

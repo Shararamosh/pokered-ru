@@ -265,6 +265,7 @@ EnemyRan:
 	pop de
 	jr c, .female
 	;shara-add end
+.standard ;shara-add
 	ld hl, WildRanText
 	jr .gotText ;shara-add: Continuing standard behavior.
 .female ;shara-add: Loading run text for certain Pokemon.
@@ -1102,6 +1103,7 @@ RemoveFaintedPlayerMon:
 	pop de
 	jr c, .female
 	;shara-add end
+.standard ;shara-add
 	ld hl, PlayerMonFaintedText
 	jr .gotText
 .female ;shara-add
@@ -3383,6 +3385,7 @@ PrintGhostText:
 	pop de
 	jr c, .female
 	;shara-add end
+.standard ;shara-add
 	ld hl, ScaredText
 	jr .gotText ;shara-add: Continuing standard behavior.
 .female ;shara-add: Loading scared text for certain Pokemon.
@@ -3576,6 +3579,7 @@ CheckPlayerStatusConditions:
 	pop de
 	jr c, .confusedCheckFemaleText
 	;shara-add end
+.consusedCheckStandardText ;shara-add
 	ld hl, ConfusedNoMoreText
 	jr .gotText ;shara-add
 .confusedCheckFemaleText ;shara-add
@@ -3631,15 +3635,13 @@ CheckPlayerStatusConditions:
 	jr c, .ParalysisCheckFemale
 	;shara-add end
 .ParalysisCheckStandard ;shara-add
-	pop af
 	ld hl, FullyParalyzedText
-	call PrintText
-	jr .MonHurtItselfOrFullyParalysed
+	jr .ParalysisCheckContinue
 .ParalysisCheckFemale ;shara-add
-	pop af
 	ld hl, FullyParalyzedText_Female
+.ParalysisCheckContinue ;shara-add
+	pop af
 	call PrintText
-
 .MonHurtItselfOrFullyParalysed
 	ld hl, wPlayerBattleStatus1
 	ld a, [hl]
@@ -4093,9 +4095,8 @@ PrintMoveFailureText:
 	jr z, .AttackMissedFemaleCheck
 	;shara-add end
 .AttackMissedStandard ;shara-add
-	pop af
 	ld hl, AttackMissedText
-	jr .gotText
+	jr .AttackMissedGotText
 .AttackMissedFemaleCheck ;shara-add
 	ld a, [wBattleMonSpecies2]
 	push de
@@ -4106,9 +4107,9 @@ PrintMoveFailureText:
 	jr c, .AttackMissedFemale
 	jr .AttackMissedStandard
 .AttackMissedFemale ;shara-add
-	pop af
 	ld hl, AttackMissedText_Female
-.gotText ;shara-add
+.AttackMissedGotText ;shara-add
+	pop af
 	ld a, [wCriticalHitOrOHKO]
 	cp $ff
 	jr nz, .gotTextToPrint
@@ -4150,9 +4151,7 @@ PrintMoveFailureText:
 	jr z, .KeptGoingAndCrashedFemaleCheck
 	;shara-add end
 .KeptGoingAndCrashedStandard ;shara-add
-	pop af
 	ld hl, KeptGoingAndCrashedText
-	call PrintText
 	jr .KeptGoingAndCrashedGotText
 .KeptGoingAndCrashedFemaleCheck ;shara-add
 	ld a, [wBattleMonSpecies2]
@@ -4164,10 +4163,10 @@ PrintMoveFailureText:
 	jr c, .KeptGoingAndCrashedFemale
 	jr .KeptGoingAndCrashedStandard
 .KeptGoingAndCrashedFemale ;shara-add
-	pop af
 	ld hl, KeptGoingAndCrashedText_Female
-	call PrintText
 .KeptGoingAndCrashedGotText ;shara-add
+	pop af
+	call PrintText
 	ld b, $4
 	predef PredefShakeScreenHorizontally
 	ldh a, [hWhoseTurn]
@@ -4336,12 +4335,12 @@ CheckForDisobedience:
 	jr c, .monNapsFemale
 	;shara-add end
 .monNapsStandard ;shara-add
-	pop af
 	ld hl, BeganToNapText
-	jr .printText
+	jr .monNapsGotText
 .monNapsFemale ;shara-add
-	pop af
 	ld hl, BeganToNapText_Female
+.monNapsGotText
+	pop af
 	jr .printText
 .monDoesNothing
 	call BattleRandom
@@ -4368,12 +4367,12 @@ CheckForDisobedience:
 	pop de
 	jr c, .monDoesNothingFemale
 .monDoesNothingStandard ;shara-add
-	pop af
 	ld hl, TurnedAwayText
-	jr .printText
+	jr .monDoesNothingGotText
 .monDoesNothingFemale ;shara-add
-	pop af
 	ld hl, TurnedAwayText_Female
+.monDoesNothingGotText
+	pop af
 .printText
 	call PrintText
 	jr .cannotUseMove
