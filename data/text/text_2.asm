@@ -209,8 +209,8 @@ _LavenderPokecenterGuyText::
 _MtMoonPokecenterBenchGuyText::
 	text "Если у тебя много"
 	line "#МОНов, тебе"
-	cont "следует хранить их"
-	cont "в ПК!"
+	cont "следует хранить"
+	cont "их в ПК!"
 	done
 
 _RockTunnelPokecenterGuyText::
@@ -423,8 +423,9 @@ _BillsHouseMonitorText::
 
 _BillsHouseInitiatedText::
 	text "<PLAYER> включил"
-	line "Разделитель Клеток"
-	cont "ТЕЛЕПОРТАТОРа!"
+	line "Разделитель"
+	cont "Клеток ТЕЛЕПОРТА-"
+	cont "ТОРа!"
 	text_end
 
 _BillsHousePokemonListText1::

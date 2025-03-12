@@ -1,119 +1,123 @@
 _MtMoon1BattleText2::
-	text "WHOA! You shocked"
-	line "me! Oh, you're"
-	cont "just a kid!"
+	text "ВОУ! Ты испугал"
+	line "меня! Оу, ты"
+	cont "всего лишь"
+	cont "ребёнок!"
 	done
 
 _MtMoon1EndBattleText2::
-	text "Wow!"
-	line "Shocked again!"
+	text "Вау!"
+	line "Снова испуган!"
 	prompt
 
 _MtMoon1AfterBattleText2::
-	text "Kids like you"
-	line "shouldn't be"
-	cont "here!"
+	text "Такие дети, как"
+	line "ты не должны"
+	cont "быть здесь!"
 	done
 
 _MtMoon1BattleText3::
-	text "Did you come to"
-	line "explore too?"
+	text "Ты тоже пришёл"
+	line "исследовать?"
 	done
 
 _MtMoon1EndBattleText3::
-	text "Losing"
-	line "stinks!"
+	text "Проигрыш -"
+	line "отстой!"
 	prompt
 
 _MtMoon1AfterBattleText3::
-	text "I came down here"
-	line "to show off to"
-	cont "girls."
+	text "Я пришёл сюда"
+	line "покрасоваться"
+	cont "перед девушками."
 	done
 
 _MtMoon1BattleText4::
-	text "Wow! It's way"
-	line "bigger in here"
-	cont "than I thought!"
+	text "Вау! Здесь намного"
+	line "просторнее, чем"
+	cont "я ожидал!"
 	done
 
 _MtMoon1EndBattleText4::
-	text "Oh!"
-	line "I lost it!"
+	text "Оу!"
+	line "Я проиграл!"
 	prompt
 
 _MtMoon1AfterBattleText4::
-	text "How do you get"
-	line "out of here?"
+	text "Как ты отсюда"
+	line "выйдешь?"
 	done
 
 _MtMoon1BattleText5::
-	text "What! Don't sneak"
-	line "up on me!"
+	text "Что! Не подкрады-"
+	line "вайся ко мне!"
 	done
 
 _MtMoon1EndBattleText5::
-	text "My"
-	line "#MON won't do!"
+	text "Мой"
+	line "#МОН не смог!"
 	prompt
 
 _MtMoon1AfterBattleText5::
-	text "I have to find"
-	line "stronger #MON."
+	text "Я должен найти"
+	line "сильного #МОНа."
 	done
 
 _MtMoon1BattleText6::
-	text "What? I'm waiting"
-	line "for my friends to"
-	cont "find me here."
+	text "Что? Я жду своих"
+	line "друзей, которые"
+	cont "ищут меня."
 	done
 
 _MtMoon1EndBattleText6::
-	text "I lost?"
+	text "Я"
+	line "проиграла?"
 	prompt
 
 _MtMoon1AfterBattleText6::
-	text "I heard there are"
-	line "some very rare"
-	cont "fossils here."
+	text "Я слышала, здесь"
+	line "можно найти"
+	cont "редкие окамене-"
+	cont "лости."
 	done
 
 _MtMoon1BattleText7::
-	text "Suspicious men"
-	line "are in the cave."
-	cont "What about you?"
+	text "В этой пещере"
+	line "подозрительные"
+	cont "люди. А как"
+	cont "насчёт тебя?"
 	done
 
 _MtMoon1EndBattleText7::
-	text "You"
-	line "got me!"
+	text "Ты"
+	line "одолел меня!"
 	prompt
 
 _MtMoon1AfterBattleText7::
-	text "I saw them! I'm"
-	line "sure they're from"
-	cont "TEAM ROCKET!"
+	text "Я их видел! Они"
+	line "точно из КОМАНДЫ"
+	cont "РАКЕТА!"
 	done
 
 _MtMoon1BattleText8::
-	text "Go through this"
-	line "cave to get to"
-	cont "CERULEAN CITY!"
+	text "Через эту пещеру"
+	line "можно пройти в"
+	cont "ЦЕРУЛИН СИТИ!"
 	done
 
 _MtMoon1EndBattleText8::
-	text "I"
-	line "lost."
+	text "Я"
+	line "проиграл."
 	prompt
 
 _MtMoon1AfterBattleText8::
-	text "ZUBAT is tough!"
-	line "But, it can be"
-	cont "useful if you"
-	cont "catch one."
+	text "ЗУБАТ силён!"
+	line "Но его может"
+	cont "быть полезно"
+	cont "поймать."
 	done
 
 _MtMoon1Text14::
-	text "Beware! ZUBAT is"
-	line "a blood sucker!"
+	text "Осторожно! ЗУБАТ -"
+	line "кровопийца!"
 	done

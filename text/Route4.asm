@@ -1,35 +1,35 @@
 _Route4Text1::
-	text "Ouch! I tripped"
-	line "over a rocky"
-	cont "#MON, GEODUDE!"
+	text "Ауч! Я споткнулась"
+	line "о каменного"
+	cont "#МОНа ДЖЕОДУДа!"
 	done
 
 _Route4BattleText1::
-	text "I came to get my"
-	line "mushroom #MON!"
+	text "Я пришла сюда за"
+	line "#МОНом-грибом!"
 	done
 
 _Route4EndBattleText1::
-	text "Oh! My cute"
-	line "mushroom #MON!"
+	text "Оу! Мой милый"
+	line "грибок!"
 	prompt
 
 _Route4AfterBattleText1::
-	text "There might not"
-	line "be any more"
-	cont "mushrooms here."
+	text "Возможно, здесь"
+	line "больше нет"
+	cont "грибов."
 
-	para "I think I got"
-	line "them all."
+	para "Думаю, я собрала"
+	line "их все."
 	done
 
 _Route4Text5::
-	text "MT.MOON"
-	line "Tunnel Entrance"
+	text "ЛУННАЯ ГОРА"
+	line "Вход в тоннель"
 	done
 
 _Route4Text6::
-	text "ROUTE 4"
-	line "MT.MOON -"
-	cont "CERULEAN CITY"
+	text "ДОРОГА 4"
+	line "ЛУННАЯ ГОРА -"
+	cont "ЦЕРУЛИН СИТИ"
 	done

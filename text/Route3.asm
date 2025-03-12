@@ -15,8 +15,8 @@ _Route3BattleText1::
 	done
 
 _Route3EndBattleText1::
-	text "Ты снова меня"
-	line "победил!"
+	text "Ты"
+	line "снова победил!"
 	prompt
 
 _Route3AfterBattleText1::
@@ -67,9 +67,10 @@ _Route3BattleText4::
 	done
 
 _Route3EndBattleText4::
-	text "Будь у меня"
-	line "новый #МОН,"
-	cont "я бы выйграл!"
+	text "Будь"
+	line "у меня новый"
+	cont "#МОН, я бы"
+	cont "выйграл!"
 	prompt
 
 _Route3AfterBattleText4::
@@ -87,7 +88,8 @@ _Route3BattleText5::
 	done
 
 _Route3EndBattleText5::
-	text "Будь поласковей!"
+	text "Будь"
+	line "поласковей!"
 	prompt
 
 _Route3AfterBattleText5::
@@ -119,8 +121,8 @@ _Route3BattleText7::
 	done
 
 _Route3EndBattleText7::
-	text "Разбит в пух"
-	line "и прах!"
+	text "Стёрт"
+	line "в порошок!"
 	prompt
 
 _Route3AfterBattleText7::
@@ -135,7 +137,8 @@ _Route3BattleText8::
 	done
 
 _Route3EndBattleText8::
-	text "И это всё?"
+	text "И это"
+	line "всё?"
 	prompt
 
 _Route3AfterBattleText8::

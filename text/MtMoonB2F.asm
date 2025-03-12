@@ -1,125 +1,125 @@
 _MtMoon3Text_49f24::
-	text "You want the"
-	line "DOME FOSSIL?"
+	text "Ты хочешь"
+	line "КАМЕНЬ-КУПОЛ?"
 	done
 
 _MtMoon3Text_49f64::
-	text "You want the"
-	line "HELIX FOSSIL?"
+	text "Ты хочешь"
+	line "КАМЕНЬ-ВИНТ?"
 	done
 
 _MtMoon3Text_49f6f::
-	text "<PLAYER> got the"
+	text "<PLAYER> получил"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
 _MtMoon3Text_49f7f::
-	text "Look, you've got"
-	line "no room for this.@"
+	text "Смотри-ка, у тебя"
+	line "нет места.@"
 	text_end
 
 _MtMoon3Text_49f85::
-	text "Hey, stop!"
+	text "Ну-ка, стоп!"
 
-	para "I found these"
-	line "fossils! They're"
-	cont "both mine!"
+	para "Я нашёл эти"
+	line "камни! Они оба"
+	cont "мои!"
 	done
 
 _MtMoon3Text_49f8a::
-	text "OK!"
-	line "I'll share!"
+	text "ОК!"
+	line "Я поделюсь!"
 	prompt
 
 _MtMoon3Text_49f8f::
-	text "We'll each take"
-	line "one!"
-	cont "No being greedy!"
+	text "Каждый возьмёт"
+	line "по одному!"
+	cont "Не жадничай!"
 	done
 
 _MtMoon3Text_49f94::
-	text "Far away, on"
-	line "CINNABAR ISLAND,"
-	cont "there's a #MON"
-	cont "LAB."
+	text "Далеко отсюда, на"
+	line "ОСТРОВе СИННАБАР"
+	cont "есть ЛАБОРАТОРИЯ"
+	cont "#МОНов."
 
-	para "They do research"
-	line "on regenerating"
-	cont "fossils."
+	para "Они исследуют"
+	line "возрождение из"
+	cont "окаменелостей."
 	done
 
 _MtMoon3Text_49f99::
-	text "All right. Then"
-	line "this is mine!@"
+	text "Ладно. Тогда"
+	line "этот мой!@"
 	text_end
 
 _MtMoon3BattleText2::
-	text "TEAM ROCKET will"
-	line "find the fossils,"
-	cont "revive and sell"
-	cont "them for cash!"
+	text "КОМАНДА РАКЕТА"
+	line "ищет окаменелости"
+	cont "для возрождения и"
+	cont "продажи!"
 	done
 
 _MtMoon3EndBattleText2::
-	text "Urgh!"
-	line "Now I'm mad!"
+	text "Аргх!"
+	line "Теперь я зол!"
 	prompt
 
 _MtMoon3AfterBattleText2::
-	text "You made me mad!"
-	line "TEAM ROCKET will"
-	cont "blacklist you!"
+	text "Ты разозлил меня!"
+	line "КОМАНДА РАКЕТА"
+	cont "внесла тебя"
+	cont "в чёрный список!"
 	done
 
 _MtMoon3BattleText3::
-	text "We, TEAM ROCKET,"
-	line "are #MON"
-	cont "gangsters!"
+	text "Мы, КОМАНДА"
+	line "РАКЕТА, бандиты"
+	cont "в мире #МОНов!"
 	done
 
 _MtMoon3EndBattleText3::
-	text "I blew"
-	line "it!"
+	text "Продул!"
 	prompt
 
 _MtMoon3AfterBattleText3::
-	text "Darn it all! My"
-	line "associates won't"
-	cont "stand for this!"
+	text "К чёрту это всё!"
+	line "Мои помощники"
+	cont "этого не потерпят!"
 	done
 
 _MtMoon3BattleText4::
-	text "We're pulling a"
-	line "big job here!"
-	cont "Get lost, kid!"
+	text "У нас здесь"
+	line "большой заказ!"
+	cont "Проваливай, пацан!"
 	done
 
 _MtMoon3EndBattleText4::
-	text "So, you"
-	line "are good."
+	text "А ты"
+	line "хорош."
 	prompt
 
 _MtMoon3AfterBattleText4::
-	text "If you find a"
-	line "fossil, give it"
-	cont "to me and scram!"
+	text "Найдёшь окамене-"
+	line "лость - отдай её"
+	cont "нам и проваливай!"
 	done
 
 _MtMoon3BattleText5::
-	text "Little kids"
-	line "should leave"
-	cont "grown-ups alone!"
+	text "Детишки должны"
+	line "оставить взрослых"
+	cont "в покое!"
 	done
 
 _MtMoon3EndBattleText5::
-	text "I'm"
-	line "steamed!"
+	text "Я"
+	line "выдохся!"
 	prompt
 
 _MtMoon3AfterBattleText5::
-	text "#MON lived"
-	line "here long before"
-	cont "people came."
+	text "#МОНы жили"
+	line "здесь задолго до"
+	cont "людей."
 	done

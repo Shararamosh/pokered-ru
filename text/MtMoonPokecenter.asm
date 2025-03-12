@@ -1,46 +1,46 @@
 _MtMoonPokecenterText1::
-	text "I've 6 # BALLs"
-	line "set in my belt."
+	text "На моём поясе"
+	line "6 # БОЛЛов."
 
-	para "At most, you can"
-	line "carry 6 #MON."
+	para "Максимум можно"
+	line "брать 6 #МОНов."
 	done
 
 _MtMoonPokecenterText3::
-	text "TEAM ROCKET"
-	line "attacks CERULEAN"
-	cont "citizens..."
+	text "КОМАНДА РАКЕТА"
+	line "атакует жителей"
+	cont "ЦЕРУЛИНА..."
 
-	para "TEAM ROCKET is"
-	line "always in the"
-	cont "news!"
+	para "КОМАНДА РАКЕТА"
+	line "всегда на первых"
+	cont "страницах!"
 	done
 
 _MagikarpSalesmanText1::
-	text "MAN: Hello, there!"
-	line "Have I got a deal"
-	cont "just for you!"
+	text "МУЖЧИНА: Привет!"
+	line "У меня для тебя"
+	cont "предложение!"
 
-	para "I'll let you have"
-	line "a swell MAGIKARP"
-	cont "for just ¥500!"
-	cont "What do you say?"
+	para "Я продам тебе"
+	line "этого крупного"
+	cont "МЭДЖИКАРПа"
+	cont "всего за ¥500!"
+	cont "Что скажешь?"
 	done
 
 _MagikarpSalesmanNoText::
-	text "No? I'm only"
-	line "doing this as a"
-	cont "favor to you!"
+	text "Нет? Я делаю это"
+	line "только ради тебя!"
 	done
 
 _MagikarpSalesmanNoMoneyText::
-	text "You'll need more"
-	line "money than that!"
+	text "Тебе нужно больше"
+	line "денег!"
 	done
 
 _MagikarpSalesmanText2::
-	text "MAN: Well, I don't"
-	line "give refunds!"
+	text "МУЖЧИНА: Неа,"
+	line "без возвратов!"
 	done
 
 _MtMoonPokecenterText5::
