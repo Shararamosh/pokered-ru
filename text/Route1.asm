@@ -1,6 +1,7 @@
 _Route1ViridianMartSampleText::
 	text "Привет! Я работаю"
-	line "в #МОН МАРТе."
+	line "в #МОН"
+	cont "МАРКЕТе."
 
 	para "Это удобный"
 	line "магазин, так что"

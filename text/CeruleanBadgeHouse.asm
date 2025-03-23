@@ -1,97 +1,102 @@
 _CeruleanHouse2Text_74e77::
-	text "#MON BADGEs"
-	line "are owned only by"
-	cont "skilled trainers."
+	text "Значками #-"
+	line "МОНов владеют"
+	cont "только умелые"
+	cont "тренеры."
 
-	para "I see you have"
-	line "at least one."
+	para "Вижу, у тебя есть"
+	line "как минимум один."
 
-	para "Those BADGEs have"
-	line "amazing secrets!"
+	para "Эти ЗНАЧКИ хранят"
+	line "удивительные"
+	cont "секреты!"
 	prompt
 
 _CeruleanHouse2Text_74e7c::
-	text "Now then..."
+	text "А теперь..."
 
-	para "Which of the 8"
-	line "BADGEs should I"
-	cont "describe?"
+	para "Какой из 8 ЗНАЧКОВ"
+	line "описать тебе?"
 	done
 
 _CeruleanHouse2Text_74e81::
-	text "Come visit me any"
-	line "time you wish."
+	text "Приходи ко мне,"
+	line "когда пожелаешь."
 	done
 
 _CeruleanHouse2Text_74e96::
-	text "The ATTACK of all"
-	line "#MON increases"
-	cont "a little bit."
+	text "АТАКА всех"
+	line "#МОНов немного"
+	cont "повышается."
 
-	para "It also lets you"
-	line "use FLASH any"
-	cont "time you desire."
+	para "А ещё он позволяет"
+	line "тебе использовать"
+	cont "ВСПЫШКУ в любой"
+	cont "момент."
 	prompt
 
 _CeruleanHouse2Text_74e9b::
-	text "#MON up to L30"
-	line "will obey you."
+	text "Тебе будут"
+	line "подчиняться #-"
+	cont "МОНы до У30."
 
-	para "Any higher, they"
-	line "become unruly!"
+	para "Любой выше будет"
+	line "непокорным!"
 
-	para "It also lets you"
-	line "use CUT outside"
-	cont "of battle."
+	para "А ещё он позволяет"
+	line "тебе использовать"
+	cont "ПОРЕЗ вне битвы."
 	prompt
 
 _CeruleanHouse2Text_74ea0::
-	text "The SPEED of all"
-	line "#MON increases"
-	cont "a little bit."
+	text "СКОРОСТЬ всех"
+	line "#МОНов немного"
+	cont "повышается."
 
-	para "It also lets you"
-	line "use FLY outside"
-	cont "of battle."
+	para "А ещё он позволяет"
+	line "тебе использовать"
+	cont "ПОЛЁТ вне битвы."
 	prompt
 
 _CeruleanHouse2Text_74ea5::
-	text "#MON up to L50"
-	line "will obey you."
+	text "Тебе будут"
+	line "подчиняться #-"
+	cont "МОНы до У50."
 
-	para "Any higher, they"
-	line "become unruly!"
+	para "Любой выше будет"
+	line "непокорным!"
 
-	para "It also lets you"
-	line "use STRENGTH out-"
-	cont "side of battle."
+	para "А ещё он позволяет"
+	line "тебе использовать"
+	cont "СИЛУ вне битвы."
 	prompt
 
 _CeruleanHouse2Text_74eaa::
-	text "The DEFENSE of all"
-	line "#MON increases"
-	cont "a little bit."
+	text "ЗАЩИТА всех"
+	line "#МОНов немного"
+	cont "повышается."
 
-	para "It also lets you"
-	line "use SURF outside"
-	cont "of battle."
+	para "А ещё он позволяет"
+	line "тебе использовать"
+	cont "СЁРФ вне битвы."
 	prompt
 
 _CeruleanHouse2Text_74eaf::
-	text "#MON up to L70"
-	line "will obey you."
+	text "Тебе будут"
+	line "подчиняться #-"
+	cont "МОНы до У70."
 
-	para "Any higher, they"
-	line "become unruly!"
+	para "Любой выше будет"
+	line "непокорным!"
 	prompt
 
 _CeruleanHouse2Text_74eb4::
-	text "Your #MON's"
-	line "SPECIAL abilities"
-	cont "increase a bit."
+	text "СП.АТАКА всех"
+	line "#МОНов немного"
+	cont "повышается."
 	prompt
 
 _CeruleanHouse2Text_74eb9::
-	text "All #MON will"
-	line "obey you!"
+	text "Все #МОНы будут"
+	line "тебе подчиняться!"
 	prompt

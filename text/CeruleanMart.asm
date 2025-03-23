@@ -1,19 +1,23 @@
 _CeruleanMartText2::
-	text "Use REPEL to keep"
-	line "bugs and weak"
-	cont "#MON away."
+	text "Используй"
+	line "РЕПЕЛЛЕНТ, чтобы"
+	cont "не подпускать к"
+	cont "себе жуков и"
+	cont "слабых #МОНов."
 
-	para "Put your strongest"
-	line "#MON at the"
-	cont "top of the list"
-	cont "for best results!"
+	para "Для лучшего"
+	line "результата, ставь"
+	cont "самого сильного"
+	cont "#МОНа на верх"
+	cont "списка!"
 	done
 
 _CeruleanMartText3::
-	text "Have you seen any"
-	line "RARE CANDY?"
+	text "Ты где-нибудь"
+	line "видел РЕДКИЕ"
+	cont "КОНФЕТЫ?"
 
-	para "It's supposed to"
-	line "make #MON go"
-	cont "up one level!"
+	para "Они должны"
+	line "повышать уровень"
+	cont "#МОНа!"
 	done

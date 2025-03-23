@@ -1,24 +1,23 @@
 _CeruleanPokecenterText2::
-	text "That BILL!"
+	text "Этот БИЛЛ!"
 
-	para "I heard that"
-	line "he'll do whatever"
-	cont "it takes to get"
-	cont "rare #MON!"
+	para "Я слышал, он"
+	line "делает что угодно"
+	cont "лишь бы раздобыть"
+	cont "редких #МОНов!"
 	done
 
 _CeruleanPokecenterText3::
-	text "Have you heard"
-	line "about BILL?"
+	text "Ты слышал о БИЛЛе?"
 
-	para "Everyone calls"
-	line "him a #MANIAC!"
+	para "Все зовут его"
+	line "#МАНЬЯКом!"
 
-	para "I think people"
-	line "are just jealous"
-	cont "of BILL, though."
+	para "Но мне кажется,"
+	line "люди просто"
+	cont "завидуют БИЛЛу."
 
-	para "Who wouldn't want"
-	line "to boast about"
-	cont "their #MON?"
+	para "Кто бы отказался"
+	line "похвастаться"
+	cont "своими #МОНами?"
 	done

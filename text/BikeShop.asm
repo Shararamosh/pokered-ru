@@ -1,71 +1,74 @@
 _BikeShopText_1d810::
-	text "Hi! Welcome to"
-	line "our BIKE SHOP."
+	text "Привет! Добро"
+	line "пожаловать в наш"
+	cont "ВЕЛОМАГАЗИН."
 
-	para "Have we got just"
-	line "the BIKE for you!"
+	para "У нас есть ВЕЛИК"
+	line "как раз для тебя!"
 	prompt
 
 _BikeShopText_1d815::
-	text "It's a cool BIKE!"
-	line "Do you want it?"
+	text "Это крутой ВЕЛИК!"
+	line "Хочешь его купить?"
 	done
 
 _BikeShopCantAffordText::
-	text "Sorry! You can't"
-	line "afford it!"
+	text "Извини! Ты не"
+	line "можешь его себе"
+	cont "позволить!"
 	prompt
 
 _BikeShopText_1d81f::
-	text "Oh, that's..."
+	text "Оу, это..."
 
-	para "A BIKE VOUCHER!"
+	para "ВЕЛОКУПОН!"
 
-	para "OK! Here you go!"
+	para "ОК! Вот, держи!"
 	prompt
 
 _BikeShopText_1d824::
-	text "<PLAYER> exchanged"
-	line "the BIKE VOUCHER"
-	cont "for a BICYCLE.@"
+	text "<PLAYER> обменял"
+	line "ВЕЛОКУПОН на"
+	cont "ВЕЛОСИПЕД.@"
 	text_end
 
 _BikeShopComeAgainText::
-	text "Come back again"
-	line "some time!"
+	text "Заходи в любое"
+	line "время!"
 	done
 
 _BikeShopText_1d82f::
-	text "How do you like"
-	line "your new BICYCLE?"
+	text "Как тебе твой"
+	line "новый ВЕЛОСИПЕД?"
 
-	para "You can take it"
-	line "on CYCLING ROAD"
-	cont "and in caves!"
+	para "На нём можно"
+	line "ездить по ВЕЛО-"
+	cont "ДОРОГЕ и в"
+	cont "пещерах!"
 	done
 
 _BikeShopText_1d834::
-	text "You better make"
-	line "room for this!"
+	text "Освободи место"
+	line "для этого!"
 	done
 
 _BikeShopText_1d843::
-	text "A plain city BIKE"
-	line "is good enough"
-	cont "for me!"
+	text "Мне достаточно"
+	line "обычного город-"
+	cont "ского ВЕЛОСИПЕДА."
 
-	para "You can't put a"
-	line "shopping basket"
-	cont "on an MTB!"
+	para "А на горный можно"
+	line "установить"
+	cont "корзину!"
 	done
 
 _BikeShopText_1d85c::
-	text "These BIKEs are"
-	line "cool, but they're"
-	cont "way expensive!"
+	text "Это крутые ВЕЛИКи,"
+	line "но они очень"
+	cont "дорогие!"
 	done
 
 _BikeShopText_1d861::
-	text "Wow. Your BIKE is"
-	line "really cool!"
+	text "Вау. Твой ВЕЛИК"
+	line "очень крут!"
 	done

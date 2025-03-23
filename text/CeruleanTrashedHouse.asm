@@ -1,36 +1,35 @@
 _CeruleanTrashedText_1d6ab::
-	text "Those miserable"
-	line "ROCKETs!"
+	text "Проклятая КОМАНДА"
+	line "РАКЕТА!"
 
-	para "Look what they"
-	line "did here!"
+	para "Просто взгляни,"
+	line "что они сделали!"
 
-	para "They stole a TM"
-	line "for teaching"
-	cont "#MON how to"
-	cont "DIG holes!"
+	para "Они украли TM для"
+	line "обучения #МОНа"
+	cont "ПОДКОПу нор!"
 
-	para "That cost me a"
-	line "bundle, it did!"
+	para "Она обошлась мне в"
+	line "кругленькую сумму!"
 	done
 
 _CeruleanTrashedText_1d6b0::
-	text "I figure what's"
-	line "lost is lost!"
+	text "Ладно, что упало,"
+	line "то пропало!"
 
-	para "I decided to teach"
-	line "DIGLETT how to"
-	cont "DIG without a TM!"
+	para "Я решил обучить"
+	line "ДИГЛЕТТа ПОДКОПу"
+	cont "без TM!"
 	done
 
 _CeruleanHouseTrashedText2::
-	text "TEAM ROCKET must"
-	line "be trying to DIG"
-	cont "their way into no"
-	cont "good!"
+	text "КОМАНДА РАКЕТА"
+	line "явно КОПает себе"
+	cont "путь в никуда!"
 	done
 
 _CeruleanHouseTrashedText3::
-	text "TEAM ROCKET left"
-	line "a way out!"
+	text "КОМАНДА РАКЕТА"
+	line "проломила себе"
+	cont "выход!"
 	done
